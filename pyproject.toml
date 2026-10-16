@@ -3,9 +3,90 @@ name = "ai-ml-course"
 version = "0.1.0"
 description = "Self-study AI/ML course: lessons, labs, quizzes, cheat sheets and projects."
 requires-python = ">=3.12,<3.13"
-# Empty on purpose: Step 2 in course/PROMPTS.md looks up and pins the current
-# versions of every library the course uses.
-dependencies = []
+# Every library the course uses, pinned to the newest release that resolves together
+# (checked against PyPI on 2026-10-16). VERIFY (as of 2026-10-16): re-check at the week-24
+# refresh in course/PROMPTS.md. `uv sync` installs all of this on the laptop CPU.
+dependencies = [
+    # Part A on: arrays, linear algebra, statistics, plotting, # %% cells in VS Code
+    "numpy==2.5.4",
+    "pandas==3.0.6",
+    "matplotlib==3.11.2",
+    "scipy==1.18.1",
+    "ipykernel==7.4.0",
+    "scikit-learn==1.9.1",
+    # Part B: classical ML
+    "xgboost==3.4.1",
+    "lightgbm==4.7.0",
+    "shap==0.53.0",  # 0.54.0 (2026-10-16) has no Python 3.12 wheels yet
+    "optuna==5.0.0",
+    "fairlearn==0.15.0",
+    "umap-learn==0.5.12",
+    "statsmodels==0.15.0",
+    # Parts C, D, G: deep learning and vision (CPU wheels, see [tool.uv.sources])
+    "torch==2.14.1",
+    "torchvision==0.29.1",
+    "torchmetrics==1.9.0",
+    "pillow==12.3.0",
+    # Parts E, F, G, J: NLP, transformers, fine-tuning, generative and multimodal models
+    "gensim==4.4.0",
+    "tiktoken==0.14.0",
+    "tokenizers==0.23.3",
+    "transformers==5.20.0",
+    "datasets==5.1.0",
+    "trl==1.16.0",
+    "peft==0.21.2",
+    "accelerate==1.15.0",
+    "diffusers==0.41.0",
+    "open-clip-torch==3.3.0",
+    # Part H: reinforcement learning
+    "gymnasium[toy-text,classic-control]==1.4.0",
+    "stable-baselines3==2.9.0",
+    # Part I: applied LLM engineering (install only the provider SDK you use, or keep all three)
+    "httpx==0.28.1",
+    "anthropic==1.15.0",
+    "openai==3.31.0",
+    "google-genai==2.31.0",
+    "pydantic==2.14.1",
+    "sentence-transformers==6.1.0",
+    "psycopg[binary]==3.3.6",
+    "pgvector==0.5.1",
+    "pytest==9.1.1",
+    "respx==0.23.1",
+    "mcp==2.3.0",
+    "opentelemetry-sdk==1.45.1",
+    "presidio-analyzer==2.2.362",  # 2.2.364 caps numpy below 2.5
+    # Part J and the capstone: MLOps, serving, monitoring
+    "mlflow==3.17.1",
+    "dvc==3.67.1",
+    "fastapi==0.143.2",
+    "uvicorn==0.54.0",
+    "onnx==1.23.2",
+    "onnxscript==0.7.2",
+    "onnxruntime==1.31.0",
+    "prometheus-client==0.26.0",
+]
+
+# Optional extras, not installed by a plain `uv sync`:
+#   uv sync --group box2d      LunarLander in Part H (needs SWIG; VERIFY Windows wheels)
+#   uv sync --group local-llm  llama.cpp GGUF models on CPU in F3.4, I1.1, J2.1 (needs a C++ build)
+#   uv sync --group gpu        QLoRA in J1.3 / P9; meant for Colab or Kaggle, not this laptop
+# vLLM (J2.1, GPU only) is not listed: it pins its own CUDA build of torch, so install it in the
+# Colab/Kaggle notebook with `pip install vllm` instead.
+[dependency-groups]
+box2d = ["gymnasium[box2d]==1.4.0"]
+local-llm = ["llama-cpp-python==0.3.36"]
+gpu = ["bitsandbytes==0.50.2"]
 
 [tool.uv]
 package = false
+
+# CPU-only PyTorch build: the laptop has no NVIDIA GPU, and the CUDA wheels are ~2 GB larger.
+# Colab and Kaggle come with their own CUDA build of torch preinstalled.
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+torchvision = { index = "pytorch-cpu" }
