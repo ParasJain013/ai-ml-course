@@ -293,7 +293,7 @@
         "A1.2-lesson",
         "A1.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A2.1",
       "level": "Core",
       "rai": false
@@ -308,7 +308,7 @@
       "depends_on": [
         "A2.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A2.1",
       "level": "Core",
       "rai": false
@@ -324,7 +324,7 @@
         "A2.1-lab",
         "A2.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A2.1",
       "level": "Core",
       "rai": false
@@ -340,7 +340,7 @@
         "A1.2-lesson",
         "A1.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A2.2",
       "level": "Core",
       "rai": false
@@ -355,7 +355,7 @@
       "depends_on": [
         "A2.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A2.2",
       "level": "Core",
       "rai": false
@@ -371,7 +371,7 @@
         "A2.2-lab",
         "A2.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A2.2",
       "level": "Core",
       "rai": false
@@ -387,7 +387,7 @@
         "A1.2-lesson",
         "A1.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A2.3",
       "level": "Core",
       "rai": false
@@ -402,7 +402,7 @@
       "depends_on": [
         "A2.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A2.3",
       "level": "Core",
       "rai": false
@@ -418,7 +418,7 @@
         "A2.3-lab",
         "A2.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A2.3",
       "level": "Core",
       "rai": false
@@ -434,7 +434,7 @@
         "A1.2-lesson",
         "A1.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A2.4",
       "level": "Core",
       "rai": false
@@ -449,7 +449,7 @@
       "depends_on": [
         "A2.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A2.4",
       "level": "Core",
       "rai": false
@@ -465,7 +465,7 @@
         "A2.4-lab",
         "A2.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A2.4",
       "level": "Core",
       "rai": false
@@ -483,7 +483,7 @@
         "A2.3-lesson",
         "A2.4-lesson"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "W02-quiz-answers",
@@ -495,7 +495,7 @@
       "depends_on": [
         "W02-quiz"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "W02-cheatsheet",
@@ -510,7 +510,7 @@
         "A2.3-lesson",
         "A2.4-lesson"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "A3.1-lesson",
