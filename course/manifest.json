@@ -24,7 +24,7 @@
       "part_week": "A1",
       "title": "The lab workflow",
       "depends_on": [],
-      "status": "todo",
+      "status": "done",
       "topic": "A1.1",
       "level": "Core",
       "rai": false
@@ -39,7 +39,7 @@
       "depends_on": [
         "A1.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A1.1",
       "level": "Core",
       "rai": false
@@ -55,7 +55,7 @@
         "A1.1-lab",
         "A1.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A1.1",
       "level": "Core",
       "rai": false
@@ -68,7 +68,7 @@
       "part_week": "A1",
       "title": "NumPy arrays",
       "depends_on": [],
-      "status": "todo",
+      "status": "done",
       "topic": "A1.2",
       "level": "Core",
       "rai": false
@@ -83,7 +83,7 @@
       "depends_on": [
         "A1.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A1.2",
       "level": "Core",
       "rai": false
@@ -99,7 +99,7 @@
         "A1.2-lab",
         "A1.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A1.2",
       "level": "Core",
       "rai": false
@@ -112,7 +112,7 @@
       "part_week": "A1",
       "title": "Pandas",
       "depends_on": [],
-      "status": "todo",
+      "status": "done",
       "topic": "A1.3",
       "level": "Core",
       "rai": false
@@ -127,7 +127,7 @@
       "depends_on": [
         "A1.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A1.3",
       "level": "Core",
       "rai": false
@@ -143,7 +143,7 @@
         "A1.3-lab",
         "A1.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A1.3",
       "level": "Core",
       "rai": false
@@ -156,7 +156,7 @@
       "part_week": "A1",
       "title": "Matplotlib",
       "depends_on": [],
-      "status": "todo",
+      "status": "done",
       "topic": "A1.4",
       "level": "Core",
       "rai": false
@@ -171,7 +171,7 @@
       "depends_on": [
         "A1.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A1.4",
       "level": "Core",
       "rai": false
@@ -187,7 +187,7 @@
         "A1.4-lab",
         "A1.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A1.4",
       "level": "Core",
       "rai": false
@@ -202,7 +202,7 @@
       "depends_on": [
         "A1.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A1.5",
       "level": "Core",
       "rai": false
@@ -217,7 +217,7 @@
       "depends_on": [
         "A1.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A1.5",
       "level": "Core",
       "rai": false
@@ -233,7 +233,7 @@
         "A1.5-lab",
         "A1.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A1.5",
       "level": "Core",
       "rai": false
@@ -252,7 +252,7 @@
         "A1.4-lesson",
         "A1.5-lesson"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "W01-quiz-answers",
@@ -264,7 +264,7 @@
       "depends_on": [
         "W01-quiz"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "W01-cheatsheet",
@@ -280,7 +280,7 @@
         "A1.4-lesson",
         "A1.5-lesson"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "A2.1-lesson",

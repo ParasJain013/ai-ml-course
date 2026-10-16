@@ -236,12 +236,15 @@ from __future__ import annotations
 import os
 import sys
 import time
+import warnings
 from pathlib import Path
 
 import matplotlib
 
 if "ipykernel" not in sys.modules:  # plain `uv run`: draw to files, never open windows
     matplotlib.use("Agg")
+    # matplotlib 3.11 warns when plt.show() runs under Agg; under `uv run` it is a harmless no-op
+    warnings.filterwarnings("ignore", message="FigureCanvasAgg is non-interactive")
 import matplotlib.pyplot as plt
 import numpy as np
 import numpy.typing as npt

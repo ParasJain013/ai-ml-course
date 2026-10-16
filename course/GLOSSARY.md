@@ -25,12 +25,14 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Alignment | Making a model's behaviour match what its developers and users intend, including refusing harmful requests. | F3.3 |
 | Anomaly detection | Finding examples that differ markedly from the bulk of the data. | B5.6 |
 | ARIMA | AutoRegressive Integrated Moving Average: a classical time-series model built from lags, differencing and past errors. | B6.4 |
+| Array (NumPy) | A block of numbers of one dtype with a shape; NumPy's core data structure. | A1.2 |
 | Artifact (MLOps) | A file produced by a run, such as a model, a plot or a dataset snapshot, stored with the run that made it. | J1.1 |
 | Attention | A mechanism that computes a weighted average of values, with weights from how well a query matches each key. | E2.4, F1.1 |
 | Augmentation | Creating modified training examples (flips, crops, colour shifts) so a model learns invariances and overfits less. | D2.2 |
 | Autocast | PyTorch's context manager that runs selected operations in a lower-precision dtype for mixed precision. | C4.2 |
 | Autoencoder | A network trained to reconstruct its input through a narrow bottleneck, learning a compressed representation. | G1.1 |
 | Autograd | Automatic differentiation: recording operations on a graph and applying the chain rule backward to get gradients. | C1.3, C2.1 |
+| Axis | One dimension of an array; axis 0 runs down the rows, axis 1 across the columns. | A1.2 |
 
 ## B
 
@@ -56,6 +58,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Bias–variance trade-off | Test error splits into bias (too simple), variance (too sensitive to the training set) and noise. | B4.5 |
 | Binomial distribution | The number of successes in $n$ independent Bernoulli trials. | A5.2 |
 | Bonferroni correction | Testing each of $m$ hypotheses at $\alpha / m$ to control the chance of any false positive. | A6.3 |
+| Boolean mask | An array of True/False values that selects the matching entries of an array or rows of a DataFrame. | A1.2, A1.3 |
 | Bootstrap | Estimating the uncertainty of a statistic by recomputing it on resamples drawn with replacement. | A6.2 |
 | BPE (byte-pair encoding) | A subword tokenizer that repeatedly merges the most frequent adjacent pair of symbols. | F1.3 |
 | Broadcasting | NumPy's rule for combining arrays of different shapes by virtually repeating size-1 axes. | A1.2 |
@@ -72,6 +75,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Causal masking | Blocking attention to future positions so each token sees only earlier ones. | F1.1 |
 | Central limit theorem (CLT) | The mean of many independent draws is approximately Gaussian, whatever the original distribution. | A5.4 |
 | Chain rule | The derivative of a composition is the product of the derivatives of its parts. | A4.3 |
+| Chained assignment | Assigning through two indexing steps (`df[m]["c"] = v`); does nothing under copy-on-write. | A1.3 |
 | Chat template | The exact text format that wraps system, user and assistant messages for a given model. | F3.1 |
 | Checkpointing (gradient) | Saving memory by recomputing some activations during the backward pass instead of storing them. | C4.2 |
 | Chinchilla (compute-optimal) | The finding that, for a fixed compute budget, parameters and training tokens should grow together. | F2.3 |
@@ -97,8 +101,10 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Contrastive learning | Training embeddings so matching pairs are close and non-matching pairs are far apart. | G2.2 |
 | Convexity | A function is convex if every chord lies above it; then any local minimum is global. | A4.5 |
 | Convolution | Sliding a small kernel over an input and taking a weighted sum at each position. | D1.1 |
+| Copy-on-write | pandas 3 behaviour: every selection acts as a new object, so changing it never changes the original. | A1.3 |
 | Correlation | A standardized measure (−1 to 1) of how two variables move together; not evidence of causation. | A6.1 |
 | Cosine decay | A learning-rate schedule that falls along a half cosine curve. | C3.2 |
+| Cosine distance | $1 - \cos(\mathbf{a}, \mathbf{b})$; smaller means more similar. | A1.5 |
 | Cosine similarity | The cosine of the angle between two vectors: $\mathbf{a}\cdot\mathbf{b} / (\lVert\mathbf{a}\rVert\,\lVert\mathbf{b}\rVert)$. | A1.5 |
 | Covariance | $\mathbb{E}[(X - \mu_X)(Y - \mu_Y)]$: how two variables vary together. | A5.1 |
 | Covariance matrix | The `(d, d)` matrix of pairwise covariances between features; symmetric and positive semi-definite. | A3.3 |
@@ -118,6 +124,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Data minimization | Collecting and keeping only the personal data a task needs. `[RAI]` | B1.2 |
 | Data parallel | Copying the model to several devices, each processing part of the batch, then averaging gradients. | C4.4 |
 | Data versioning | Tracking exact dataset snapshots so any model can be traced to the data that trained it. | J1.2 |
+| DataFrame | pandas' in-memory table: named columns (Series) that share one row index. | A1.3 |
 | DataLoader | PyTorch's iterator that batches, shuffles and loads examples from a Dataset. | C2.2 |
 | Dataset (PyTorch) | A class with `__len__` and `__getitem__` that returns one example. | C2.2 |
 | Datasheet | Documentation of a dataset's motivation, collection, composition and recommended uses. `[RAI]` | J2.5 |
@@ -131,6 +138,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Deepfake | Realistic synthetic media of a real person, made without their consent or to deceive. `[RAI]` | G2.4 |
 | Demographic parity | A fairness criterion: the positive-prediction rate is equal across groups. `[RAI]` | B4.6 |
 | Dense retrieval | Retrieval by nearest neighbours in embedding space. | I2.1 |
+| Density (histogram) | A bin's count divided by $n$ times the bin width, so the bars' areas sum to 1. | A1.4 |
 | Depthwise separable convolution | A convolution split into a per-channel spatial filter and a 1×1 channel mix, using far fewer parameters. | D1.4 |
 | Derivative | The instantaneous rate of change of a function; its local slope. | A4.1 |
 | Descriptive statistics | Numbers that summarize data: centre, spread, shape. | A6.1 |
@@ -145,6 +153,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | DPO | Direct Preference Optimization: tuning a model on preference pairs with a classification-style loss, no RL loop. | F3.2 |
 | DQN | Deep Q-Network: Q-learning with a neural network, a replay buffer and a target network. | H1.4 |
 | Dropout | Randomly zeroing activations during training so the network cannot rely on any one unit. | C3.5 |
+| dtype | The element type of an array or column, such as `float64`, `int64` or `str`. | A1.2 |
 | Dynamic programming (RL) | Computing exact values or policies from a known model of the environment by repeated Bellman updates. | H1.2 |
 
 ## E
@@ -165,6 +174,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Entropy | $H(p) = -\sum_x p(x) \log p(x)$: the average surprise of a distribution. | A6.4 |
 | Epsilon-greedy | Exploring by taking a random action with probability $\epsilon$, otherwise the best-known action. | H1.3 |
 | Equalized odds | A fairness criterion: true-positive and false-positive rates are equal across groups. `[RAI]` | B4.6 |
+| Euclidean distance | The straight-line distance between two points, $\lVert\mathbf{a} - \mathbf{b}\rVert_2$. | A1.2, A1.5 |
 | Evals | Systematic tests that score an ML or LLM system against a fixed set of cases. | I2.4, I3.3 |
 | Expectation | $\mathbb{E}[X]$: the probability-weighted average of a random variable. | A5.1 |
 | Experiment tracking | Recording each training run's parameters, metrics and artifacts so runs can be compared and reproduced. | J1.1 |
@@ -179,14 +189,17 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | F1 score | The harmonic mean of precision and recall. | B4.1 |
 | Fairness | The absence of unjustified differences in a model's outcomes or errors across groups. `[RAI]` | B4.6 |
 | Faithfulness | Whether a generated answer is supported by the retrieved context it claims to use. | I2.4 |
+| Fancy indexing | Indexing an array with a list or array of positions; always returns a copy. | A1.2 |
 | fastText | Word embeddings built from character n-grams, so unseen words still get vectors. | E1.4 |
 | Feature engineering | Building model inputs from raw data: scaling, encoding, dates, interactions. | B1.3 |
 | Feature extraction (transfer) | Using a frozen pretrained network's outputs as features for a new small model. | D2.1 |
 | Feature subsampling | Each tree or split considers only a random subset of features (random forests). | B3.2 |
 | Few-shot prompting | Including a few worked examples in the prompt. | I1.2 |
+| Figure and Axes (matplotlib) | A Figure is the whole image; each Axes inside it is one plot with its own axes, title and legend. | A1.4 |
 | Fine-tuning | Continuing to train a pretrained model on a new task's data. | D2.1, J1.3 |
 | Finite differences | Approximating a derivative by $(f(x + h) - f(x - h)) / 2h$; used to check gradients. | A4.1 |
 | FlashAttention | An exact attention algorithm that avoids storing the full attention matrix by working in tiles. | F2.5 |
+| Freedman–Diaconis rule | A histogram bin width of $2\,\mathrm{IQR}\,n^{-1/3}$, robust to outliers. | A1.4 |
 | FSDP | Fully Sharded Data Parallel: sharding parameters, gradients and optimizer state across devices. | C4.4 |
 | Function calling | See tool use. | I1.4 |
 
@@ -221,6 +234,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | He initialization | Weight initialization with variance $2 / d_{\text{in}}$, suited to ReLU layers. | C3.3 |
 | Hierarchical clustering | Building a tree of clusters by repeatedly merging (or splitting) groups. | B5.2 |
 | Hinge loss | $\max(0, 1 - y z)$: the SVM loss that penalizes points inside the margin. | B2.5 |
+| Histogram | A chart of how many values fall into each of a set of equal-width intervals (bins). | A1.4 |
 | HNSW | Hierarchical Navigable Small World: a graph index for fast approximate nearest-neighbour search. | I2.2 |
 | Holdout set | Data kept aside and used only for the final evaluation. | B1.1 |
 | Hybrid search | Combining keyword (full-text) and vector search results. | I2.2 |
@@ -233,9 +247,11 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 |---|---|---|
 | Identity matrix | $\mathbf{I}$: ones on the diagonal, zeros elsewhere; $\mathbf{A}\mathbf{I} = \mathbf{A}$. | A2.2 |
 | Implicit feedback | User signals such as clicks and views, which show interest but not dislike. | B6.1 |
+| Index (pandas) | The row labels of a DataFrame or Series; arithmetic aligns rows by these labels. | A1.3 |
 | Indirect prompt injection | Malicious instructions hidden in content the model reads (a web page, an email, a tool result). `[RAI]` | I4.2 |
 | Inference server (LLM) | A service optimized to run an LLM for many requests (batching, KV cache management). | J2.1 |
 | Initialization | How weights are set before training; it controls whether signals vanish or explode. | C3.3 |
+| Inner join | A join that keeps only rows whose key appears in both tables. | A1.3 |
 | Instance segmentation | Labelling each pixel with the object instance it belongs to. | D2.4 |
 | Instruction tuning (SFT) | Supervised fine-tuning on instruction–response pairs so a base model follows instructions. | F3.1 |
 | Interpretability | Methods that explain what a model relies on and why it made a prediction. | B3.4 |
@@ -282,11 +298,15 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Learning rate | $\eta$: the step size of gradient descent. | A4.4 |
 | Least privilege | Giving each tool or credential only the permissions its task needs. `[RAI]` | I4.2 |
 | Least squares | Fitting by minimizing the sum of squared residuals. | A2.4 |
+| Left join | A join that keeps every row of the left table, with missing values where the right table has no match. | A1.3 |
 | LeNet | An early CNN for digit recognition (convolution, pooling, fully connected). | D1.3 |
+| Lie factor | The size of an effect shown in a chart divided by its size in the data (Tufte); about 1 when honest. | A1.4 |
 | LightGBM | A fast gradient-boosting library with histogram-based, leaf-wise tree growth. | B3.3 |
+| Linear congruential generator (LCG) | A simple pseudo-random number generator, $x_{k+1} = (a x_k + c) \bmod m$. | A1.1 |
 | Linear map | A function $f(\mathbf{x}) = \mathbf{A}\mathbf{x}$ that preserves addition and scaling. | A2.1 |
 | Linear regression | Predicting a number as a weighted sum of features plus a bias. | B1.5 |
 | LLM-as-judge | Using an LLM with a rubric to grade outputs; it has position, length and self-preference biases. | I2.4 |
+| Lockfile | A file recording the exact resolved version of every dependency (here `uv.lock`). | A1.1 |
 | Logistic regression | A linear model whose output goes through a sigmoid to give a probability. | B2.1 |
 | Log-loss | Binary cross-entropy: $-[y \log p + (1 - y)\log(1 - p)]$. | B2.1, A5.5 |
 | Long context | Handling inputs of many thousands of tokens, limited by attention's cost and the KV cache. | F2.5 |
@@ -336,7 +356,9 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 |---|---|---|
 | n-gram | A sequence of $n$ consecutive tokens. | E1.1 |
 | Naive Bayes | A classifier that applies Bayes' theorem assuming features are independent given the class. | B2.4 |
+| NaN | "Not a number": the float value NumPy and pandas use for a missing number; NaN is not equal to itself. | A1.3 |
 | NDCG | Normalized discounted cumulative gain: a ranking metric that rewards relevant items near the top. | B6.2 |
+| Nearest-neighbour search | Finding the stored vectors most similar to a query vector. | A1.5, I2.1 |
 | Negative sampling | Training embeddings by contrasting each true pair with a few random "negative" pairs. | E1.3 |
 | Non-maximum suppression (NMS) | Removing overlapping detection boxes, keeping the highest-scoring one. | D2.3 |
 | Norm | The length of a vector: L2 $\sqrt{\sum_j x_j^2}$, L1 $\sum_j \lvert x_j \rvert$. | A1.5 |
@@ -370,6 +392,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Partial derivative | The derivative with respect to one variable, holding the others fixed. | A4.1 |
 | PCA | Principal component analysis: projecting data onto the directions of greatest variance. | B5.4 |
 | Perceptron | A single linear unit followed by a step function; the first neural network. | C1.1 |
+| Period (random number generator) | The number of draws before a generator's sequence starts repeating. | A1.1 |
 | Permutation importance | The drop in score when one feature's values are shuffled. | B3.4 |
 | Permutation test | A hypothesis test that builds the null distribution by shuffling labels. | A6.3 |
 | Perplexity | $\exp$(average cross-entropy per token); lower means the model is less surprised. | F2.2 |
@@ -381,6 +404,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Policy gradient | Improving a policy by gradient ascent on expected return, using sampled episodes. | H2.1 |
 | Policy iteration | Alternating policy evaluation and greedy policy improvement until the policy stops changing. | H1.2 |
 | Pooling | Downsampling a feature map by taking the max or mean over small windows. | D1.2 |
+| Population standard deviation | $\sqrt{\frac{1}{n}\sum_i (x_i - \bar{x})^2}$; NumPy's default (`ddof=0`). | A1.2, A6.2 |
 | Positional encoding | Information about token position added to a transformer's inputs or attention (sinusoidal, RoPE). | F1.2 |
 | PPO | Proximal policy optimization: a policy-gradient method with a clipped objective that limits each update. | H2.2 |
 | PR-AUC | Area under the precision–recall curve; informative when positives are rare. | B4.1 |
@@ -392,6 +416,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Prompt caching | Reusing the provider's computation for an identical prompt prefix, at lower cost and latency. | I4.4 |
 | Prompt injection | Input crafted to make an LLM ignore its instructions and follow the attacker's. `[RAI]` | I4.2 |
 | Prompting | Writing the instructions, context and examples an LLM receives. | I1.2 |
+| Pseudo-random number generator | A deterministic algorithm whose output looks random; the seed sets its starting state. | A1.1 |
 | PSI | Population stability index: a drift score comparing binned distributions of a feature. | J2.2 |
 
 ## Q
@@ -444,6 +469,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Term | Definition | Taught in |
 |---|---|---|
 | Safety (LLM) | Preventing harmful outputs and misuse of a model. `[RAI]` | F3.3 |
+| Sample standard deviation | $\sqrt{\frac{1}{n-1}\sum_i (x_i - \bar{x})^2}$; pandas' default (`ddof=1`). | A1.2, A6.2 |
 | Scaled dot-product attention | $\operatorname{softmax}(\mathbf{Q}\mathbf{K}^\top / \sqrt{d_k})\,\mathbf{V}$. | F1.1 |
 | Scaling (features) | Putting features on comparable ranges: standardization or min–max scaling. | B1.3 |
 | Scaling laws | Empirical power laws relating loss to parameters, data and compute. | F2.3 |
@@ -455,18 +481,22 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Semantic search | Finding documents by meaning through embeddings, not exact words. | I2.1 |
 | Semantic segmentation | Labelling each pixel with a class, without separating instances. | D2.4 |
 | seq2seq | A model that maps an input sequence to an output sequence with an encoder and a decoder. | E2.3 |
+| Series | One pandas column: a 1-D array with an index. | A1.3 |
 | SGD | Stochastic gradient descent: gradient descent using a random mini-batch per step. | A4.4, C3.1 |
 | Shadow deployment | Running a new model on live traffic without serving its outputs, to compare it safely. | J2.4 |
 | SHAP | SHapley Additive exPlanations: per-prediction feature attributions based on Shapley values. | B3.4 |
+| Shape | The size of an array along each axis, written as a tuple such as `(n, d)`. | A1.2 |
 | Sigmoid | $\sigma(z) = 1 / (1 + e^{-z})$: squashes a number into $(0, 1)$. | B2.1 |
 | Silhouette score | A clustering score comparing each point's distance to its own cluster with the nearest other cluster. | B5.1 |
 | Skip-gram | word2vec's objective: predict context words from the centre word. | E1.3 |
 | Softmax | $\operatorname{softmax}(\mathbf{z})_k = e^{z_k} / \sum_j e^{z_j}$: turns logits into probabilities. | C1.4 |
 | Specification gaming | Satisfying the literal objective in an unintended way; the general form of reward hacking. `[RAI]` | H2.4 |
+| Standardization | Shifting and scaling a feature to mean 0 and standard deviation 1. | A1.2, B1.3 |
 | Stratified k-fold | k-fold cross-validation that keeps the class proportions in every fold. | B4.3 |
 | Streaming | Sending a response token by token as it is generated. | I1.1, I4.3 |
 | Stride | How many positions a convolution or pooling window moves at each step. | D1.1 |
 | Structured output | Constraining or validating an LLM's output to match a schema. | I1.3 |
+| Sturges' rule | A histogram bin count of $\lceil \log_2 n \rceil + 1$. | A1.4 |
 | Support vector machine (SVM) | A maximum-margin classifier, optionally with kernels. | B2.5 |
 | SVD | Singular value decomposition: $\mathbf{A} = \mathbf{U}\boldsymbol{\Sigma}\mathbf{V}^\top$, rotate, scale, rotate. | A3.2 |
 | System prompt | Instructions given to an LLM that set its role and rules for the conversation. | I1.1 |
@@ -508,6 +538,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | UMAP | A non-linear dimensionality reduction that preserves local structure, faster than t-SNE. | B5.5 |
 | Underfitting | A model too simple to capture the pattern, so both training and test error are high. | B4.5 |
 | Uniform distribution | Every value in a range is equally likely. | A5.2 |
+| Unit vector | A vector of length 1: $\mathbf{a} / \lVert\mathbf{a}\rVert_2$. | A1.5 |
 | uv | The Python package and environment manager this course uses. | A1.1 |
 
 ## V
@@ -521,6 +552,8 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Vanishing gradients | Gradients that shrink exponentially through layers or time steps, so early parts stop learning. | C3.3, E2.1 |
 | Variance | $\operatorname{Var}[X] = \mathbb{E}[(X - \mu)^2]$: the spread of a random variable. | A5.1 |
 | Vectorization | Replacing Python loops with whole-array operations. | A1.2 |
+| View (NumPy) | An array that shares memory with another; basic slicing returns one. | A1.2 |
+| Virtual environment | A project-local Python installation with its own packages (`.venv/`). | A1.1 |
 | Vision-language model (VLM) | A model that takes images and text as input and generates text. | G2.3 |
 | Vision Transformer (ViT) | A transformer that treats image patches as tokens. | G2.1 |
 
