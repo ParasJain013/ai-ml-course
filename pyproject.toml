@@ -1,0 +1,11 @@
+[project]
+name = "ai-ml-course"
+version = "0.1.0"
+description = "Self-study AI/ML course: lessons, labs, quizzes, cheat sheets and projects."
+requires-python = ">=3.12,<3.13"
+# Empty on purpose: Step 2 in course/PROMPTS.md looks up and pins the current
+# versions of every library the course uses.
+dependencies = []
+
+[tool.uv]
+package = false
