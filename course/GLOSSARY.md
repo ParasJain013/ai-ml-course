@@ -44,6 +44,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Back substitution | Solving an upper-triangular system from the last equation up. | A2.3 |
 | Backpropagation | Computing every parameter's gradient by applying the chain rule backward through the network. | C1.2 |
 | Backpropagation through time (BPTT) | Backpropagation through an RNN unrolled over the time steps of a sequence. | E2.1 |
+| Backward stable | An algorithm whose computed answer is the exact answer to a problem within rounding of yours; its residual stays at rounding level (`np.linalg.solve`). | A3.4 |
 | Bag-of-words | Representing a text by the counts of its words, ignoring their order. | E1.2 |
 | Bagging | Bootstrap aggregating: training models on bootstrap resamples and averaging their predictions. | B3.2 |
 | Base rate | The prior probability of a condition in the population, before any evidence. | A5.3 |
@@ -57,6 +58,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Bellman equation | The recursive relation between a state's value and the values of the states that follow it. | H1.1 |
 | Bernoulli distribution | The distribution of a single yes/no outcome with success probability $p$. | A5.2 |
 | BERT | An encoder-only transformer pretrained with masked language modelling. | F2.1 |
+| Bessel's correction | Dividing by $n - 1$ instead of $n$ in a sample variance or covariance so it is unbiased; `ddof=1` in NumPy and pandas. | A3.3, A5.1 |
 | Bias (statistical) | The systematic gap between an estimator's or model's expected value and the truth. | B4.5 |
 | Bias (fairness) | Systematically different model behaviour or errors across groups of people. | B4.6 |
 | Bias–variance trade-off | Test error splits into bias (too simple), variance (too sensitive to the training set) and noise. | B4.5 |
@@ -74,12 +76,15 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Caching (LLM) | Reusing earlier results instead of paying for a new model call; see exact, prompt and semantic caching. | I4.4 |
 | Calibration | Whether predicted probabilities match observed frequencies (of cases predicted 0.8, about 80% are positive). | B4.1 |
 | Canary rollout | Sending a small share of live traffic to a new model version before a full rollout. | J2.4 |
+| Catastrophic cancellation | Losing most significant digits by subtracting two large, nearly equal floating-point numbers. | A3.4, A3.3 |
 | Categorical distribution | The distribution of one draw from $K$ classes with probabilities $p_1, \dots, p_K$. | A5.2 |
 | Categorical encoding | Turning category labels into numbers: one-hot, ordinal or target encoding. | B1.3 |
 | Causal masking | Blocking attention to future positions so each token sees only earlier ones. | F1.1 |
+| Centering | Subtracting each column's mean so every feature has mean 0; required before computing covariance or PCA. | A3.3 |
 | Central limit theorem (CLT) | The mean of many independent draws is approximately Gaussian, whatever the original distribution. | A5.4 |
 | Chain rule | The derivative of a composition is the product of the derivatives of its parts. | A4.3 |
 | Chained assignment | Assigning through two indexing steps (`df[m]["c"] = v`); does nothing under copy-on-write. | A1.3 |
+| Characteristic polynomial | $\det(\mathbf{A} - \lambda\mathbf{I})$, a polynomial in $\lambda$ whose roots are the eigenvalues of $\mathbf{A}$. | A3.1 |
 | Chat template | The exact text format that wraps system, user and assistant messages for a given model. | F3.1 |
 | Checkpointing (gradient) | Saving memory by recomputing some activations during the backward pass instead of storing them. | C4.2 |
 | Chinchilla (compute-optimal) | The finding that, for a fixed compute budget, parameters and training tokens should grow together. | F2.3 |
@@ -109,6 +114,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Convolution | Sliding a small kernel over an input and taking a weighted sum at each position. | D1.1 |
 | Copy-on-write | pandas 3 behaviour: every selection acts as a new object, so changing it never changes the original. | A1.3 |
 | Correlation | A standardized measure (−1 to 1) of how two variables move together; not evidence of causation. | A6.1 |
+| Correlation matrix | The `(d, d)` matrix of pairwise correlations, $R_{jk} = S_{jk}/(s_j s_k)$: the covariance matrix of the standardized features. | A3.3 |
 | Cosine decay | A learning-rate schedule that falls along a half cosine curve. | C3.2 |
 | Cosine distance | $1 - \cos(\mathbf{a}, \mathbf{b})$; smaller means more similar. | A1.5 |
 | Cosine similarity | The cosine of the angle between two vectors: $\mathbf{a}\cdot\mathbf{b} / (\lVert\mathbf{a}\rVert\,\lVert\mathbf{b}\rVert)$. | A1.5 |
@@ -136,12 +142,14 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Datasheet | Documentation of a dataset's motivation, collection, composition and recommended uses. `[RAI]` | J2.5 |
 | DBSCAN | Density-based clustering that grows clusters from dense regions and marks sparse points as noise. | B5.2 |
 | DCGAN | A GAN that uses convolutional generator and discriminator networks. | G1.3 |
+| ddof | "Delta degrees of freedom": the divisor is $n - $ `ddof`; `np.var` defaults to 0, `np.cov` and pandas to 1. | A3.3 |
 | DDP | Distributed Data Parallel: PyTorch's multi-process data-parallel training. | C4.4 |
 | DDPM | Denoising Diffusion Probabilistic Model: a diffusion model trained to predict the noise added at each step. | G1.4 |
 | Decision tree | A model that splits the data by feature thresholds into leaves with simple predictions. | B3.1 |
 | Decoder-only model | A transformer with causal self-attention that predicts the next token (GPT). | F2.1 |
 | Decoding | Turning a language model's next-token distributions into text. | F2.4 |
 | Deepfake | Realistic synthetic media of a real person, made without their consent or to deceive. `[RAI]` | G2.4 |
+| Deflation | Removing a found eigen- or singular component from a matrix so an iterative method can find the next one. | A3.2 |
 | Demographic parity | A fairness criterion: the positive-prediction rate is equal across groups. `[RAI]` | B4.6 |
 | Dense retrieval | Retrieval by nearest neighbours in embedding space. | I2.1 |
 | Density (histogram) | A bin's count divided by $n$ times the bin width, so the bars' areas sum to 1. | A1.4 |
@@ -170,9 +178,11 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Term | Definition | Taught in |
 |---|---|---|
 | Early stopping | Stopping training when the validation score stops improving. | C3.5 |
+| Eckart–Young theorem | The truncated SVD $\mathbf{A}_k$ is the best rank-$k$ approximation of $\mathbf{A}$ in Frobenius (and spectral) norm. | A3.2 |
 | EDA | Exploratory data analysis: summarizing and plotting data to understand it before modelling. | A6.1 |
 | Effect size | How large a difference is, not just whether it is statistically significant. | A6.3 |
 | EfficientNet | A CNN family that scales depth, width and resolution together. | D1.4 |
+| Eigendecomposition | Writing a square matrix as $\mathbf{V}\boldsymbol{\Lambda}\mathbf{V}^{-1}$ (eigenvectors as columns, eigenvalues on the diagonal); $\mathbf{Q}\boldsymbol{\Lambda}\mathbf{Q}^\top$ when symmetric. | A3.1 |
 | Eigenvalue, eigenvector | $\mathbf{A}\mathbf{v} = \lambda\mathbf{v}$: a direction $\mathbf{v}$ the matrix only stretches, by $\lambda$. | A3.1 |
 | Elastic net | Regularization with both L1 and L2 penalties. | B2.2 |
 | ELBO | Evidence lower bound: the objective a VAE maximizes, reconstruction minus a KL term. | G1.2 |
@@ -208,8 +218,10 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Fine-tuning | Continuing to train a pretrained model on a new task's data. | D2.1, J1.3 |
 | Finite differences | Approximating a derivative by $(f(x + h) - f(x - h)) / 2h$; used to check gradients. | A4.1 |
 | FlashAttention | An exact attention algorithm that avoids storing the full attention matrix by working in tiles. | F2.5 |
+| Forward substitution | Solving a lower-triangular system from the first equation down. | A3.4 |
 | Free variable | An unknown of a linear system that can take any value; there are $d - \operatorname{rank}(\mathbf{A})$ of them. | A2.3 |
 | Freedman–Diaconis rule | A histogram bin width of $2\,\mathrm{IQR}\,n^{-1/3}$, robust to outliers. | A1.4 |
+| Frobenius norm | $\lVert\mathbf{A}\rVert_F = \sqrt{\sum_{ij} A_{ij}^2} = \sqrt{\sum_j \sigma_j^2}$: the matrix as one long vector. | A3.2 |
 | FSDP | Fully Sharded Data Parallel: sharding parameters, gradients and optimizer state across devices. | C4.4 |
 | Full rank | A matrix whose rank equals the smaller of its two dimensions. | A2.3 |
 | Function calling | See tool use. | I1.4 |
@@ -232,6 +244,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Gradient boosting | Building an ensemble by fitting each new tree to the gradient (residuals) of the current ensemble's loss. | B3.3 |
 | Gradient clipping | Rescaling gradients whose norm exceeds a threshold. | E2.1 |
 | Gradient descent | Repeatedly stepping parameters against the gradient: $\boldsymbol{\theta} \leftarrow \boldsymbol{\theta} - \eta\nabla\mathcal{L}$. | A4.4 |
+| Gram–Schmidt | Building an orthonormal basis by removing from each column its parts along the earlier ones; the classical form loses orthogonality on ill-conditioned matrices, the modified form less so. | A3.4 |
 | Grid search | Trying every combination of hyperparameter values from a grid. | B4.3 |
 | Group k-fold | Cross-validation that keeps all rows of a group (a user, a patient) in the same fold. | B4.3 |
 | Grouped-query attention (GQA) | Attention where groups of query heads share key and value heads, shrinking the KV cache. | F2.5 |
@@ -246,10 +259,12 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Hallucination | A model stating something fluent and confident that is false or unsupported. `[RAI]` | F3.3 |
 | He initialization | Weight initialization with variance $2 / d_{\text{in}}$, suited to ReLU layers. | C3.3 |
 | Hierarchical clustering | Building a tree of clusters by repeatedly merging (or splitting) groups. | B5.2 |
+| Hilbert matrix | $H_{ij} = 1/(i + j - 1)$: a standard example of a severely ill-conditioned matrix. | A3.4 |
 | Hinge loss | $\max(0, 1 - y z)$: the SVM loss that penalizes points inside the margin. | B2.5 |
 | Histogram | A chart of how many values fall into each of a set of equal-width intervals (bins). | A1.4 |
 | HNSW | Hierarchical Navigable Small World: a graph index for fast approximate nearest-neighbour search. | I2.2 |
 | Holdout set | Data kept aside and used only for the final evaluation. | B1.1 |
+| Householder reflection | A reflection that zeroes a column below its first entry; the stable way to compute QR (`np.linalg.qr`). | A3.4 |
 | Hybrid search | Combining keyword (full-text) and vector search results. | I2.2 |
 | Hyperparameter | A setting chosen before training (learning rate, depth), not learned from data. | B4.3 |
 | Hypothesis test | A procedure that decides whether data are surprising enough under a null hypothesis to reject it. | A6.3 |
@@ -279,6 +294,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Term | Definition | Taught in |
 |---|---|---|
 | Jacobian | The matrix of all partial derivatives of a vector-valued function; shape `(m, n)` for $f: \mathbb{R}^n \to \mathbb{R}^m$. | A4.2 |
+| Jitter | A small multiple of the identity added to a matrix that should be positive definite so Cholesky succeeds despite rounding. | A3.4 |
 | JSON schema | A machine-readable description of the structure a JSON value must have. | I1.3 |
 | Jupyter | An interactive notebook environment that runs code in cells. | A1.1 |
 
@@ -328,6 +344,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Long context | Handling inputs of many thousands of tokens, limited by attention's cost and the KV cache. | F2.5 |
 | LoRA | Low-Rank Adaptation: fine-tuning by learning a low-rank update $\mathbf{B}\mathbf{A}$ added to frozen weights. | J1.3 |
 | Loss scaling | Multiplying the loss before backward in fp16 so small gradients do not underflow. | C4.2 |
+| Low-rank approximation | Replacing a matrix by one of rank $k$ that is close to it, usually the truncated SVD; stores $k(n + d + 1)$ numbers. | A3.2 |
 | LR range test | Increasing the learning rate over one short run to find the range where loss falls fastest. | C3.2 |
 | LSTM | Long short-term memory: an RNN cell with input, forget and output gates and a cell state. | E2.2 |
 | LU factorization | Writing a square matrix (with rows reordered) as lower-triangular times upper-triangular; what `np.linalg.solve` computes. | A2.3, A3.4 |
@@ -336,8 +353,10 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 
 | Term | Definition | Taught in |
 |---|---|---|
+| Machine epsilon | The gap between 1 and the next float: $\varepsilon \approx 2.2 \times 10^{-16}$ in float64, $1.2 \times 10^{-7}$ in float32; the relative rounding error per operation. | A3.4 |
 | mAP | Mean average precision: the detection metric averaging precision over recall levels, classes and IoU thresholds. | D2.3 |
 | MAP estimation | Maximum a posteriori: choosing parameters that maximize likelihood times prior. | A5.5 |
+| Markov chain | A random process that moves between states with probabilities that depend only on the current state, given by a transition matrix. | A3.1, H1.1 |
 | Masked language modelling | Predicting hidden tokens from both sides of the context (BERT's objective). | F2.1 |
 | Matrix | A rectangular table of numbers of shape `(m, d)`, read as a linear map from $d$-vectors to $m$-vectors. | A2.1 |
 | Matrix factorization | Approximating a matrix as a product of two low-rank matrices (users × factors, factors × items). | B6.1 |
@@ -398,6 +417,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | ONNX | Open Neural Network Exchange: a portable model format that many runtimes can execute. | J2.1 |
 | Optimizer | The rule that turns gradients into parameter updates (SGD, Adam). | C3.1 |
 | Orthogonal | At right angles: $\mathbf{a}\cdot\mathbf{b} = 0$. | A2.4 |
+| Orthogonal matrix | A square matrix $\mathbf{Q}$ with orthonormal columns, $\mathbf{Q}^\top\mathbf{Q} = \mathbf{I}$; it rotates or reflects without changing lengths. | A3.1 |
 | Out-of-bag error | A random forest's error on the rows each tree did not see in its bootstrap sample. | B3.2 |
 | Outer product | $\mathbf{u}\mathbf{v}^\top$: a column times a row, giving a matrix of rank 1. | A2.1, A2.2 |
 | Outlier | A value far from the bulk of the data. | B1.2 |
@@ -429,6 +449,9 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Pooling | Downsampling a feature map by taking the max or mean over small windows. | D1.2 |
 | Population standard deviation | $\sqrt{\frac{1}{n}\sum_i (x_i - \bar{x})^2}$; NumPy's default (`ddof=0`). | A1.2, A6.2 |
 | Positional encoding | Information about token position added to a transformer's inputs or attention (sinusoidal, RoPE). | F1.2 |
+| Positive definite | A symmetric matrix with $\mathbf{w}^\top\mathbf{C}\mathbf{w} > 0$ for every $\mathbf{w} \ne \mathbf{0}$; all eigenvalues positive; has a Cholesky factor. | A3.3, A3.4 |
+| Positive semi-definite (PSD) | A symmetric matrix with $\mathbf{w}^\top\mathbf{C}\mathbf{w} \ge 0$ for every $\mathbf{w}$; all eigenvalues $\ge 0$. Every covariance matrix is PSD. | A3.3 |
+| Power iteration | Finding the dominant eigenvector by repeating $\mathbf{x} \leftarrow \mathbf{A}\mathbf{x}/\lVert\mathbf{A}\mathbf{x}\rVert$; converges at rate $\lvert\lambda_2/\lambda_1\rvert$. | A3.1 |
 | PPO | Proximal policy optimization: a policy-gradient method with a clipped objective that limits each update. | H2.2 |
 | PR-AUC | Area under the precision–recall curve; informative when positives are rare. | B4.1 |
 | Precision | Of the predicted positives, the share that are truly positive. | B4.1 |
@@ -440,6 +463,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Prompt caching | Reusing the provider's computation for an identical prompt prefix, at lower cost and latency. | I4.4 |
 | Prompt injection | Input crafted to make an LLM ignore its instructions and follow the attacker's. `[RAI]` | I4.2 |
 | Prompting | Writing the instructions, context and examples an LLM receives. | I1.2 |
+| Pseudo-inverse | $\mathbf{X}^+ = \mathbf{V}\boldsymbol{\Sigma}^+\mathbf{U}^\top$ (invert the nonzero singular values); $\mathbf{X}^+\mathbf{y}$ is the minimum-norm least-squares solution. | A3.2 |
 | Pseudo-random number generator | A deterministic algorithm whose output looks random; the seed sets its starting state. | A1.1 |
 | PSI | Population stability index: a drift score comparing binned distributions of a feature. | J2.2 |
 
@@ -450,6 +474,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Q-learning | Learning action values by moving $Q(s, a)$ toward $r + \gamma \max_{a'} Q(s', a')$. | H1.3 |
 | QLoRA | LoRA on top of a base model quantized to 4 bits, so fine-tuning fits on a small GPU. | J1.3 |
 | QR decomposition | Writing a matrix as an orthogonal matrix times an upper-triangular one. | A3.4 |
+| Quadratic form | $\mathbf{w}^\top\mathbf{A}\mathbf{w}$, a scalar; with a covariance matrix it is the variance of the data projected on $\mathbf{w}$. | A3.3 |
 | Quantization | Storing weights (and sometimes activations) in fewer bits to save memory and time. | F3.4, J2.1 |
 
 ## R
@@ -462,6 +487,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Random variable | A quantity whose value is determined by a random outcome. | A5.1 |
 | Rank | The number of linearly independent rows or columns of a matrix. | A2.3 |
 | Rate limit | A provider's cap on requests or tokens per minute. | I1.1 |
+| Rayleigh quotient | $\mathbf{x}^\top\mathbf{A}\mathbf{x}/\mathbf{x}^\top\mathbf{x}$: the eigenvalue estimate for an approximate eigenvector $\mathbf{x}$. | A3.1 |
 | Recall | Of the true positives, the share the model finds. | B4.1 |
 | Recall@k | The share of relevant items that appear in the top $k$ results. | I2.4 |
 | Receptive field | The region of the input that affects one unit of a feature map. | D1.2 |
@@ -520,11 +546,14 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Sigmoid | $\sigma(z) = 1 / (1 + e^{-z})$: squashes a number into $(0, 1)$. | B2.1 |
 | Silhouette score | A clustering score comparing each point's distance to its own cluster with the nearest other cluster. | B5.1 |
 | Singular matrix | A square matrix with no inverse: dependent columns, determinant 0. | A2.2, A2.3 |
+| Singular value, singular vector | In $\mathbf{A}\mathbf{v}_j = \sigma_j\mathbf{u}_j$: $\sigma_j \ge 0$ is how much $\mathbf{A}$ stretches the input direction $\mathbf{v}_j$ into the output direction $\mathbf{u}_j$. | A3.2 |
 | Skip-gram | word2vec's objective: predict context words from the centre word. | E1.3 |
 | Softmax | $\operatorname{softmax}(\mathbf{z})_k = e^{z_k} / \sum_j e^{z_j}$: turns logits into probabilities. | C1.4 |
 | Specification gaming | Satisfying the literal objective in an unintended way; the general form of reward hacking. `[RAI]` | H2.4 |
+| Spectral theorem | A real symmetric matrix has real eigenvalues and an orthonormal basis of eigenvectors: $\mathbf{A} = \mathbf{Q}\boldsymbol{\Lambda}\mathbf{Q}^\top$. | A3.1 |
 | Standard basis vectors | $\mathbf{e}_1, \dots, \mathbf{e}_d$: a 1 in one position and 0 elsewhere; the columns of $\mathbf{I}$. | A2.1 |
 | Standardization | Shifting and scaling a feature to mean 0 and standard deviation 1. | A1.2, B1.3 |
+| Steady state (Markov chain) | A probability vector $\boldsymbol{\pi}$ the transition matrix leaves unchanged: an eigenvector with eigenvalue 1. | A3.1 |
 | Stratified k-fold | k-fold cross-validation that keeps the class proportions in every fold. | B4.3 |
 | Streaming | Sending a response token by token as it is generated. | I1.1, I4.3 |
 | Stride | How many positions a convolution or pooling window moves at each step. | D1.1 |
@@ -550,6 +579,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Temperature | Dividing logits by $\tau$ before softmax; higher is more random, lower is more deterministic. | F2.4 |
 | Temporal leakage | Using information from the future when predicting the past, often through a random split of time-ordered data. | B1.4 |
 | TF-IDF | Term frequency times inverse document frequency: word weights that downweight common words. | E1.2 |
+| Thin SVD | The SVD keeping only $r = \min(n, d)$ columns of $\mathbf{U}$: shapes `(n, r)(r, r)(r, d)`; `full_matrices=False`. | A3.2 |
 | Threshold tuning | Choosing the probability cut-off for a positive prediction to match the costs of errors. | B4.4 |
 | Throughput | Work done per unit time (examples per second, tokens per second). | C4.1, I4.3 |
 | Time-series cross-validation | Validation that always trains on the past and tests on the following period. | B4.3, B6.3 |
@@ -558,6 +588,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Tool use | An LLM requesting a function call with arguments; the application runs it and returns the result. | I1.4 |
 | Top-k sampling | Sampling the next token only from the $k$ most probable tokens. | F2.4 |
 | Top-p (nucleus) sampling | Sampling from the smallest set of tokens whose probabilities sum to at least $p$. | F2.4 |
+| Trace | $\operatorname{tr}(\mathbf{A}) = \sum_i A_{ii}$, the sum of the diagonal; equals the sum of the eigenvalues. | A3.1 |
 | Tracing | Recording each step of a request (model calls, tools, retrieval) with timing, as linked spans. | I4.5 |
 | Train/validation/test split | Separate data for fitting, for choosing models and settings, and for the final unbiased estimate. | B1.1 |
 | Trajectory (agent) | The sequence of steps, tool calls and observations an agent took on a task. | I3.3 |
@@ -565,6 +596,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Transformer | An architecture of stacked self-attention and MLP blocks with residuals and normalization. | F1.2 |
 | Transpose | $\mathbf{A}^\top$: rows become columns. | A2.2 |
 | Trend | The long-term direction of a time series. | B6.3 |
+| Truncated SVD | Keeping only the top $k$ singular values and vectors; `sklearn.decomposition.TruncatedSVD` computes it without centering. | A3.2 |
 
 ## U
 
