@@ -792,7 +792,7 @@
         "A2.1-lesson",
         "A2.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A4.1",
       "level": "Core",
       "rai": false
@@ -807,7 +807,7 @@
       "depends_on": [
         "A4.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A4.1",
       "level": "Core",
       "rai": false
@@ -823,7 +823,7 @@
         "A4.1-lab",
         "A4.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A4.1",
       "level": "Core",
       "rai": false
@@ -840,7 +840,7 @@
         "A2.1-lesson",
         "A2.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A4.2",
       "level": "Core",
       "rai": false
@@ -855,7 +855,7 @@
       "depends_on": [
         "A4.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A4.2",
       "level": "Core",
       "rai": false
@@ -871,7 +871,7 @@
         "A4.2-lab",
         "A4.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A4.2",
       "level": "Core",
       "rai": false
@@ -888,7 +888,7 @@
         "A2.1-lesson",
         "A2.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A4.3",
       "level": "Core",
       "rai": false
@@ -903,7 +903,7 @@
       "depends_on": [
         "A4.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A4.3",
       "level": "Core",
       "rai": false
@@ -919,7 +919,7 @@
         "A4.3-lab",
         "A4.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A4.3",
       "level": "Core",
       "rai": false
@@ -936,7 +936,7 @@
         "A2.1-lesson",
         "A2.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A4.4",
       "level": "Core",
       "rai": false
@@ -951,7 +951,7 @@
       "depends_on": [
         "A4.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A4.4",
       "level": "Core",
       "rai": false
@@ -967,7 +967,7 @@
         "A4.4-lab",
         "A4.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A4.4",
       "level": "Core",
       "rai": false
@@ -984,7 +984,7 @@
         "A2.1-lesson",
         "A2.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A4.5",
       "level": "Depth",
       "rai": false
@@ -999,7 +999,7 @@
       "depends_on": [
         "A4.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A4.5",
       "level": "Depth",
       "rai": false
@@ -1015,7 +1015,7 @@
         "A4.5-lab",
         "A4.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A4.5",
       "level": "Depth",
       "rai": false
@@ -1034,7 +1034,7 @@
         "A4.4-lesson",
         "A4.5-lesson"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "W04-quiz-answers",
@@ -1046,7 +1046,7 @@
       "depends_on": [
         "W04-quiz"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "W04-cheatsheet",
@@ -1062,7 +1062,7 @@
         "A4.4-lesson",
         "A4.5-lesson"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "A5.1-lesson",
