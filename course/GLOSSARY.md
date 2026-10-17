@@ -50,6 +50,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Bag-of-words | Representing a text by the counts of its words, ignoring their order. | E1.2 |
 | Bagging | Bootstrap aggregating: training models on bootstrap resamples and averaging their predictions. | B3.2 |
 | Base rate | The prior probability of a condition in the population, before any evidence. | A5.3 |
+| Base value (SHAP) | The average prediction over the background data, $v(\varnothing)$; a prediction's SHAP values add up to the prediction minus this. | B3.4 |
 | Baseline | The simplest reasonable model or rule that a real model must beat to be worth deploying. | B1.1 |
 | Batching (serving) | Grouping several requests into one model call to raise throughput. | J2.1, I4.3 |
 | BatchNorm | Normalizing each feature over the batch, then applying a learned scale and shift. | C3.4 |
@@ -73,7 +74,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Block bootstrap | Resampling blocks of consecutive rows (or whole users) so that correlated data keeps its dependence. | A6.2 |
 | Bonferroni correction | Testing each of $m$ hypotheses at $\alpha / m$ to control the chance of any false positive. | A6.3b |
 | Boolean mask | An array of True/False values that selects the matching entries of an array or rows of a DataFrame. | A1.2, A1.3 |
-| Bootstrap | Estimating the uncertainty of a statistic by recomputing it on resamples drawn with replacement. | A6.2 |
+| Bootstrap | Estimating the uncertainty of a statistic by recomputing it on resamples drawn with replacement. | A6.2, B3.2 |
 | Box–Muller transform | Turning two uniform numbers into two independent standard normals through a random radius $\sqrt{-2\log u_1}$ and angle $2\pi u_2$. | A5.2 |
 | BPE (byte-pair encoding) | A subword tokenizer that repeatedly merges the most frequent adjacent pair of symbols. | F1.3 |
 | Breakdown point | The share of values that can be replaced by garbage before a statistic can be pushed arbitrarily far: 0 for the mean, 50% for the median. | A6.1 |
@@ -87,6 +88,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Caching (LLM) | Reusing earlier results instead of paying for a new model call; see exact, prompt and semantic caching. | I4.4 |
 | Calibration | Whether predicted probabilities match observed frequencies (of cases predicted 0.8, about 80% are positive). | B4.1 |
 | Canary rollout | Sending a small share of live traffic to a new model version before a full rollout. | J2.4 |
+| CART | Classification And Regression Trees: grow a tree greedily by trying every feature and threshold and keeping the split with the lowest weighted child impurity. | B3.1 |
 | Catastrophic cancellation | Losing most significant digits by subtracting two large, nearly equal floating-point numbers. | A3.4, A3.3 |
 | Categorical distribution | The distribution of one draw from $K$ classes with probabilities $p_1, \dots, p_K$. | A5.2 |
 | Categorical encoding | Turning category labels into numbers: one-hot, ordinal or target encoding. | B1.3 |
@@ -113,6 +115,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Classifier-free guidance | Steering a diffusion model by mixing its conditional and unconditional predictions. | G2.4 |
 | Cleaning log | A record of every data-cleaning decision, its reason and how many rows it touched. | B1.2 |
 | CLIP | A model that trains image and text encoders contrastively so matching pairs have similar embeddings. | G2.2 |
+| Coalition | A subset of features (players) in a Shapley-value calculation; its value $v(S)$ is the expected prediction when only those features are known. | B3.4 |
 | Cohen's d | Difference in means divided by the pooled standard deviation; a standardized effect size. | A6.3a |
 | Collaborative filtering | Recommending items from the behaviour of similar users or items, without item content. | B6.1 |
 | Column space | The set of all vectors $\mathbf{A}\mathbf{x}$: every output a matrix can reach. | A2.3 |
@@ -173,6 +176,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | DDP | Distributed Data Parallel: PyTorch's multi-process data-parallel training. | C4.4 |
 | DDPM | Denoising Diffusion Probabilistic Model: a diffusion model trained to predict the noise added at each step. | G1.4 |
 | Decision boundary | The set of inputs where a classifier switches class; for logistic regression the hyperplane $\mathbf{w}^\top\mathbf{x} + b = 0$ ($p = 0.5$). | B2.1 |
+| Decision stump | A decision tree of depth 1: a single split; a sum of stumps is an additive model with no interactions. | B3.3 |
 | Decision tree | A model that splits the data by feature thresholds into leaves with simple predictions. | B3.1 |
 | Decoder-only model | A transformer with causal self-attention that predicts the next token (GPT). | F2.1 |
 | Decoding | Turning a language model's next-token distributions into text. | F2.4 |
@@ -209,7 +213,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 
 | Term | Definition | Taught in |
 |---|---|---|
-| Early stopping | Stopping training when the validation score stops improving. | C3.5 |
+| Early stopping | Stopping training when the validation score stops improving. | C3.5, B3.3 |
 | Eckart–Young theorem | The truncated SVD $\mathbf{A}_k$ is the best rank-$k$ approximation of $\mathbf{A}$ in Frobenius (and spectral) norm. | A3.2 |
 | EDA | Exploratory data analysis: summarizing and plotting data to understand it before modelling. | A6.1 |
 | Effect size | How large a difference is, not just whether it is statistically significant. | A6.3a |
@@ -224,7 +228,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Empirical CDF | The fraction of observed values at or below each $x$; an estimate of the CDF. | A5.2 |
 | Empirical risk | The average loss of a model on a given set of rows; an estimate of the true risk. | B1.1 |
 | Encoder–decoder | An architecture where an encoder reads the input and a decoder generates the output conditioned on it. | E2.3, F2.1 |
-| Entropy | $H(p) = -\sum_x p(x) \log p(x)$: the average surprise of a distribution. | A6.4 |
+| Entropy | $H(p) = -\sum_x p(x) \log p(x)$: the average surprise of a distribution. | A6.4, B3.1 |
 | Epoch | One full pass of training over every example in the training set. | A4.4 |
 | Epsilon-greedy | Exploring by taking a random action with probability $\epsilon$, otherwise the best-known action. | H1.3 |
 | Equalized odds | A fairness criterion: true-positive and false-positive rates are equal across groups. `[RAI]` | B4.6 |
@@ -289,6 +293,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Generative model | A model of how each class produces the data, $p(\mathbf{x} \mid y)\,p(y)$, turned into $p(y \mid \mathbf{x})$ by Bayes' theorem (naive Bayes, GMMs); in Part G, a model that samples new data. | B2.4, G1.1 |
 | Geometric mean | $\exp$ of the mean of $\log x$; for data whose log is symmetric it sits near the median. | A6.1 |
 | Gibbs' inequality | $D_{\mathrm{KL}}(p \,\|\, q) \ge 0$, with equality only when $q = p$; so $H(p, q) \ge H(p)$. | A6.4 |
+| Gini impurity | $1 - \sum_k p_k^2$: the chance that a random row is misclassified by a random label drawn from the node's class shares; 0 for a pure node. | B3.1 |
 | Golden set | A curated, versioned set of inputs with known good outputs used to evaluate a system. | I2.4 |
 | GPT | A decoder-only transformer pretrained on next-token prediction. | F1.4, F2.1 |
 | Grad-CAM | A heat map of which image regions most influenced a CNN's prediction, from gradients of the last conv layer. | D2.5 |
@@ -332,15 +337,19 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 
 | Term | Definition | Taught in |
 |---|---|---|
+| ICE curve | Individual conditional expectation: one row's prediction as a single feature is varied; the partial dependence curve is their average. | B3.4 |
 | Idempotent | A matrix with $\mathbf{P}^2 = \mathbf{P}$: applying it twice is the same as once, like every projection. | A2.4 |
 | Identity matrix | $\mathbf{I}$: ones on the diagonal, zeros elsewhere; $\mathbf{A}\mathbf{I} = \mathbf{A}$. | A2.2 |
 | i.i.d. | Independent and identically distributed: draws that do not influence each other and share one distribution. | A5.4 |
 | Implicit feedback | User signals such as clicks and views, which show interest but not dislike. | B6.1 |
+| Impurity (tree node) | How mixed a node's targets are: Gini or entropy for classes, variance for numbers; a split is chosen to lower it the most. | B3.1 |
+| Impurity-based importance | Mean decrease in impurity (MDI): a tree feature's summed, weighted impurity decreases; computed on training data and biased towards many-valued features. | B3.4 |
 | Imputation | Filling missing values with an estimate (mean, median, a model), learned on training rows only. | B1.2 |
 | Independence (random variables) | $p(x, y) = p(x)\,p(y)$ for all values: knowing one tells nothing about the other; implies zero covariance, not the reverse. | A5.1 |
 | Index (pandas) | The row labels of a DataFrame or Series; arithmetic aligns rows by these labels. | A1.3 |
 | Indirect prompt injection | Malicious instructions hidden in content the model reads (a web page, an email, a tool result). `[RAI]` | I4.2 |
 | Inference server (LLM) | A service optimized to run an LLM for many requests (batching, KV cache management). | J2.1 |
+| Information gain | The drop in entropy from a parent node to its size-weighted children; the entropy version of a split's gain. | B3.1 |
 | Initialization | How weights are set before training; it controls whether signals vanish or explode. | C3.3 |
 | Inner join | A join that keeps only rows whose key appears in both tables. | A1.3 |
 | Instance segmentation | Labelling each pixel with the object instance it belongs to. | D2.4 |
@@ -348,6 +357,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Interaction feature | A feature built from two others (often their product) so the effect of one can depend on the other. | B1.3 |
 | Interpretability | Methods that explain what a model relies on and why it made a prediction. | B3.4 |
 | Interquartile range (IQR) | $Q(0.75) - Q(0.25)$: the width of the middle half of the data; a robust spread. | A6.1 |
+| Interventional SHAP | Shapley values whose coalition values fill the unknown features from background rows, $v(S) = \frac{1}{\lvert\mathcal{B}\rvert}\sum_{\mathbf{b}} f(\mathbf{x}_S, \mathbf{b}_{\bar S})$. | B3.4 |
 | Inverse matrix | $\mathbf{A}^{-1}$ with $\mathbf{A}\mathbf{A}^{-1} = \mathbf{I}$; exists only for square full-rank matrices. | A2.2 |
 | Inverse-CDF sampling | Draw $u$ uniform on $[0, 1)$ and return $F^{-1}(u)$; for classes, the first one whose running total exceeds $u$. | A5.2 |
 | IoU | Intersection over union: the overlap of two boxes or masks divided by their union. | D2.3 |
@@ -397,6 +407,8 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Law of large numbers | The sample mean converges to the expectation as the sample grows. | A5.4 |
 | Law of total probability | $P(B) = \sum_k P(B \mid H_k)\,P(H_k)$ over hypotheses that cover every case without overlapping. | A5.3 |
 | LayerNorm | Normalizing each example's features to zero mean and unit variance, then scaling and shifting. | C3.4 |
+| Leaf (tree) | A terminal node of a decision tree; it predicts the class shares (classification) or the mean target (regression) of its training rows. | B3.1 |
+| Leaf-wise growth | Growing a tree by always splitting the leaf with the largest gain anywhere in the tree, up to a leaf budget (LightGBM's `num_leaves`). | B3.3 |
 | Learning curve | Training and validation score plotted against training-set size (or epochs). | B4.5 |
 | Learning rate | $\eta$: the step size of gradient descent. | A4.4 |
 | Least privilege | Giving each tool or credential only the permissions its task needs. `[RAI]` | I4.2 |
@@ -545,6 +557,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Problem statement | The framing of an ML task: unit of prediction, target, prediction time, action, metric and baseline. | B1.1 |
 | Prosecutor's fallacy | Mistaking $P(\text{evidence} \mid \text{hypothesis})$ for $P(\text{hypothesis} \mid \text{evidence})$. | A5.3 |
 | Pseudonymization | Replacing an identifier with a token (for example a keyed hash, HMAC) so records can be joined but not directly identified; still personal data. | B1.2 |
+| Pseudo-residuals | The negative gradient of the loss with respect to the current predictions, $-\partial\ell/\partial F$; boosting fits each tree to them ($y - p$ for log-loss). | B3.3 |
 | p-value | The probability of data at least as extreme as observed if the null hypothesis were true. | A6.3a |
 | Padding (convolution) | Adding a border of zeros around the input to control the output size. | D1.1 |
 | Partial dependence | The average prediction as one feature varies, with the others left as observed. | B3.4 |
@@ -626,7 +639,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Reparameterization trick | Writing $z = \mu + \sigma\epsilon$ with $\epsilon \sim \mathcal{N}(0, 1)$ so gradients flow through sampling. | G1.2 |
 | Replay buffer | A store of past transitions sampled at random to train DQN on less correlated data. | H1.4 |
 | Reranking | Re-scoring retrieved candidates with a stronger model before using the top few. | I2.3 |
-| Residual | Observed minus fitted value, $y_i - \hat{y}_i$; for a projection, $\mathbf{b} - \mathbf{p}$. | A2.4, B1.5 |
+| Residual | Observed minus fitted value, $y_i - \hat{y}_i$; for a projection, $\mathbf{b} - \mathbf{p}$. | A2.4, B1.5, B3.3 |
 | Residual connection | Adding a block's input to its output, $\mathbf{x} + f(\mathbf{x})$, so gradients flow through deep networks. | D1.3, F1.2 |
 | Residual plot | Residuals plotted against fitted values or a feature; any pattern means the model is missing something. | A2.4, B4.2 |
 | ResNet | A CNN family built from residual blocks. | D1.3 |
@@ -678,8 +691,9 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Shadow price | The rate at which the optimal value changes as a constraint is relaxed; the value of the Lagrange multiplier. | A4.5 |
 | SHAP | SHapley Additive exPlanations: per-prediction feature attributions based on Shapley values. | B3.4 |
 | Shape | The size of an array along each axis, written as a tuple such as `(n, d)`. | A1.2 |
+| Shapley value | A feature's marginal contribution to a prediction, averaged over all orders in which the features could be added; the values add up to prediction minus base value. | B3.4 |
 | Shear | A linear map that slides points parallel to an axis by an amount proportional to their distance from it. | A2.1 |
-| Shrinkage | Pulling an estimate toward a prior value, more strongly when there is little data. | A6.5 |
+| Shrinkage | Pulling an estimate toward a prior value, more strongly when there is little data; in boosting, scaling each new tree by the learning rate. | A6.5, B3.3 |
 | Sigmoid | $\sigma(z) = 1 / (1 + e^{-z})$: squashes a number into $(0, 1)$. | B2.1 |
 | Significance level | $\alpha$: the false-positive rate accepted in advance; reject $H_0$ when $p < \alpha$. | A6.3a |
 | Silhouette score | A clustering score comparing each point's distance to its own cluster with the nearest other cluster. | B5.1 |
@@ -689,6 +703,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Skewness | $\mathbb{E}[((X - \mu)/\sigma)^3]$: lopsidedness; 0 if symmetric, positive with a long right tail. | A5.4, A6.1 |
 | Skip-gram | word2vec's objective: predict context words from the centre word. | E1.3 |
 | Soft margin | An SVM margin that allows violations, each paid for through the hinge loss at a price set by $C$. | B2.5 |
+| Soft voting | Combining classifiers by averaging their predicted class probabilities (scikit-learn's forests); hard voting counts each model's predicted class. | B3.2 |
 | Soft-thresholding | $S(a, t) = \operatorname{sign}(a)\max(\lvert a\rvert - t, 0)$: shrink towards zero by $t$ and stop at zero; the lasso's coordinate update. | B2.2 |
 | Softmax | $\operatorname{softmax}(\mathbf{z})_k = e^{z_k} / \sum_j e^{z_j}$: turns logits into probabilities. | C1.4 |
 | Spearman correlation | $\rho$: Pearson correlation of the ranks; measures monotonic trend and resists outliers. | A6.1 |
@@ -728,6 +743,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Training set | Rows a model's parameters are fitted on. | B1.1 |
 | Train/serve skew | A feature computed differently in training and in production, so the model sees different inputs live. | B1.3, J2.2 |
 | Train/test contamination | Leakage through a fitting step (scaler, selector, encoder) that learned from the evaluation rows. | B1.4 |
+| TreeSHAP | An algorithm that computes exact SHAP values for tree ensembles in polynomial time; interventional or tree-path-dependent variants. | B3.4 |
 | True risk | A model's expected loss on new data from the same source; estimated by the empirical risk on held-out rows. | B1.1 |
 | t-SNE | A non-linear 2-D embedding that preserves local neighbourhoods; distances between clusters mean little. | B5.5 |
 | t-test | A test of whether two means differ, using the t distribution (Welch's version allows unequal variances). | A6.3a |
