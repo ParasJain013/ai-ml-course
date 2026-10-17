@@ -656,3 +656,42 @@ Read in week <NN> with <topic id>. Link: <arXiv or venue> (VERIFY link). Time: ~
 
 Paper answer notes (`answers/papers/<year>_<short_name>.md`) answer the "Questions while reading"
 in order, quoting the paper by section number rather than by long quotation.
+
+### 6.10 Model card (`my-work/P<k>/MODEL_CARD.md`) `[RAI]`
+
+Every project from P2 on ships one (taught in B4.6, extended in J2.5). Adapted from Mitchell et al.,
+"Model Cards for Model Reporting" (2019), and covering every section the P2 brief requires. Added
+2026-10-17: B4.6 and P2 refer to this template.
+
+````markdown
+# Model card: <model name>
+
+## Model details
+*Type and library versions, version or commit, training date, owner and contact.*
+
+## Intended use
+*The decision the prediction supports, who acts on it, and the population it is meant for.*
+
+## Out-of-scope uses
+*Uses the model must not be put to, and why.*
+
+## Data
+*Source and licence, time period, how rows were sampled, who is in the data and who is missing;
+preprocessing and excluded columns (leakage, PII).*
+
+## Metrics
+*The metric and why it matches the costs; test score with a 95% bootstrap CI next to the baselines.*
+
+## Decision threshold
+*The threshold, the costs it was chosen from, and the confusion matrix at that threshold.*
+
+## Metrics by group
+*Per group of each audited attribute: size, base rate, selection rate, TPR, FPR, with CIs for small
+groups; the gaps between groups and what they mean for the intended use.*
+
+## Known limitations
+*Where the model is known or expected to fail: subpopulations, drift, extrapolation, data quality.*
+
+## Ethical considerations
+*Harms if it is wrong, sensitive attributes and proxies, who was consulted, mitigations taken or rejected.*
+````
