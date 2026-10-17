@@ -37,6 +37,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Autocast | PyTorch's context manager that runs selected operations in a lower-precision dtype for mixed precision. | C4.2 |
 | Autoencoder | A network trained to reconstruct its input through a narrow bottleneck, learning a compressed representation. | G1.1 |
 | Autograd | Automatic differentiation: recording operations on a graph and applying the chain rule backward to get gradients. | C1.3, C2.1 |
+| Average precision | $\sum_k (R_k - R_{k-1})P_k$: precision averaged over the positives in score order; the usual PR-AUC estimate, with the prevalence as its baseline. | B4.1 |
 | Axis | One dimension of an array; axis 0 runs down the rows, axis 1 across the columns. | A1.2 |
 
 ## B
@@ -78,6 +79,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Box–Muller transform | Turning two uniform numbers into two independent standard normals through a random radius $\sqrt{-2\log u_1}$ and angle $2\pi u_2$. | A5.2 |
 | BPE (byte-pair encoding) | A subword tokenizer that repeatedly merges the most frequent adjacent pair of symbols. | F1.3 |
 | Breakdown point | The share of values that can be replaced by garbage before a statistic can be pushed arbitrarily far: 0 for the mean, 50% for the median. | A6.1 |
+| Brier score | The mean squared error of predicted probabilities, $\frac1n\sum(\hat{p}_i - y_i)^2$; a proper scoring rule, baseline $\pi(1 - \pi)$. | B4.1 |
 | Broadcasting | NumPy's rule for combining arrays of different shapes by virtually repeating size-1 axes. | A1.2 |
 
 ## C
@@ -231,6 +233,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Entropy | $H(p) = -\sum_x p(x) \log p(x)$: the average surprise of a distribution. | A6.4, B3.1 |
 | Epoch | One full pass of training over every example in the training set. | A4.4 |
 | Epsilon-greedy | Exploring by taking a random action with probability $\epsilon$, otherwise the best-known action. | H1.3 |
+| Equal opportunity | A fairness criterion: true-positive rates are equal across groups. `[RAI]` | B4.6 |
 | Equalized odds | A fairness criterion: true-positive and false-positive rates are equal across groups. `[RAI]` | B4.6 |
 | Euclidean distance | The straight-line distance between two points, $\lVert\mathbf{a} - \mathbf{b}\rVert_2$. | A1.2, A1.5, B2.3 |
 | Evals | Systematic tests that score an ML or LLM system against a fixed set of cases. | I2.4, I3.3 |
@@ -249,6 +252,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 |---|---|---|
 | F1 score | The harmonic mean of precision and recall. | B4.1 |
 | Fairness | The absence of unjustified differences in a model's outcomes or errors across groups. `[RAI]` | B4.6 |
+| Fairness through unawareness | Dropping the sensitive attribute from the features; it does not remove group gaps because other features act as proxies. `[RAI]` | B4.6 |
 | Faithfulness | Whether a generated answer is supported by the retrieved context it claims to use. | I2.4 |
 | False discovery rate (FDR) | The expected share of false positives among all rejected hypotheses. | A6.3b |
 | False positive rate | $P(\text{flagged} \mid \text{actually negative})$, equal to $1 -$ specificity. | A5.3, B4.1 |
@@ -361,7 +365,9 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Inverse matrix | $\mathbf{A}^{-1}$ with $\mathbf{A}\mathbf{A}^{-1} = \mathbf{I}$; exists only for square full-rank matrices. | A2.2 |
 | Inverse-CDF sampling | Draw $u$ uniform on $[0, 1)$ and return $F^{-1}(u)$; for classes, the first one whose running total exceeds $u$. | A5.2 |
 | IoU | Intersection over union: the overlap of two boxes or masks divided by their union. | D2.3 |
+| Irreducible error | The noise variance $\sigma^2$ in $y = f(x) + \varepsilon$: the part of the test error no model can remove. | B4.5 |
 | Isolation forest | Anomaly detection that scores points by how few random splits isolate them. | B5.6 |
+| Isotonic regression | Fitting the best non-decreasing step function; used to recalibrate scores into probabilities on held-out rows. | B4.1 |
 | IVFFlat | An index that clusters vectors and searches only the nearest clusters. | I2.2 |
 
 ## J
@@ -445,11 +451,13 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Term | Definition | Taught in |
 |---|---|---|
 | Machine epsilon | The gap between 1 and the next float: $\varepsilon \approx 2.2 \times 10^{-16}$ in float64, $1.2 \times 10^{-7}$ in float32; the relative rounding error per operation. | A3.4, A4.1 |
+| MAE | Mean absolute error, $\frac1n\sum\lvert y_i - \hat{y}_i\rvert$; minimized by the median; robust to outliers. | B4.2 |
 | Mahalanobis distance | $\sqrt{(\mathbf{x} - \boldsymbol{\mu})^\top\boldsymbol{\Sigma}^{-1}(\mathbf{x} - \boldsymbol{\mu})}$: distance from the mean in standard deviations along each eigen-direction of $\boldsymbol{\Sigma}$. | A5.2 |
 | Manhattan distance | The L1 distance $\sum_j \lvert u_j - v_j\rvert$: distance along a city grid. | B2.3 |
 | Mann–Whitney U test | A rank-based test of whether values in one group tend to be larger than in the other. | A6.3a |
 | mAP | Mean average precision: the detection metric averaging precision over recall levels, classes and IoU thresholds. | D2.3 |
 | MAP estimation | Maximum a posteriori: choosing parameters that maximize likelihood times prior. | A5.5 |
+| MAPE | Mean absolute percentage error, $\frac1n\sum\lvert e_i\rvert/\lvert y_i\rvert$; undefined at zero targets and biased towards under-forecasting. | B4.2 |
 | Marginal distribution | The distribution of one variable on its own, found by summing the joint distribution over the others. | A5.1 |
 | Markov chain | A random process that moves between states with probabilities that depend only on the current state, given by a transition matrix. | A3.1, H1.1 |
 | Masked language modelling | Predicting hidden tokens from both sides of the context (BERT's objective). | F2.1 |
@@ -497,6 +505,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 |---|---|---|
 | Nat | The unit of information with the natural log; 1 nat = 1.443 bits. | A6.4 |
 | Negative log-likelihood (NLL) | $-\sum_i \log p(x_i \mid \boldsymbol{\theta})$; minimizing it is MLE, and most training losses are an NLL. | A5.5 |
+| Nested cross-validation | An inner cross-validation tunes hyperparameters inside each fold of an outer one, which scores the whole tuning procedure on unseen rows. | B4.3 |
 | n-gram | A sequence of $n$ consecutive tokens. | E1.1 |
 | Naive Bayes | A classifier that applies Bayes' theorem assuming features are independent given the class. | B2.4 |
 | NaN | "Not a number": the float value NumPy and pandas use for a missing number; NaN is not equal to itself. | A1.3 |
@@ -535,6 +544,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Outlier | A value far from the bulk of the data. | A6.1, B1.2 |
 | Overdispersion | Count data whose variance is larger than its mean, a sign that a Poisson model is too simple. | A5.2 |
 | Overfitting | Fitting noise in the training data, so training error is low but test error is high. | B4.5 |
+| Oversampling | Repeating (or synthesizing) minority-class rows in the training data; duplicating a row $k$ times equals giving it weight $k$. | B4.4 |
 
 ## P
 
@@ -545,17 +555,23 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Peeking | Checking an experiment repeatedly and stopping at the first significant result, which inflates false positives. | A6.3b |
 | Percentile bootstrap | A confidence interval from the $\alpha/2$ and $1 - \alpha/2$ quantiles of a statistic over bootstrap resamples. | A6.2 |
 | Perfect separation | A feature that splits the classes exactly, so the logistic-regression MLE weights grow without bound. | A5.5, B2.1 |
+| Pinball loss | The quantile loss $\max(\tau e, (\tau - 1)e)$ with $e = y - \hat{y}$; minimized by the $\tau$-quantile. | B4.2 |
+| Platt scaling | Recalibrating scores with a one-feature logistic regression, $\sigma(as + b)$, fitted on held-out rows. | B4.1 |
 | Plug-in principle | Using the empirical distribution of the sample in place of the unknown population; the basis of the bootstrap. | A6.2 |
 | Point estimate | A single number computed from data as the best guess of an unknown quantity. | A6.2 |
 | Posterior | $P(\text{hypothesis} \mid \text{evidence})$ or $p(\boldsymbol{\theta} \mid \text{data})$: the belief after seeing the evidence. | A5.3, A6.5 |
 | Posterior predictive | The distribution of future data averaged over the posterior, wider than plugging in one estimate. | A6.5 |
 | Power (statistical) | The probability that a test rejects $H_0$ when a given real effect exists; $1 - \beta$. | A6.3a, A6.3b |
+| Precision–recall curve | Precision plotted against recall as the threshold varies; summarized by average precision. | B4.1 |
 | Pre-registration | Writing down the hypotheses, metrics, sample size and analysis before seeing the data. | A6.3b |
 | Prior | $P(\text{hypothesis})$ or $p(\boldsymbol{\theta})$: the belief before seeing the evidence. | A5.3, A5.5, A6.5 |
+| Prior correction | Undoing a change in class balance by multiplying a model's odds by $1/w$ (class weight $w$) or $\beta$ (kept share of negatives). | B4.4 |
 | Probability density function (pdf) | Probability per unit of $x$ for a continuous variable; probabilities are areas under it, and it can exceed 1. | A5.2 |
 | Probability mass function (pmf) | $P(X = x)$ for each value of a discrete variable; the values add up to 1. | A5.2 |
 | Problem statement | The framing of an ML task: unit of prediction, target, prediction time, action, metric and baseline. | B1.1 |
+| Proper scoring rule | A score (log-loss, Brier) whose expected value is optimized by reporting the true probability. | B4.1 |
 | Prosecutor's fallacy | Mistaking $P(\text{evidence} \mid \text{hypothesis})$ for $P(\text{hypothesis} \mid \text{evidence})$. | A5.3 |
+| Proxy (feature) | A feature correlated with a sensitive attribute (postcode for race, relationship for sex) that lets a model use it indirectly. `[RAI]` | B4.6 |
 | Pseudonymization | Replacing an identifier with a token (for example a keyed hash, HMAC) so records can be joined but not directly identified; still personal data. | B1.2 |
 | Pseudo-residuals | The negative gradient of the loss with respect to the current predictions, $-\partial\ell/\partial F$; boosting fits each tree to them ($y - p$ for log-loss). | B3.3 |
 | p-value | The probability of data at least as extreme as observed if the null hypothesis were true. | A6.3a |
@@ -636,6 +652,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Regularization | Anything that discourages overfitting: penalties, dropout, early stopping, augmentation. | B2.2, C3.5 |
 | REINFORCE | The basic policy-gradient algorithm: weight log-probability gradients by the return. | H2.1 |
 | Relative error | $\lVert\mathbf{a} - \mathbf{b}\rVert / (\lVert\mathbf{a}\rVert + \lVert\mathbf{b}\rVert)$: a scale-free size of a difference; the gradient-check metric. | A4.2 |
+| Reliability diagram | Mean predicted probability against observed positive rate per bin of predictions; the diagonal means calibrated. | B4.1 |
 | Reparameterization trick | Writing $z = \mu + \sigma\epsilon$ with $\epsilon \sim \mathcal{N}(0, 1)$ so gradients flow through sampling. | G1.2 |
 | Replay buffer | A store of past transitions sampled at random to train DQN on less correlated data. | H1.4 |
 | Reranking | Re-scoring retrieved candidates with a stronger model before using the top few. | I2.3 |
@@ -651,9 +668,11 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Reward hacking | An agent maximizing the reward signal in a way that defeats the designer's intent. `[RAI]` | H2.4 |
 | Reward model | A model trained on human preferences to score outputs; the reward in RLHF. | H2.3 |
 | RLHF | Reinforcement learning from human feedback: a reward model from preferences, then RL (usually PPO) against it. | F3.2, H2.3 |
+| RMSE | Root mean squared error, $\sqrt{\frac1n\sum(y_i - \hat{y}_i)^2}$; minimized by the mean; dominated by large errors. | B4.2 |
 | RNN | Recurrent neural network: applies the same cell at each time step, carrying a hidden state. | E2.1 |
 | Robust statistic | A summary that barely moves when a few values are wrong or extreme, such as the median. | A6.1 |
 | Robust z-score | $(x - \text{median})/(1.4826\,\mathrm{MAD})$; values with $\lvert z\rvert > 3.5$ are flagged for a look. | A6.1 |
+| ROC curve | True positive rate against false positive rate as the threshold varies. | B4.1 |
 | ROC-AUC | Area under the ROC curve: the probability a random positive is scored above a random negative. | B4.1 |
 | Rollback | Returning to the previous model version after a bad deployment. | J2.4 |
 | RoPE | Rotary positional embeddings: encoding position by rotating query and key vectors. | F1.2 |
@@ -678,10 +697,12 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Secant | The line through two points of a graph; its slope approaches the derivative as the points merge. | A4.1 |
 | Seed | The starting value of a random number generator; fixing it makes runs repeatable. | A1.1 |
 | Segmentation | Labelling every pixel of an image. | D2.4 |
+| Selection rate | The share of a group the model predicts positive, $P(\hat{Y} = 1 \mid A = a)$. `[RAI]` | B4.6 |
 | Self-attention | Attention where queries, keys and values all come from the same sequence. | F1.1 |
 | Semantic caching | Reusing an earlier answer when a new query's embedding is close enough to a past one. | I4.4 |
 | Semantic search | Finding documents by meaning through embeddings, not exact words. | I2.1 |
 | Semantic segmentation | Labelling each pixel with a class, without separating instances. | D2.4 |
+| Sensitive attribute | A characteristic such as sex, race or age along which a model's outcomes and errors are audited. `[RAI]` | B4.6 |
 | Sensitivity | $P(\text{positive} \mid \text{condition present})$, the true positive rate; the same as recall. | A5.3, B4.1 |
 | Sentinel value | A placeholder such as −999, 0 or 1900-01-01 that a source system writes for "unknown"; a disguised missing value. | B1.2 |
 | seq2seq | A model that maps an input sequence to an output sequence with an encoder and a decoder. | E2.3 |
@@ -740,6 +761,8 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | t distribution | The distribution of $(\bar{X} - \mu)/(s/\sqrt{n})$ for Gaussian data, with heavier tails than the normal; gives the t interval. | A6.2 |
 | Target encoding | Replacing a category by the mean target of its rows; must be computed out of fold, or it leaks the label. | B1.4 |
 | Test set | Rows used once, at the end, to report the chosen model's performance (also holdout set). | B1.1 |
+| Time-series split | Expanding-window validation: each fold trains on all rows before a block and validates on that block. | B4.3 |
+| TPE | Tree-structured Parzen estimator: Bayesian search that proposes settings where the density of good trials exceeds that of bad ones (Optuna's default). | B4.3 |
 | Training set | Rows a model's parameters are fitted on. | B1.1 |
 | Train/serve skew | A feature computed differently in training and in production, so the model sees different inputs live. | B1.3, J2.2 |
 | Train/test contamination | Leakage through a fitting step (scaler, selector, encoder) that learned from the evaluation rows. | B1.4 |
@@ -783,6 +806,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Term | Definition | Taught in |
 |---|---|---|
 | Unbiased estimator | An estimator whose average over repeated samples equals the true value. | A5.1 |
+| Undersampling | Discarding majority-class rows from the training data; multiplies the model's odds by the inverse of the kept share. | B4.4 |
 | U-Net | An encoder–decoder CNN with skip connections, used for segmentation and in diffusion models. | D2.4, G1.4 |
 | UMAP | A non-linear dimensionality reduction that preserves local structure, faster than t-SNE. | B5.5 |
 | Underfitting | A model too simple to capture the pattern, so both training and test error are high. | B4.5 |
@@ -813,6 +837,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Term | Definition | Taught in |
 |---|---|---|
 | Walk-forward validation | Repeatedly training on data up to a time and testing on the next period, moving forward. | B6.3 |
+| WAPE | Weighted absolute percentage error, $\sum\lvert e_i\rvert/\sum\lvert y_i\rvert$; a relative error that survives zero targets. | B4.2 |
 | Warmup | Starting with a small learning rate and increasing it over the first steps. | C3.2 |
 | Watermarking | Embedding a detectable signal in generated content to mark it as synthetic. `[RAI]` | G2.4 |
 | Weight decay | Shrinking weights a little at each step; equivalent to L2 regularization for plain SGD. | C3.5 |
