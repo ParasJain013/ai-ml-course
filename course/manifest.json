@@ -2062,7 +2062,7 @@
         "B1.3-lesson",
         "B1.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B2.1",
       "level": "Core",
       "rai": false
@@ -2077,7 +2077,7 @@
       "depends_on": [
         "B2.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B2.1",
       "level": "Core",
       "rai": false
@@ -2093,7 +2093,7 @@
         "B2.1-lab",
         "B2.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B2.1",
       "level": "Core",
       "rai": false
@@ -2114,7 +2114,7 @@
         "B1.3-lesson",
         "B1.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B2.2",
       "level": "Core",
       "rai": false
@@ -2129,7 +2129,7 @@
       "depends_on": [
         "B2.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B2.2",
       "level": "Core",
       "rai": false
@@ -2145,7 +2145,7 @@
         "B2.2-lab",
         "B2.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B2.2",
       "level": "Core",
       "rai": false
@@ -2166,7 +2166,7 @@
         "B1.3-lesson",
         "B1.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B2.3",
       "level": "Core",
       "rai": false
@@ -2181,7 +2181,7 @@
       "depends_on": [
         "B2.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B2.3",
       "level": "Core",
       "rai": false
@@ -2197,7 +2197,7 @@
         "B2.3-lab",
         "B2.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B2.3",
       "level": "Core",
       "rai": false
@@ -2218,7 +2218,7 @@
         "B1.3-lesson",
         "B1.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B2.4",
       "level": "Core",
       "rai": false
@@ -2233,7 +2233,7 @@
       "depends_on": [
         "B2.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B2.4",
       "level": "Core",
       "rai": false
@@ -2249,7 +2249,7 @@
         "B2.4-lab",
         "B2.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B2.4",
       "level": "Core",
       "rai": false
@@ -2271,7 +2271,7 @@
         "B1.3-lesson",
         "B1.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B2.5",
       "level": "Depth",
       "rai": false
@@ -2286,7 +2286,7 @@
       "depends_on": [
         "B2.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B2.5",
       "level": "Depth",
       "rai": false
@@ -2302,7 +2302,7 @@
         "B2.5-lab",
         "B2.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B2.5",
       "level": "Depth",
       "rai": false
@@ -2321,7 +2321,7 @@
         "B2.4-lesson",
         "B2.5-lesson"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "W08-quiz-answers",
@@ -2333,7 +2333,7 @@
       "depends_on": [
         "W08-quiz"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "W08-cheatsheet",
@@ -2349,7 +2349,7 @@
         "B2.4-lesson",
         "B2.5-lesson"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "B3.1-lesson",
