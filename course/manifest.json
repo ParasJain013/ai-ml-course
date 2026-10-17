@@ -1738,7 +1738,7 @@
         "A4.4-lesson",
         "A6.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B1.1",
       "level": "Core",
       "rai": false
@@ -1753,7 +1753,7 @@
       "depends_on": [
         "B1.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B1.1",
       "level": "Core",
       "rai": false
@@ -1769,7 +1769,7 @@
         "B1.1-lab",
         "B1.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B1.1",
       "level": "Core",
       "rai": false
@@ -1787,7 +1787,7 @@
         "A4.4-lesson",
         "A6.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B1.2",
       "level": "Core",
       "rai": true
@@ -1802,7 +1802,7 @@
       "depends_on": [
         "B1.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B1.2",
       "level": "Core",
       "rai": true
@@ -1818,7 +1818,7 @@
         "B1.2-lab",
         "B1.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B1.2",
       "level": "Core",
       "rai": true
@@ -1836,7 +1836,7 @@
         "A4.4-lesson",
         "A6.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B1.3",
       "level": "Core",
       "rai": false
@@ -1851,7 +1851,7 @@
       "depends_on": [
         "B1.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B1.3",
       "level": "Core",
       "rai": false
@@ -1867,7 +1867,7 @@
         "B1.3-lab",
         "B1.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B1.3",
       "level": "Core",
       "rai": false
@@ -1885,7 +1885,7 @@
         "A4.4-lesson",
         "A6.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B1.4",
       "level": "Core",
       "rai": false
@@ -1900,7 +1900,7 @@
       "depends_on": [
         "B1.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B1.4",
       "level": "Core",
       "rai": false
@@ -1916,7 +1916,7 @@
         "B1.4-lab",
         "B1.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B1.4",
       "level": "Core",
       "rai": false
@@ -1934,7 +1934,7 @@
         "A4.4-lesson",
         "A6.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B1.5",
       "level": "Core",
       "rai": false
@@ -1949,7 +1949,7 @@
       "depends_on": [
         "B1.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B1.5",
       "level": "Core",
       "rai": false
@@ -1965,7 +1965,7 @@
         "B1.5-lab",
         "B1.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B1.5",
       "level": "Core",
       "rai": false
@@ -1985,7 +1985,7 @@
         "B1.5-lesson",
         "P1-brief"
       ],
-      "status": "todo",
+      "status": "done",
       "project": "P2",
       "due_week": 10
     },
@@ -1999,7 +1999,7 @@
       "depends_on": [
         "P2-brief"
       ],
-      "status": "todo",
+      "status": "done",
       "project": "P2"
     },
     {
@@ -2016,7 +2016,7 @@
         "B1.4-lesson",
         "B1.5-lesson"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "W07-quiz-answers",
@@ -2028,7 +2028,7 @@
       "depends_on": [
         "W07-quiz"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "W07-cheatsheet",
@@ -2044,7 +2044,7 @@
         "B1.4-lesson",
         "B1.5-lesson"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "B2.1-lesson",
