@@ -417,7 +417,7 @@ policy covers).
 **Project milestone: P10 due.** Add a misuse section and the watermark result to its model card
 (about 0.25 h).
 
-**Prerequisites:** G1.4 (DDPM samples), A6.3 (hypothesis tests, for the detector).
+**Prerequisites:** G1.4 (DDPM samples), A6.3a (hypothesis tests, for the detector).
 
 **Resources** (optional)
 

@@ -315,7 +315,7 @@ models with the right splitter, and report the test score once, with a bootstrap
 leakage audit, run the fairness audit on the sensitive attribute, and write the model card with
 intended use, metrics by group and known limitations. P2 needs **≥ 70%** on its rubric to pass CP2.
 
-**Prerequisites:** B1.1, B1.4, B2.1, B2.2, B3.3; A6.2 (bootstrap CIs), A6.3 (hypothesis tests, for
+**Prerequisites:** B1.1, B1.4, B2.1, B2.2, B3.3; A6.2 (bootstrap CIs), A6.3a (hypothesis tests, for
 comparing models fairly).
 
 **Resources** (optional)

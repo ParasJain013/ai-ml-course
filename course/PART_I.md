@@ -157,7 +157,7 @@ the end.
   (few-shot); plus "think step by step, then give the label on the last line" (and parse that line);
   and a version with the system prompt carrying the role and rules. Write the harness yourself: run a
   prompt over the set, parse labels, compute accuracy with a bootstrap 95% interval (A6.2), and a
-  paired comparison between two prompts on the same items (A6.3). Compare with your E1.2 TF-IDF plus
+  paired comparison between two prompts on the same items (A6.3a). Compare with your E1.2 TF-IDF plus
   logistic-regression baseline trained on the same split, and say honestly whether the LLM is worth it
   here. Add a `pytest` test that fails if the chosen prompt's dev accuracy drops below a threshold:
   this is the first eval in CI-shaped form, which I2.4 and I3.3 grow. `local` default: 50 test rows.
@@ -206,7 +206,7 @@ the end.
 **Prerequisites:** F3.4 (running a local model, chat templates), F3.1 (message roles and chat
 templates), F2.4 (temperature, top-p, logits, stop conditions), F1.3 (tokenizers and why token counts
 differ), F3.3 (hallucination, red-team mindset); E1.2 (TF-IDF baseline for I1.2); A6.2 (bootstrap
-intervals), A6.3 (paired comparisons), B1.1 (dev/test splits), B4.1 (accuracy and per-class metrics),
+intervals), A6.3a (paired comparisons), B1.1 (dev/test splits), B4.1 (accuracy and per-class metrics),
 C2.3 (reproducibility and seeds). Within the week: I1.2–I1.4 use the I1.1 client; I1.4 uses I1.3's
 argument validation.
 
@@ -339,7 +339,7 @@ use, what it refuses, known failure modes). Running the evals in CI comes in I3.
 guardrails and caching in I4. Then ask for a review with `Review my-work/<your P7 folder>`.
 
 **Prerequisites:** I1.1 (client), I1.3 (structured citations and judge verdicts); A1.5 (dot product,
-norms, cosine similarity), A6.2 (bootstrap), A6.3 (paired comparisons); B1.4 (leakage, for the
+norms, cosine similarity), A6.2 (bootstrap), A6.3a (paired comparisons); B1.4 (leakage, for the
 held-out test set), B4.1 (precision and recall), B5.1 (k-means, for IVF), B6.2 (ranking metrics,
 retrieve-then-rank); E1.2 (TF-IDF), E1.3 (embedding geometry); F1.3 (token budgets), F2.1 (encoders
 versus decoders, for embedders and cross-encoders), F2.5 (long context, "lost in the middle"), F3.3

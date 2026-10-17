@@ -124,6 +124,7 @@ fluent with NumPy, pandas and matplotlib.
 - A6.1 Core: descriptive statistics and EDA — robust summaries, correlation versus causation.
 - A6.2 Core: confidence intervals and the bootstrap.
 - A6.3 Core: hypothesis testing — p-values, t-test, chi-square, multiple comparisons, A/B tests and their pitfalls.
+  (Taught as two lessons: A6.3a single tests, A6.3b multiple comparisons and A/B tests; see PART_A.md.)
 - A6.4 Core: entropy, cross-entropy and KL divergence — what classifiers and VAEs actually minimize.
 - A6.5 Depth: Bayesian inference — conjugate priors with the Beta–Binomial example.
 

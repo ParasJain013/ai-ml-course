@@ -296,7 +296,7 @@ interview 1.5 · **total 14**
   inputs). Write PSI from scratch (bin edges from the reference data's quantiles, a small epsilon for
   empty bins) and the two-sample KS statistic from scratch (the largest gap between the two empirical
   CDFs), and check both against `scipy.stats.ks_2samp` and a hand calculation on 10 values; use the
-  chi-square test (A6.3) for categoricals. Show that with 30 features and α = 0.05 you get false
+  chi-square test (A6.3a) for categoricals. Show that with 30 features and α = 0.05 you get false
   alarms on undrifted data, then fix it with a Bonferroni correction or a PSI threshold (the common
   0.1/0.25 rule of thumb, and why it is only a convention). Show that input drift tests miss the third
   change entirely, and catch it with performance monitoring on delayed labels: a rolling metric with a
@@ -355,7 +355,7 @@ the fast path: deploy P7 as a service with the J2.4 pipeline.
 **Prerequisites:** C2.3 (saving and loading, device handling), I1.3 (Pydantic schemas), I1.1 (the API
 client, reused against the local inference server), F2.4 (KV cache), F3.4 (quantized weights), D1.4
 (efficient models, for the ONNX discussion), I4.3 (batching, latency and cost), A5.2 (distributions,
-the Laplace distribution), A6.2 (bootstrap CIs), A6.3 (hypothesis tests, chi-square, multiple
+the Laplace distribution), A6.2 (bootstrap CIs), A6.3a–A6.3b (hypothesis tests, chi-square, multiple
 comparisons), B1.2 (PII and data minimization), B1.4 (leakage tests), B4.1–B4.2 (metrics to monitor),
 B4.6 (the first model card, fairness slices), B5.6 (anomaly detection as alerting), B6.3 (time-based
 splits), F3.3 (safety findings), I2.4 and I3.3 (the eval suites that become gates), I4.1 (PII

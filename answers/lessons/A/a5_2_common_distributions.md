@@ -109,7 +109,7 @@ correct but slow; 100,000 repeats should still finish in seconds if vectorized a
 | (i) 5xx per minute | Poisson (rate $\lambda$ per minute) | Constant rate and independence: errors come in bursts during incidents and deploys | Variance far above the mean (overdispersion); clusters in the time series; more zero-minutes *and* more huge minutes than Poisson predicts |
 | (ii) Ad click | Bernoulli($p$) | One $p$ for everyone: click rates vary by user, placement and time; one user's clicks are correlated | Per-segment rates that differ a lot; variance of clicks per user above $np(1 - p)$ |
 | (iii) Daily revenue | Not Gaussian: positive and right-skewed (log-normal is a common start) | Gaussian symmetry and thin tails; weekly seasonality; occasional huge orders | Histogram on a log axis; skew; mean far above the median; day-of-week pattern |
-| (iv) Plan choice | Categorical($p_1, \dots, p_4$) | Fixed probabilities: they shift with pricing pages, campaigns, region | Compare plan shares across time windows and segments (a chi-square test, A6.3) |
+| (iv) Plan choice | Categorical($p_1, \dots, p_4$) | Fixed probabilities: they shift with pricing pages, campaigns, region | Compare plan shares across time windows and segments (a chi-square test, A6.3a) |
 | (v) Sensor noise | Gaussian($0$, $\sigma^2$) | Mean zero (sensor drift/bias) and constant $\sigma$ (noise grows with temperature); occasional outliers from glitches | Compare with a reference sensor: mean residual not 0, residual spread changing with the reading, residuals beyond 4σ |
 
 The common thread: name the distribution from the process, then name the assumption in it (constant
