@@ -88,7 +88,7 @@ Commit after each milestone; the commit history is part of the evidence for pre-
 7. **Uncertainty and size, not just p-values**: for each hypothesis, a bootstrap confidence interval for
    the effect (A6.2) and an effect size in the data's units (difference in means or medians, difference in
    proportions) or a standardized one, plus the p-value and the multiple-comparison-corrected decision
-   (A6.3).
+   (A6.3a, A6.3b).
 8. **The report** (`README.md`): question, data (source, licence, what a row is, time range), cleaning
    summary, the figures with their takeaways, results table (hypothesis, test, effect, 95% CI, p-value,
    corrected decision), conclusions in plain language, and a section **"What this data cannot tell us"**
@@ -138,4 +138,4 @@ Criteria and weights, out of 100:
 
 ## Topics used
 
-A1.3, A1.4, A3.3, A5.1, A5.4, A6.1, A6.2, A6.3
+A1.3, A1.4, A3.3, A5.1, A5.4, A6.1, A6.2, A6.3a, A6.3b

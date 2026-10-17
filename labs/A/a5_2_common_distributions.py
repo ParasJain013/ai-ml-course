@@ -177,7 +177,7 @@ def max_pmf_gap(x: IntArray, pmf: FloatArray) -> float:
 
 
 def ks_gap(x: FloatArray, cdf_fn) -> float:
-    """Largest gap between the empirical CDF of x and a CDF (the KS statistic, A6.3). x (n,) -> scalar."""
+    """Largest gap between the empirical CDF of x and a CDF (the KS statistic, A6.3a). x (n,) -> scalar."""
     xs = np.sort(x)
     n = len(xs)
     F = cdf_fn(xs)  # (n,)

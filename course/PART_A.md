@@ -302,7 +302,7 @@ the autograd engine in C1.3 (A4.3); optimizers in C3.1 (A4.4); SVMs in B2.5 (A4.
 
 **Project milestone: P1 M2, explore (2 h).** 6–8 plots that follow the A1.4 rules, each with a
 one-sentence takeaway. Turn your M0 questions into 2–3 testable hypotheses and **write them down
-before you run any test**. This is pre-registration, and A6.3 explains why it matters.
+before you run any test**. This is pre-registration, and A6.3a–A6.3b explain why it matters.
 
 **Prerequisites:** A1.2, A1.4, A3.3 (covariance), A4.4 (gradient descent, for A5.5).
 
@@ -322,7 +322,7 @@ diffusion (G1.4) (A5.2).
 
 ## A6 · Statistics & information theory (course week 6)
 
-**Teaching order this week:** A6.1 → A6.2 → A6.3 first, because P1's final milestone uses them. Then
+**Teaching order this week:** A6.1 → A6.2 → A6.3a → A6.3b first, because P1's final milestone uses them. Then
 the P1 write-up, then A6.4 and A6.5.
 
 **Learning objectives**
@@ -340,9 +340,14 @@ the P1 write-up, then A6.4 and A6.5.
 |---|---|---|---|
 | A6.1 | Descriptive statistics and EDA: robust summaries, correlation versus causation | Core | 1.5 |
 | A6.2 | Confidence intervals and the bootstrap | Core | 2 |
-| A6.3 | Hypothesis testing: p-values, t-test, chi-square, multiple comparisons, A/B tests and their pitfalls | Core | 2.5 |
+| A6.3a | Hypothesis tests: p-values, permutation, t and chi-square | Core | 1.5 |
+| A6.3b | Multiple comparisons and A/B tests | Core | 1 |
 | A6.4 | Entropy, cross-entropy and KL divergence: what classifiers and VAEs minimize | Core | 2 |
 | A6.5 | Bayesian inference: conjugate priors with the Beta–Binomial example | Depth | 1 |
+
+A6.3 of the outline (hypothesis testing, 2.5 h) is taught as two lessons, A6.3a and A6.3b, because one
+lesson could not cover single tests, multiple comparisons and A/B-test design without leaps. The
+manifest and every cross-reference use the two ids.
 
 **Hours:** reading 3.5 · coding 5.5 · project 3 · quiz, cheat sheet and CP1 self-check 1 · **total 13**
 
@@ -354,9 +359,10 @@ the P1 write-up, then A6.4 and A6.5.
 - **A6.2:** percentile bootstrap confidence intervals from scratch for the mean and the median,
   compared with the t-interval from `scipy.stats`. A coverage simulation: draw 1,000 samples from a
   known distribution and count how often each method's 95% interval contains the true mean.
-- **A6.3:** a permutation test for a difference in means from scratch. Welch's t-test from scratch,
+- **A6.3a:** a permutation test for a difference in means from scratch. Welch's t-test from scratch,
   checked against `scipy.stats.ttest_ind(equal_var=False)`. A chi-square test of independence from
-  scratch, checked against `scipy.stats.chi2_contingency`. Two failure simulations: 20 tests on pure
+  scratch, checked against `scipy.stats.chi2_contingency`.
+- **A6.3b:** Two failure simulations: 20 tests on pure
   noise (count the false positives, then apply Bonferroni and Holm), and an A/B test where you
   "peek" every day and stop at the first p < 0.05.
 - **A6.4:** entropy, cross-entropy and KL divergence from scratch, checked against
@@ -371,7 +377,7 @@ apply a multiple-comparison correction. Write the report in the project README, 
 data *cannot* tell you (confounders, correlation versus causation, sampling bias). P1 needs **≥ 70%**
 on its rubric to pass CP1.
 
-**Prerequisites:** A1.3–A1.4, A5.1–A5.5 (A6.2–A6.3 rely on the CLT from A5.4; A6.4 relies on A5.5).
+**Prerequisites:** A1.3–A1.4, A5.1–A5.5 (A6.2–A6.3b rely on the CLT from A5.4; A6.4 relies on A5.5).
 
 **Resources** (optional)
 
@@ -381,8 +387,8 @@ on its rubric to pass CP1.
 
 **GPU:** no.
 
-**Used later in:** evaluation and cross-validation in B4 (A6.2, A6.3); A/B testing and drift
-detection in J2.2 (A6.3); the cross-entropy loss of every classifier from B2.1 to the LLMs in F
+**Used later in:** evaluation and cross-validation in B4 (A6.2, A6.3a, A6.3b); A/B testing and drift
+detection in J2.2 (A6.3a, A6.3b); the cross-entropy loss of every classifier from B2.1 to the LLMs in F
 (A6.4); the VAE objective in G1.2 (A6.4); the KL penalty in RLHF in H2.3 (A6.4).
 
 ---

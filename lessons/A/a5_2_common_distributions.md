@@ -291,7 +291,7 @@ Matching means and variances is not enough: two different distributions can shar
 compares the whole shape. For discrete samplers it takes the largest gap between the observed
 frequency of each value and scipy's pmf; for continuous ones, the largest gap between the
 **empirical CDF** (the fraction of samples at or below each $x$) and scipy's CDF. That second number is
-the Kolmogorov–Smirnov statistic, which [A6.3](a6_3_hypothesis_testing.md) turns into a test.
+the Kolmogorov–Smirnov statistic, which [A6.3a](a6_3a_hypothesis_tests.md) turns into a test.
 
 ```text
 == with scipy.stats: the samplers match the exact distributions ==

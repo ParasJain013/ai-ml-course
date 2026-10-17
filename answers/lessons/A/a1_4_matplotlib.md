@@ -117,7 +117,7 @@ acceptable for a line, but I want the actual size of the drop in tickets and as 
 volume vary normally? If weekly counts swing by ±60, a 40-ticket drop is within noise. (4)
 **Comparison:** what else changed: a UI release, a pricing change, fewer active users? Tickets per
 active user is a better metric than raw tickets. Ideally the model was rolled out to part of the
-traffic (an A/B test, A6.3), and I would ask for the chart of tickets per user for the treatment and
+traffic (an A/B test, A6.3b), and I would ask for the chart of tickets per user for the treatment and
 control groups over the same weeks. The chart I would ask for: weekly tickets per 1,000 active users
 for 6 months before and 6 weeks after, with the launch date marked, a band showing the normal
 week-to-week range, and, if available, control versus treatment as two labelled lines.
@@ -141,4 +141,4 @@ everything else that happened.
 
 Total 35 pts. Pass ≥ 70% (25 pts). Topic ids to revisit for each lost criterion: exercise 1 →
 A1.4 "Equal-width binning" and "Density"; exercise 2 → A1.4 "The lie factor" and "Figure, Axes";
-exercise 3 → A1.4 "Plots that don't mislead", and later A6.3 (A/B tests).
+exercise 3 → A1.4 "Plots that don't mislead", and later A6.3b (A/B tests).

@@ -264,7 +264,7 @@ correlation of die1 and total: estimate 0.7068   exact 1/sqrt(2) = 0.7071
 Every error is in the third decimal, about the size $\sigma/\sqrt{n} = 1.7078/1000 \approx 0.0017$ predicts for
 the mean. Note `Cov[die1, die2]`: two independent dice give an estimate of $-0.0019$, not 0. A sample
 covariance is never exactly zero; whether $-0.0019$ is "zero" is a question about noise, answered
-properly in [A6.3](a6_3_hypothesis_testing.md).
+properly in [A6.3a](a6_3a_hypothesis_tests.md).
 
 The rules hold on the same draws:
 
@@ -381,5 +381,5 @@ Save your work to `my-work/A/a5_1_random_variables_expectation.md` (or `.py`) an
 **What builds on this:** [A5.2](a5_2_common_distributions.md) (the named distributions and their
 means and variances); [A5.4](a5_4_lln_clt_monte_carlo.md) (why the sample mean converges and how it is
 distributed); [A6.2](a6_2_confidence_intervals_bootstrap.md) (error bars on any estimate);
-[A6.3](a6_3_hypothesis_testing.md) (is a difference real or noise?); [A4.4](a4_4_gradient_descent.md)
+[A6.3a](a6_3a_hypothesis_tests.md) (is a difference real or noise?); [A4.4](a4_4_gradient_descent.md)
 revisited (a mini-batch gradient is a sample mean, so its noise shrinks like $1/\sqrt{B}$).

@@ -2,9 +2,9 @@
   "about": "Every artifact of the course, in generation order. Step 3 of course/PROMPTS.md resumes from the first entry whose status is not done. Statuses: todo, done, verified. week = course week (1-36); part_week = the outline id of that week. depends_on lists manifest ids: a lesson depends on the lessons its syllabus names as prerequisites (other topics in the same week only where the syllabus says so); list order is the teaching order. Paths follow course/STYLE_GUIDE.md section 5.",
   "generated": "2026-10-16",
   "counts": {
-    "lesson": 153,
-    "lab": 153,
-    "answer_key": 153,
+    "lesson": 154,
+    "lab": 154,
+    "answer_key": 154,
     "quiz": 36,
     "quiz_answers": 36,
     "cheatsheet_week": 36,
@@ -13,7 +13,7 @@
     "cheatsheet_part": 11,
     "paper_guide": 10,
     "paper_notes": 10,
-    "total": 622
+    "total": 625
   },
   "artifacts": [
     {
@@ -1365,7 +1365,7 @@
         "A5.4-lesson",
         "A5.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A6.1",
       "level": "Core",
       "rai": false
@@ -1380,7 +1380,7 @@
       "depends_on": [
         "A6.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A6.1",
       "level": "Core",
       "rai": false
@@ -1396,7 +1396,7 @@
         "A6.1-lab",
         "A6.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A6.1",
       "level": "Core",
       "rai": false
@@ -1417,7 +1417,7 @@
         "A5.4-lesson",
         "A5.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A6.2",
       "level": "Core",
       "rai": false
@@ -1432,7 +1432,7 @@
       "depends_on": [
         "A6.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A6.2",
       "level": "Core",
       "rai": false
@@ -1448,18 +1448,18 @@
         "A6.2-lab",
         "A6.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A6.2",
       "level": "Core",
       "rai": false
     },
     {
-      "id": "A6.3-lesson",
+      "id": "A6.3a-lesson",
       "type": "lesson",
-      "path": "lessons/A/a6_3_hypothesis_testing.md",
+      "path": "lessons/A/a6_3a_hypothesis_tests.md",
       "week": 6,
       "part_week": "A6",
-      "title": "Hypothesis testing",
+      "title": "Hypothesis tests: p-values, permutation, t and chi-square",
       "depends_on": [
         "A1.3-lesson",
         "A1.4-lesson",
@@ -1469,39 +1469,92 @@
         "A5.4-lesson",
         "A5.5-lesson"
       ],
-      "status": "todo",
-      "topic": "A6.3",
+      "status": "done",
+      "topic": "A6.3a",
       "level": "Core",
       "rai": false
     },
     {
-      "id": "A6.3-lab",
+      "id": "A6.3a-lab",
       "type": "lab",
-      "path": "labs/A/a6_3_hypothesis_testing.py",
+      "path": "labs/A/a6_3a_hypothesis_tests.py",
       "week": 6,
       "part_week": "A6",
-      "title": "Hypothesis testing",
+      "title": "Hypothesis tests: p-values, permutation, t and chi-square",
       "depends_on": [
-        "A6.3-lesson"
+        "A6.3a-lesson"
       ],
-      "status": "todo",
-      "topic": "A6.3",
+      "status": "done",
+      "topic": "A6.3a",
       "level": "Core",
       "rai": false
     },
     {
-      "id": "A6.3-key",
+      "id": "A6.3a-key",
       "type": "answer_key",
-      "path": "answers/lessons/A/a6_3_hypothesis_testing.md",
+      "path": "answers/lessons/A/a6_3a_hypothesis_tests.md",
       "week": 6,
       "part_week": "A6",
-      "title": "Hypothesis testing",
+      "title": "Hypothesis tests: p-values, permutation, t and chi-square",
       "depends_on": [
-        "A6.3-lab",
-        "A6.3-lesson"
+        "A6.3a-lab",
+        "A6.3a-lesson"
       ],
-      "status": "todo",
-      "topic": "A6.3",
+      "status": "done",
+      "topic": "A6.3a",
+      "level": "Core",
+      "rai": false
+    },
+    {
+      "id": "A6.3b-lesson",
+      "type": "lesson",
+      "path": "lessons/A/a6_3b_multiple_comparisons_ab_tests.md",
+      "week": 6,
+      "part_week": "A6",
+      "title": "Multiple comparisons and A/B tests",
+      "depends_on": [
+        "A1.3-lesson",
+        "A1.4-lesson",
+        "A5.1-lesson",
+        "A5.2-lesson",
+        "A5.3-lesson",
+        "A5.4-lesson",
+        "A5.5-lesson",
+        "A6.3a-lesson"
+      ],
+      "status": "done",
+      "topic": "A6.3b",
+      "level": "Core",
+      "rai": false
+    },
+    {
+      "id": "A6.3b-lab",
+      "type": "lab",
+      "path": "labs/A/a6_3b_multiple_comparisons_ab_tests.py",
+      "week": 6,
+      "part_week": "A6",
+      "title": "Multiple comparisons and A/B tests",
+      "depends_on": [
+        "A6.3b-lesson"
+      ],
+      "status": "done",
+      "topic": "A6.3b",
+      "level": "Core",
+      "rai": false
+    },
+    {
+      "id": "A6.3b-key",
+      "type": "answer_key",
+      "path": "answers/lessons/A/a6_3b_multiple_comparisons_ab_tests.md",
+      "week": 6,
+      "part_week": "A6",
+      "title": "Multiple comparisons and A/B tests",
+      "depends_on": [
+        "A6.3b-lab",
+        "A6.3b-lesson"
+      ],
+      "status": "done",
+      "topic": "A6.3b",
       "level": "Core",
       "rai": false
     },
@@ -1521,7 +1574,7 @@
         "A5.4-lesson",
         "A5.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A6.4",
       "level": "Core",
       "rai": false
@@ -1536,7 +1589,7 @@
       "depends_on": [
         "A6.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A6.4",
       "level": "Core",
       "rai": false
@@ -1552,7 +1605,7 @@
         "A6.4-lab",
         "A6.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A6.4",
       "level": "Core",
       "rai": false
@@ -1573,7 +1626,7 @@
         "A5.4-lesson",
         "A5.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A6.5",
       "level": "Depth",
       "rai": false
@@ -1588,7 +1641,7 @@
       "depends_on": [
         "A6.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A6.5",
       "level": "Depth",
       "rai": false
@@ -1604,7 +1657,7 @@
         "A6.5-lab",
         "A6.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "A6.5",
       "level": "Depth",
       "rai": false
@@ -1619,11 +1672,12 @@
       "depends_on": [
         "A6.1-lesson",
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "A6.4-lesson",
         "A6.5-lesson"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "W06-quiz-answers",
@@ -1635,7 +1689,7 @@
       "depends_on": [
         "W06-quiz"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "W06-cheatsheet",
@@ -1647,11 +1701,12 @@
       "depends_on": [
         "A6.1-lesson",
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "A6.4-lesson",
         "A6.5-lesson"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "PART_A-cheatsheet",
@@ -1668,7 +1723,7 @@
         "W05-cheatsheet",
         "W06-cheatsheet"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "B1.1-lesson",
@@ -2581,7 +2636,8 @@
       "title": "Classification metrics",
       "depends_on": [
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.1-lesson",
         "B1.4-lesson",
         "B2.1-lesson",
@@ -2633,7 +2689,8 @@
       "title": "Regression metrics, and choosing a metric that matches the real cost of errors",
       "depends_on": [
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.1-lesson",
         "B1.4-lesson",
         "B2.1-lesson",
@@ -2685,7 +2742,8 @@
       "title": "Cross-validation (k-fold, stratified, group, time-series) and hyperparameter tuning (grid, random, Bayesian)",
       "depends_on": [
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.1-lesson",
         "B1.4-lesson",
         "B2.1-lesson",
@@ -2737,7 +2795,8 @@
       "title": "Class imbalance",
       "depends_on": [
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.1-lesson",
         "B1.4-lesson",
         "B2.1-lesson",
@@ -2789,7 +2848,8 @@
       "title": "Fairness",
       "depends_on": [
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.1-lesson",
         "B1.4-lesson",
         "B2.1-lesson",
@@ -2841,7 +2901,8 @@
       "title": "The bias–variance trade-off, learning curves and validation curves",
       "depends_on": [
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.1-lesson",
         "B1.4-lesson",
         "B2.1-lesson",
@@ -6964,7 +7025,8 @@
       "title": "LLM APIs",
       "depends_on": [
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.1-lesson",
         "B4.1-lesson",
         "C2.3-lesson",
@@ -7019,7 +7081,8 @@
       "title": "Prompting",
       "depends_on": [
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.1-lesson",
         "B4.1-lesson",
         "C2.3-lesson",
@@ -7075,7 +7138,8 @@
       "title": "Structured output",
       "depends_on": [
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.1-lesson",
         "B4.1-lesson",
         "C2.3-lesson",
@@ -7130,7 +7194,8 @@
       "title": "Tool use (function calling)",
       "depends_on": [
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.1-lesson",
         "B4.1-lesson",
         "C2.3-lesson",
@@ -7291,7 +7356,8 @@
       "depends_on": [
         "A1.5-lesson",
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.4-lesson",
         "B4.1-lesson",
         "B5.1-lesson",
@@ -7351,7 +7417,8 @@
       "depends_on": [
         "A1.5-lesson",
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.4-lesson",
         "B4.1-lesson",
         "B5.1-lesson",
@@ -7411,7 +7478,8 @@
       "depends_on": [
         "A1.5-lesson",
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.4-lesson",
         "B4.1-lesson",
         "B5.1-lesson",
@@ -7472,7 +7540,8 @@
       "depends_on": [
         "A1.5-lesson",
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.4-lesson",
         "B4.1-lesson",
         "B5.1-lesson",
@@ -8605,7 +8674,8 @@
       "depends_on": [
         "A5.2-lesson",
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.2-lesson",
         "B1.4-lesson",
         "B4.1-lesson",
@@ -8677,7 +8747,8 @@
       "depends_on": [
         "A5.2-lesson",
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.2-lesson",
         "B1.4-lesson",
         "B4.1-lesson",
@@ -8749,7 +8820,8 @@
       "depends_on": [
         "A5.2-lesson",
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.2-lesson",
         "B1.4-lesson",
         "B4.1-lesson",
@@ -8821,7 +8893,8 @@
       "depends_on": [
         "A5.2-lesson",
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.2-lesson",
         "B1.4-lesson",
         "B4.1-lesson",
@@ -8893,7 +8966,8 @@
       "depends_on": [
         "A5.2-lesson",
         "A6.2-lesson",
-        "A6.3-lesson",
+        "A6.3a-lesson",
+        "A6.3b-lesson",
         "B1.2-lesson",
         "B1.4-lesson",
         "B4.1-lesson",

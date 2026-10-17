@@ -13,7 +13,7 @@ Gaussian, with a spread that shrinks like $1/\sqrt{n}$, which gives every averag
 they also justify **Monte Carlo estimation**: when a quantity has no formula (the expected reward of a
 policy in [H2.1](../H/h2_1_policy_gradients.md), a dropout model's predictive uncertainty, the value of
 an integral in many dimensions), simulate and average, and report the error bar. Without this you
-cannot say whether "accuracy rose from 91.2% to 91.6%" is real ([A6.3](a6_3_hypothesis_testing.md)).
+cannot say whether "accuracy rose from 91.2% to 91.6%" is real ([A6.3a](a6_3a_hypothesis_tests.md)).
 
 ## Prerequisite check
 
@@ -355,7 +355,7 @@ Save your work to `my-work/A/a5_4_lln_clt_monte_carlo.md` (or `.py`) and ask for
    dimension; integrals are $(b - a)\,\mathbb{E}[f(U)]$.
 
 **What builds on this:** [A6.2](a6_2_confidence_intervals_bootstrap.md) (confidence intervals and the
-bootstrap); [A6.3](a6_3_hypothesis_testing.md) (is a difference bigger than its noise?);
+bootstrap); [A6.3a](a6_3a_hypothesis_tests.md) (is a difference bigger than its noise?);
 [A5.5](a5_5_mle_map.md) (estimators and their spread); [C3.1](../C/c3_1_optimizers.md) (mini-batch
 gradients are Monte Carlo estimates of the full gradient); [H2.1](../H/h2_1_policy_gradients.md) (policy
 gradients estimate expected reward by sampling episodes).
