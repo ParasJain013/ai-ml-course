@@ -133,11 +133,12 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Contrastive learning | Training embeddings so matching pairs are close and non-matching pairs are far apart. | G2.2 |
 | Convexity | A function is convex if every chord lies above it; then any local minimum is global. | A4.5 |
 | Convolution | Sliding a small kernel over an input and taking a weighted sum at each position. | D1.1 |
+| Coordinate descent | Minimizing one parameter at a time with the others held fixed, cycling until nothing changes; how the lasso is fitted. | B2.2 |
 | Copy-on-write | pandas 3 behaviour: every selection acts as a new object, so changing it never changes the original. | A1.3 |
 | Correlation | A standardized measure (−1 to 1) of how two variables move together; not evidence of causation. | A6.1 |
 | Correlation matrix | The `(d, d)` matrix of pairwise correlations, $R_{jk} = S_{jk}/(s_j s_k)$: the covariance matrix of the standardized features. | A3.3 |
 | Cosine decay | A learning-rate schedule that falls along a half cosine curve. | C3.2 |
-| Cosine distance | $1 - \cos(\mathbf{a}, \mathbf{b})$; smaller means more similar. | A1.5 |
+| Cosine distance | $1 - \cos(\mathbf{a}, \mathbf{b})$; smaller means more similar. | A1.5, B2.3 |
 | Cosine similarity | The cosine of the angle between two vectors: $\mathbf{a}\cdot\mathbf{b} / (\lVert\mathbf{a}\rVert\,\lVert\mathbf{b}\rVert)$. | A1.5 |
 | Covariance | $\mathbb{E}[(X - \mu_X)(Y - \mu_Y)]$: how two variables vary together. | A5.1 |
 | Covariance matrix | The `(d, d)` matrix of pairwise covariances between features; symmetric and positive semi-definite. | A3.3 |
@@ -171,6 +172,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | ddof | "Delta degrees of freedom": the divisor is $n - $ `ddof`; `np.var` defaults to 0, `np.cov` and pandas to 1. | A3.3 |
 | DDP | Distributed Data Parallel: PyTorch's multi-process data-parallel training. | C4.4 |
 | DDPM | Denoising Diffusion Probabilistic Model: a diffusion model trained to predict the noise added at each step. | G1.4 |
+| Decision boundary | The set of inputs where a classifier switches class; for logistic regression the hyperplane $\mathbf{w}^\top\mathbf{x} + b = 0$ ($p = 0.5$). | B2.1 |
 | Decision tree | A model that splits the data by feature thresholds into leaves with simple predictions. | B3.1 |
 | Decoder-only model | A transformer with causal self-attention that predicts the next token (GPT). | F2.1 |
 | Decoding | Turning a language model's next-token distributions into text. | F2.4 |
@@ -191,6 +193,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Dimensionality reduction | Mapping data to fewer dimensions while keeping its structure (PCA, t-SNE, UMAP). | B5.4 |
 | Directional derivative | The rate of change of $f$ when moving from $\mathbf{x}$ along a unit vector $\mathbf{u}$: $\nabla f \cdot \mathbf{u}$. | A4.2 |
 | Discount factor | $\gamma \in [0, 1]$: how much an RL agent values future rewards relative to immediate ones. | H1.1 |
+| Discriminative model | A model of $p(y \mid \mathbf{x})$ directly, fitted to predict the label (logistic regression, SVMs). | B2.4 |
 | Distributed training | Training one model across several devices or machines. | C4.4 |
 | Docker image | A packaged, versioned file system and start command that runs the same everywhere. | J2.4 |
 | Dot product | $\mathbf{a}\cdot\mathbf{b} = \sum_j a_j b_j$. | A1.5 |
@@ -198,6 +201,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | DQN | Deep Q-Network: Q-learning with a neural network, a replay buffer and a target network. | H1.4 |
 | Dropout | Randomly zeroing activations during training so the network cannot rely on any one unit. | C3.5 |
 | dtype | The element type of an array or column, such as `float64`, `int64` or `str`. | A1.2 |
+| Dual problem (SVM) | The SVM rewritten in terms of one multiplier $\alpha_i$ per training point; it uses the data only through dot products, which enables kernels. | B2.5 |
 | Dummy variable trap | One-hot columns for every category plus an intercept column: the columns are linearly dependent. | A2.3, B1.3 |
 | Dynamic programming (RL) | Computing exact values or policies from a known model of the environment by repeated Bellman updates. | H1.2 |
 
@@ -224,7 +228,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Epoch | One full pass of training over every example in the training set. | A4.4 |
 | Epsilon-greedy | Exploring by taking a random action with probability $\epsilon$, otherwise the best-known action. | H1.3 |
 | Equalized odds | A fairness criterion: true-positive and false-positive rates are equal across groups. `[RAI]` | B4.6 |
-| Euclidean distance | The straight-line distance between two points, $\lVert\mathbf{a} - \mathbf{b}\rVert_2$. | A1.2, A1.5 |
+| Euclidean distance | The straight-line distance between two points, $\lVert\mathbf{a} - \mathbf{b}\rVert_2$. | A1.2, A1.5, B2.3 |
 | Evals | Systematic tests that score an ML or LLM system against a fixed set of cases. | I2.4, I3.3 |
 | Evidence (Bayes) | $P(B)$, the normalizer in Bayes' theorem, computed with the law of total probability. | A5.3 |
 | Exact test | A test that computes the p-value by listing every possible relabelling instead of sampling or approximating. | A6.3a |
@@ -278,9 +282,11 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Gaussian (normal) distribution | The bell-shaped distribution $\mathcal{N}(\mu, \sigma^2)$. | A5.2 |
 | Gaussian elimination | Solving a linear system with row operations that clear the entries below the diagonal, then back substitution. | A2.3 |
 | Gaussian mixture model (GMM) | A density modelled as a weighted sum of Gaussians; soft clustering. | B5.3 |
+| Gaussian naive Bayes | Naive Bayes for continuous features: one normal distribution per class and feature. | B2.4 |
 | Gauss–Jordan elimination | Inverting a matrix by row-reducing $[\mathbf{M} \mid \mathbf{I}]$ to $[\mathbf{I} \mid \mathbf{M}^{-1}]$. | A2.2 |
 | Generalization | How well a model performs on new data from the same distribution, not just its training data. | B1.1 |
 | Generalization gap | The difference between a model's error on new data and on its training data. | B1.1, B4.5 |
+| Generative model | A model of how each class produces the data, $p(\mathbf{x} \mid y)\,p(y)$, turned into $p(y \mid \mathbf{x})$ by Bayes' theorem (naive Bayes, GMMs); in Part G, a model that samples new data. | B2.4, G1.1 |
 | Geometric mean | $\exp$ of the mean of $\log x$; for data whose log is symmetric it sits near the median. | A6.1 |
 | Gibbs' inequality | $D_{\mathrm{KL}}(p \,\|\, q) \ge 0$, with equality only when $q = p$; so $H(p, q) \ge H(p)$. | A6.4 |
 | Golden set | A curated, versioned set of inputs with known good outputs used to evaluate a system. | I2.4 |
@@ -384,7 +390,8 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Lagrange multiplier | A variable that turns a constrained optimization into an unconstrained one at a stationary point. | A4.5 |
 | Lag feature | A past value of a time series used as a feature for predicting a later value. | B6.3 |
 | Lagrangian | $f(\mathbf{x}) - \lambda(h(\mathbf{x}) - c)$: the objective plus multiplier times constraint, whose stationary points solve a constrained problem. | A4.5 |
-| Laplace distribution | Density $\frac{1}{2b}e^{-\lvert x - \mu\rvert/b}$: sharper peak and heavier tails than a Gaussian; its NLL is the absolute error. | A5.5 |
+| Laplace distribution | Density $\frac{1}{2b}e^{-\lvert x - \mu\rvert/b}$: sharper peak and heavier tails than a Gaussian; its NLL is the absolute error. | A5.5, B2.2 |
+| Laplace smoothing | Adding a pseudo-count $\alpha$ (usually 1) to every count so no estimated probability is zero: $(N_{cw} + \alpha)/(N_c + \alpha V)$. | B2.4 |
 | Latency | The time from a request to its response; reported as percentiles (p50, p95). | I4.3 |
 | Latent diffusion | Diffusion run in an autoencoder's latent space instead of pixel space. | G2.4 |
 | Law of large numbers | The sample mean converges to the expectation as the sample grows. | A5.4 |
@@ -409,6 +416,8 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | LLM-as-judge | Using an LLM with a rubric to grade outputs; it has position, length and self-preference biases. | I2.4 |
 | Local derivative | The derivative of one node's output with respect to its own inputs; backprop multiplies local derivatives along paths. | A4.3 |
 | Lockfile | A file recording the exact resolved version of every dependency (here `uv.lock`). | A1.1 |
+| Log-odds (logit) | $\log\frac{p}{1 - p}$; the linear score of a logistic regression. The inverse of the sigmoid. | B2.1 |
+| Log-sum-exp | Computing $\log\sum_i e^{s_i}$ stably by subtracting $\max_i s_i$ first; used to normalize log-probabilities and in softmax. | B2.4, C1.4 |
 | Logistic regression | A linear model whose output goes through a sigmoid to give a probability. | B2.1 |
 | Log-loss | Binary cross-entropy: $-[y \log p + (1 - y)\log(1 - p)]$. | B2.1, A5.5 |
 | Long context | Handling inputs of many thousands of tokens, limited by attention's cost and the KV cache. | F2.5 |
@@ -425,6 +434,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 |---|---|---|
 | Machine epsilon | The gap between 1 and the next float: $\varepsilon \approx 2.2 \times 10^{-16}$ in float64, $1.2 \times 10^{-7}$ in float32; the relative rounding error per operation. | A3.4, A4.1 |
 | Mahalanobis distance | $\sqrt{(\mathbf{x} - \boldsymbol{\mu})^\top\boldsymbol{\Sigma}^{-1}(\mathbf{x} - \boldsymbol{\mu})}$: distance from the mean in standard deviations along each eigen-direction of $\boldsymbol{\Sigma}$. | A5.2 |
+| Manhattan distance | The L1 distance $\sum_j \lvert u_j - v_j\rvert$: distance along a city grid. | B2.3 |
 | Mann–Whitney U test | A rank-based test of whether values in one group tend to be larger than in the other. | A6.3a |
 | mAP | Mean average precision: the detection metric averaging precision over recall levels, classes and IoU thresholds. | D2.3 |
 | MAP estimation | Maximum a posteriori: choosing parameters that maximize likelihood times prior. | A5.5 |
@@ -464,6 +474,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Multi-agent system | Several LLM agents with different roles coordinated by an orchestrator or by messages. | I3.4 |
 | Multi-head attention | Running several attention operations in parallel on different learned projections and concatenating them. | F1.1 |
 | Multi-query attention (MQA) | Attention where all query heads share one key head and one value head. | F2.5 |
+| Multinomial naive Bayes | Naive Bayes for count features (word counts): each class is a bag of words with its own word probabilities. | B2.4 |
 | Multiple comparisons | Running many tests inflates the chance of false positives unless corrected. | A6.3b |
 | Multivariate Gaussian | $\mathcal{N}(\boldsymbol{\mu}, \boldsymbol{\Sigma})$: a Gaussian over vectors, with mean `(d,)` and covariance `(d, d)`. | A5.2 |
 | Mutual information | $I(X; Y) = H(Y) - H(Y \mid X)$: how much knowing $X$ reduces uncertainty about $Y$; 0 only under independence. | A6.4, B3.1 |
@@ -497,6 +508,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Object detection | Finding each object in an image as a class label and a bounding box. | D2.3 |
 | Observability | Tracing, logging and metrics that let you see what a system did and why. | I4.5 |
 | Odds | $P/(1 - P)$: probability 0.2 is odds 0.25, "1 to 4". | A5.3 |
+| Odds ratio | $e^{w_j}$ in logistic regression: the factor by which the odds multiply when feature $j$ rises by one unit, others fixed. | B2.1 |
 | One-cycle schedule | A learning rate that rises then falls over one cycle of training. | C3.2 |
 | One-hot encoding | Representing a category as a vector with a 1 in its position and 0 elsewhere. | B1.3 |
 | One-sided test | A test that counts only deviations in one pre-chosen direction; a two-sided test counts both. | A6.3a |
@@ -586,6 +598,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Quantile | $Q(p)$: the value below which a share $p$ of the data lies; the median is $Q(0.5)$. | A6.1 |
 | Quantization | Storing weights (and sometimes activations) in fewer bits to save memory and time. | F3.4, J2.1 |
 | Quasi-identifier | A column that is harmless alone but identifies people in combination with others (birth date, postcode, sex). | B1.2 |
+| Quasi-Newton method | An optimizer that builds an estimate of the curvature from successive gradients to take better-scaled steps (lbfgs, scikit-learn's default for logistic regression). | B2.1 |
 
 ## R
 
@@ -598,6 +611,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Rank | The number of linearly independent rows or columns of a matrix. | A2.3 |
 | Rate limit | A provider's cap on requests or tokens per minute. | I1.1 |
 | Rayleigh quotient | $\mathbf{x}^\top\mathbf{A}\mathbf{x}/\mathbf{x}^\top\mathbf{x}$: the eigenvalue estimate for an approximate eigenvector $\mathbf{x}$. | A3.1 |
+| RBF kernel | The Gaussian kernel $e^{-\gamma\lVert\mathbf{x} - \mathbf{z}\rVert^2}$: a similarity that is 1 for identical points and decays with distance at a rate set by $\gamma$. | B2.5 |
 | Recall | Of the true positives, the share the model finds. | B4.1 |
 | Recall@k | The share of relevant items that appear in the top $k$ results. | I2.4 |
 | Receptive field | The region of the input that affects one unit of a feature map. | D1.2 |
@@ -674,6 +688,8 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Singular value, singular vector | In $\mathbf{A}\mathbf{v}_j = \sigma_j\mathbf{u}_j$: $\sigma_j \ge 0$ is how much $\mathbf{A}$ stretches the input direction $\mathbf{v}_j$ into the output direction $\mathbf{u}_j$. | A3.2 |
 | Skewness | $\mathbb{E}[((X - \mu)/\sigma)^3]$: lopsidedness; 0 if symmetric, positive with a long right tail. | A5.4, A6.1 |
 | Skip-gram | word2vec's objective: predict context words from the centre word. | E1.3 |
+| Soft margin | An SVM margin that allows violations, each paid for through the hinge loss at a price set by $C$. | B2.5 |
+| Soft-thresholding | $S(a, t) = \operatorname{sign}(a)\max(\lvert a\rvert - t, 0)$: shrink towards zero by $t$ and stop at zero; the lasso's coordinate update. | B2.2 |
 | Softmax | $\operatorname{softmax}(\mathbf{z})_k = e^{z_k} / \sum_j e^{z_j}$: turns logits into probabilities. | C1.4 |
 | Spearman correlation | $\rho$: Pearson correlation of the ranks; measures monotonic trend and resists outliers. | A6.1 |
 | Specification gaming | Satisfying the literal objective in an unintended way; the general form of reward hacking. `[RAI]` | H2.4 |
@@ -692,7 +708,9 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Stride | How many positions a convolution or pooling window moves at each step. | D1.1 |
 | Structured output | Constraining or validating an LLM's output to match a schema. | I1.3 |
 | Sturges' rule | A histogram bin count of $\lceil \log_2 n \rceil + 1$. | A1.4 |
+| Sub-gradient | A slope that stays below a convex function at a kink (any value between the left and right derivatives); used to minimize the hinge loss or L1 penalty. | B2.5 |
 | Sum of squared residuals | $\sum_i (y_i - \hat{y}_i)^2$, the quantity least squares minimizes. | A2.4 |
+| Support vector | A training point on or inside an SVM's margin; only these have non-zero dual weights and determine the boundary. | B2.5 |
 | Support vector machine (SVM) | A maximum-margin classifier, optionally with kernels. | B2.5 |
 | Surprisal | $-\log p(x)$: the surprise of an outcome; it adds over independent events. | A6.4 |
 | SVD | Singular value decomposition: $\mathbf{A} = \mathbf{U}\boldsymbol{\Sigma}\mathbf{V}^\top$, rotate, scale, rotate. | A3.2 |
