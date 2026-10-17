@@ -111,10 +111,12 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Class imbalance | One class is much rarer than the others, so accuracy and default thresholds mislead. | B4.4 |
 | Class weights | Weighting the loss so errors on rare classes cost more. | B4.4 |
 | Classifier-free guidance | Steering a diffusion model by mixing its conditional and unconditional predictions. | G2.4 |
+| Cleaning log | A record of every data-cleaning decision, its reason and how many rows it touched. | B1.2 |
 | CLIP | A model that trains image and text encoders contrastively so matching pairs have similar embeddings. | G2.2 |
 | Cohen's d | Difference in means divided by the pooled standard deviation; a standardized effect size. | A6.3a |
 | Collaborative filtering | Recommending items from the behaviour of similar users or items, without item content. | B6.1 |
 | Column space | The set of all vectors $\mathbf{A}\mathbf{x}$: every output a matrix can reach. | A2.3 |
+| ColumnTransformer | A scikit-learn step that applies a different transformer to each group of columns and joins the results. | B1.3 |
 | Commutative | Describes an operation whose order does not matter; matrix multiplication is not commutative. | A2.2 |
 | Complementary slackness | The KKT condition $\mu g(\mathbf{x}) = 0$: a multiplier is zero unless its inequality constraint is active. | A4.5 |
 | Computational graph | A graph of operations whose edges carry values forward and gradients backward. | A4.3 |
@@ -148,6 +150,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Cumulative distribution function (CDF) | $F(x) = P(X \le x)$; climbs from 0 to 1, in steps for discrete variables. | A5.2 |
 | Curse of dimensionality | In high dimensions points are all far apart and distances lose contrast. | B2.3 |
 | CutMix | Augmentation that pastes a patch of one image into another and mixes the labels by area. | D2.2 |
+| Cyclic encoding | Encoding a periodic value (hour, month) as the sine and cosine of an angle, so the ends of the cycle are neighbours. | B1.3 |
 
 ## D
 
@@ -215,6 +218,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | EM algorithm | Expectation–maximization: alternating soft assignments and parameter updates to fit latent-variable models. | B5.3 |
 | Embedding | A dense vector that represents an item (word, document, image) so similar items are close. | E1.3, I2.1 |
 | Empirical CDF | The fraction of observed values at or below each $x$; an estimate of the CDF. | A5.2 |
+| Empirical risk | The average loss of a model on a given set of rows; an estimate of the true risk. | B1.1 |
 | Encoder–decoder | An architecture where an encoder reads the input and a decoder generates the output conditioned on it. | E2.3, F2.1 |
 | Entropy | $H(p) = -\sum_x p(x) \log p(x)$: the average surprise of a distribution. | A6.4 |
 | Epoch | One full pass of training over every example in the training set. | A4.4 |
@@ -276,6 +280,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Gaussian mixture model (GMM) | A density modelled as a weighted sum of Gaussians; soft clustering. | B5.3 |
 | Gauss–Jordan elimination | Inverting a matrix by row-reducing $[\mathbf{M} \mid \mathbf{I}]$ to $[\mathbf{I} \mid \mathbf{M}^{-1}]$. | A2.2 |
 | Generalization | How well a model performs on new data from the same distribution, not just its training data. | B1.1 |
+| Generalization gap | The difference between a model's error on new data and on its training data. | B1.1, B4.5 |
 | Geometric mean | $\exp$ of the mean of $\log x$; for data whose log is symmetric it sits near the median. | A6.1 |
 | Gibbs' inequality | $D_{\mathrm{KL}}(p \,\|\, q) \ge 0$, with equality only when $q = p$; so $H(p, q) \ge H(p)$. | A6.4 |
 | Golden set | A curated, versioned set of inputs with known good outputs used to evaluate a system. | I2.4 |
@@ -325,6 +330,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Identity matrix | $\mathbf{I}$: ones on the diagonal, zeros elsewhere; $\mathbf{A}\mathbf{I} = \mathbf{A}$. | A2.2 |
 | i.i.d. | Independent and identically distributed: draws that do not influence each other and share one distribution. | A5.4 |
 | Implicit feedback | User signals such as clicks and views, which show interest but not dislike. | B6.1 |
+| Imputation | Filling missing values with an estimate (mean, median, a model), learned on training rows only. | B1.2 |
 | Independence (random variables) | $p(x, y) = p(x)\,p(y)$ for all values: knowing one tells nothing about the other; implies zero covariance, not the reverse. | A5.1 |
 | Index (pandas) | The row labels of a DataFrame or Series; arithmetic aligns rows by these labels. | A1.3 |
 | Indirect prompt injection | Malicious instructions hidden in content the model reads (a web page, an email, a tool result). `[RAI]` | I4.2 |
@@ -333,6 +339,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Inner join | A join that keeps only rows whose key appears in both tables. | A1.3 |
 | Instance segmentation | Labelling each pixel with the object instance it belongs to. | D2.4 |
 | Instruction tuning (SFT) | Supervised fine-tuning on instruction–response pairs so a base model follows instructions. | F3.1 |
+| Interaction feature | A feature built from two others (often their product) so the effect of one can depend on the other. | B1.3 |
 | Interpretability | Methods that explain what a model relies on and why it made a prediction. | B3.4 |
 | Interquartile range (IQR) | $Q(0.75) - Q(0.25)$: the width of the middle half of the data; a robust spread. | A6.1 |
 | Inverse matrix | $\mathbf{A}^{-1}$ with $\mathbf{A}\mathbf{A}^{-1} = \mathbf{I}$; exists only for square full-rank matrices. | A2.2 |
@@ -355,6 +362,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 
 | Term | Definition | Taught in |
 |---|---|---|
+| k-anonymity | A table property: every combination of quasi-identifier values is shared by at least k rows. | B1.2 |
 | k-fold cross-validation | Splitting data into $k$ folds and validating on each in turn. | B4.3 |
 | k-means | Clustering that alternates assigning points to the nearest centroid and recomputing centroids. | B5.1 |
 | k-nearest neighbours (kNN) | Predicting from the labels of the $k$ closest training examples. | B2.3 |
@@ -436,6 +444,8 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Memory (agent) | State an agent carries across steps or sessions: the conversation, notes or retrieved facts. | I3.1 |
 | Mini-batch | A small random subset of the training data used to estimate the gradient for one step. | A4.4 |
 | Minimum detectable effect (MDE) | The smallest true effect an experiment of a given size detects with the planned power. | A6.3b |
+| Minimum-norm solution | Of all least-squares solutions of an underdetermined or collinear system, the one with the smallest length; what `lstsq`, the pseudo-inverse and gradient descent from zero return. | B1.5, A2.4 |
+| Missing indicator | A 0/1 column marking where a value was missing, so a model can use the fact of missingness. | B1.2 |
 | Missing values | Absent entries in data; handled by dropping, imputing or flagging. | A1.3, B1.2 |
 | Mixed precision | Training with 16-bit floats for most operations and 32-bit where precision matters. | C4.2 |
 | Mixup | Augmentation that blends two images and their labels with the same weight. | D2.2 |
@@ -520,7 +530,9 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Prior | $P(\text{hypothesis})$ or $p(\boldsymbol{\theta})$: the belief before seeing the evidence. | A5.3, A5.5, A6.5 |
 | Probability density function (pdf) | Probability per unit of $x$ for a continuous variable; probabilities are areas under it, and it can exceed 1. | A5.2 |
 | Probability mass function (pmf) | $P(X = x)$ for each value of a discrete variable; the values add up to 1. | A5.2 |
+| Problem statement | The framing of an ML task: unit of prediction, target, prediction time, action, metric and baseline. | B1.1 |
 | Prosecutor's fallacy | Mistaking $P(\text{evidence} \mid \text{hypothesis})$ for $P(\text{hypothesis} \mid \text{evidence})$. | A5.3 |
+| Pseudonymization | Replacing an identifier with a token (for example a keyed hash, HMAC) so records can be joined but not directly identified; still personal data. | B1.2 |
 | p-value | The probability of data at least as extreme as observed if the null hypothesis were true. | A6.3a |
 | Padding (convolution) | Adding a border of zeros around the input to control the output size. | D1.1 |
 | Partial dependence | The average prediction as one feature varies, with the others left as observed. | B3.4 |
@@ -573,6 +585,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Quadratic form | $\mathbf{w}^\top\mathbf{A}\mathbf{w}$, a scalar; with a covariance matrix it is the variance of the data projected on $\mathbf{w}$. | A3.3, A4.2 |
 | Quantile | $Q(p)$: the value below which a share $p$ of the data lies; the median is $Q(0.5)$. | A6.1 |
 | Quantization | Storing weights (and sometimes activations) in fewer bits to save memory and time. | F3.4, J2.1 |
+| Quasi-identifier | A column that is harmless alone but identifies people in combination with others (birth date, postcode, sex). | B1.2 |
 
 ## R
 
@@ -643,6 +656,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Semantic search | Finding documents by meaning through embeddings, not exact words. | I2.1 |
 | Semantic segmentation | Labelling each pixel with a class, without separating instances. | D2.4 |
 | Sensitivity | $P(\text{positive} \mid \text{condition present})$, the true positive rate; the same as recall. | A5.3, B4.1 |
+| Sentinel value | A placeholder such as −999, 0 or 1900-01-01 that a source system writes for "unknown"; a disguised missing value. | B1.2 |
 | seq2seq | A model that maps an input sequence to an output sequence with an encoder and a decoder. | E2.3 |
 | Series | One pandas column: a 1-D array with an index. | A1.3 |
 | SGD | Stochastic gradient descent: gradient descent using a random mini-batch per step. | A4.4, C3.1 |
@@ -672,6 +686,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Standardization | Shifting and scaling a feature to mean 0 and standard deviation 1. | A1.2, B1.3 |
 | Steady state (Markov chain) | A probability vector $\boldsymbol{\pi}$ the transition matrix leaves unchanged: an eigenvector with eigenvalue 1. | A3.1 |
 | Stratified k-fold | k-fold cross-validation that keeps the class proportions in every fold. | B4.3 |
+| Stratified split | A train/validation/test split made within each class, so every set keeps the class proportions. | B1.1 |
 | Streaming | Sending a response token by token as it is generated. | I1.1, I4.3 |
 | Strictly convex | Convex with chords strictly above the graph between distinct points; has at most one minimizer. | A4.5 |
 | Stride | How many positions a convolution or pooling window moves at each step. | D1.1 |
@@ -690,6 +705,12 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Term | Definition | Taught in |
 |---|---|---|
 | t distribution | The distribution of $(\bar{X} - \mu)/(s/\sqrt{n})$ for Gaussian data, with heavier tails than the normal; gives the t interval. | A6.2 |
+| Target encoding | Replacing a category by the mean target of its rows; must be computed out of fold, or it leaks the label. | B1.4 |
+| Test set | Rows used once, at the end, to report the chosen model's performance (also holdout set). | B1.1 |
+| Training set | Rows a model's parameters are fitted on. | B1.1 |
+| Train/serve skew | A feature computed differently in training and in production, so the model sees different inputs live. | B1.3, J2.2 |
+| Train/test contamination | Leakage through a fitting step (scaler, selector, encoder) that learned from the evaluation rows. | B1.4 |
+| True risk | A model's expected loss on new data from the same source; estimated by the empirical risk on held-out rows. | B1.1 |
 | t-SNE | A non-linear 2-D embedding that preserves local neighbourhoods; distances between clusters mean little. | B5.5 |
 | t-test | A test of whether two means differ, using the t distribution (Welch's version allows unequal variances). | A6.3a |
 | T5 | An encoder–decoder transformer that casts every task as text to text. | F2.1 |
@@ -741,6 +762,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 |---|---|---|
 | VAE | Variational autoencoder: an autoencoder whose latent space is a distribution, trained on the ELBO. | G1.2 |
 | Validation curve | Training and validation score plotted against one hyperparameter. | B4.5 |
+| Validation set | Held-out rows used to compare models and settings; optimistic after many comparisons. | B1.1 |
 | Value function | The expected return from a state, $V^\pi(s)$, or from a state and action, $Q^\pi(s, a)$. | H1.1 |
 | Value iteration | Repeatedly applying the Bellman optimality update until values converge. | H1.2 |
 | Vanishing gradients | Gradients that shrink exponentially through layers or time steps, so early parts stop learning. | C3.3, E2.1 |
