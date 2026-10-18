@@ -227,7 +227,7 @@ adjusted Rand index of the hard assignments against the true components: 0.9308
 points whose largest responsibility is below 0.9: 86 of 1200 (7.2%)
 ```
 
-The **adjusted Rand index** compares two groupings of the same points while ignoring the label names: 1 means identical, 0 means no better than chance. Taking each point's most likely component
+The **adjusted Rand index** ([B5.1](b5_1_k_means.md)) compares two groupings of the same points while ignoring the label names: 1 means identical, 0 means no better than chance. Taking each point's most likely component
 ("hard" assignment) agrees with the true components at 0.93; the misses are where the tilted cluster's tip touches the round one. That overlap is visible in the responsibilities: 86 points (7%) have no
 component above 0.9. Those are exactly the customers you would report as "between segments", which k-means cannot do.
 

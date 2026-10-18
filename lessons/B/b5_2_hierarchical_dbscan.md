@@ -110,8 +110,8 @@ $\varepsilon$. So compute that **k-distance** for every point and sort it. Most 
 where the sparse points start. An $\varepsilon$ just above the bend makes most points core and leaves the stragglers as noise. For $m$, a common start is
 $m = 2d$ (VERIFY as of 2026-10: a heuristic from the DBSCAN literature, not a theorem), with larger $m$ for noisier data.
 
-**Scoring a clustering against known labels.** On toy data we know the true groups, so the lab scores each method with the **adjusted Rand index** (ARI):
-the share of point *pairs* on which two labellings agree (same group in both, or different groups in both), corrected so that random labels score about 0 and
+**Scoring a clustering against known labels.** On toy data we know the true groups, so the lab scores each method with the **adjusted Rand index** (ARI, derived in [B5.1](b5_1_k_means.md)):
+in short, the share of point *pairs* on which two labellings agree (same group in both, or different groups in both), corrected so that random labels score about 0 and
 identical partitions score 1, whatever the label numbers are. It is for checking methods on data with known structure; on real data you have no labels, which is
 the whole point of clustering.
 
