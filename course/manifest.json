@@ -3009,7 +3009,7 @@
         "B3.1-lesson",
         "B4.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.1",
       "level": "Core",
       "rai": false
@@ -3024,7 +3024,7 @@
       "depends_on": [
         "B5.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.1",
       "level": "Core",
       "rai": false
@@ -3040,7 +3040,7 @@
         "B5.1-lab",
         "B5.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.1",
       "level": "Core",
       "rai": false
@@ -3063,7 +3063,7 @@
         "B3.1-lesson",
         "B4.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.2",
       "level": "Depth",
       "rai": false
@@ -3078,7 +3078,7 @@
       "depends_on": [
         "B5.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.2",
       "level": "Depth",
       "rai": false
@@ -3094,7 +3094,7 @@
         "B5.2-lab",
         "B5.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.2",
       "level": "Depth",
       "rai": false
@@ -3117,7 +3117,7 @@
         "B3.1-lesson",
         "B4.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.3",
       "level": "Depth",
       "rai": false
@@ -3132,7 +3132,7 @@
       "depends_on": [
         "B5.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.3",
       "level": "Depth",
       "rai": false
@@ -3148,7 +3148,7 @@
         "B5.3-lab",
         "B5.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.3",
       "level": "Depth",
       "rai": false
@@ -3171,7 +3171,7 @@
         "B3.1-lesson",
         "B4.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.4",
       "level": "Core",
       "rai": false
@@ -3186,7 +3186,7 @@
       "depends_on": [
         "B5.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.4",
       "level": "Core",
       "rai": false
@@ -3202,7 +3202,7 @@
         "B5.4-lab",
         "B5.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.4",
       "level": "Core",
       "rai": false
@@ -3225,7 +3225,7 @@
         "B3.1-lesson",
         "B4.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.5",
       "level": "Core",
       "rai": false
@@ -3240,7 +3240,7 @@
       "depends_on": [
         "B5.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.5",
       "level": "Core",
       "rai": false
@@ -3256,7 +3256,7 @@
         "B5.5-lab",
         "B5.5-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.5",
       "level": "Core",
       "rai": false
@@ -3279,7 +3279,7 @@
         "B3.1-lesson",
         "B4.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.6",
       "level": "Core",
       "rai": false
@@ -3294,7 +3294,7 @@
       "depends_on": [
         "B5.6-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.6",
       "level": "Core",
       "rai": false
@@ -3310,7 +3310,7 @@
         "B5.6-lab",
         "B5.6-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B5.6",
       "level": "Core",
       "rai": false
@@ -3331,7 +3331,7 @@
         "B5.6-lesson",
         "P2-brief"
       ],
-      "status": "todo",
+      "status": "done",
       "project": "P3",
       "due_week": 12
     },
@@ -3345,7 +3345,7 @@
       "depends_on": [
         "P3-brief"
       ],
-      "status": "todo",
+      "status": "done",
       "project": "P3"
     },
     {
@@ -3363,7 +3363,7 @@
         "B5.5-lesson",
         "B5.6-lesson"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "W11-quiz-answers",
@@ -3375,7 +3375,7 @@
       "depends_on": [
         "W11-quiz"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "W11-cheatsheet",
@@ -3392,7 +3392,7 @@
         "B5.5-lesson",
         "B5.6-lesson"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "B6.1-lesson",
