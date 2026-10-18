@@ -19,9 +19,11 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Actor–critic | An RL method with a policy (actor) and a learned value function (critic) that reduces the variance of policy gradients. | H2.2 |
 | Adam | An optimizer that scales each parameter's step by running estimates of the gradient's mean and squared magnitude. | C3.1 |
 | AdamW | Adam with weight decay applied directly to the weights instead of through the gradient. | C3.1 |
+| Adjusted Rand index (ARI) | Agreement between two clusterings of the same points, counted over pairs and corrected for chance: 1 = identical up to relabelling, about 0 = random. | B5.1, B5.2 |
 | Advantage | How much better an action is than the policy's average in that state: $A(s, a) = Q(s, a) - V(s)$. | H2.2 |
 | Affine map | A linear map followed by a shift, $f(\mathbf{x}) = \mathbf{A}\mathbf{x} + \mathbf{b}$; a dense layer before its activation. | A2.1, C1.1 |
 | Agent (LLM) | An LLM in a loop that chooses tools, observes their results and decides the next step until a task is done. | I3.1 |
+| Alert budget | The number of alerts reviewers can handle per period; it sets the threshold of an anomaly detector. | B5.6 |
 | Alerting | Automatically notifying a person when a monitored metric crosses a threshold. | J2.2 |
 | Alignment | Making a model's behaviour match what its developers and users intend, including refusing harmful requests. | F3.3 |
 | Alternative hypothesis | $H_1$: the claim a test looks for evidence of, such as "the two means differ". | A6.3a |
@@ -70,12 +72,14 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Bias (statistical) | The systematic gap between an estimator's or model's expected value and the truth. | B4.5 |
 | Bias (fairness) | Systematically different model behaviour or errors across groups of people. | B4.6 |
 | Bias–variance trade-off | Test error splits into bias (too simple), variance (too sensitive to the training set) and noise. | B4.5 |
+| BIC | Bayesian information criterion, $-2\ell(\hat{\boldsymbol{\theta}}) + p\log n$: log-likelihood penalized by the number of parameters $p$; lower is better; used to choose $K$ for a GMM. | B5.3 |
 | Binomial distribution | The number of successes in $n$ independent Bernoulli trials. | A5.2 |
 | Bit | The unit of information with $\log_2$: the surprise of one fair coin flip. | A6.4 |
 | Block bootstrap | Resampling blocks of consecutive rows (or whole users) so that correlated data keeps its dependence. | A6.2 |
 | Bonferroni correction | Testing each of $m$ hypotheses at $\alpha / m$ to control the chance of any false positive. | A6.3b |
 | Boolean mask | An array of True/False values that selects the matching entries of an array or rows of a DataFrame. | A1.2, A1.3 |
 | Bootstrap | Estimating the uncertainty of a statistic by recomputing it on resamples drawn with replacement. | A6.2, B3.2 |
+| Border point | In DBSCAN, a non-core point within $\varepsilon$ of a core point; it joins that core's cluster. | B5.2 |
 | Box–Muller transform | Turning two uniform numbers into two independent standard normals through a random radius $\sqrt{-2\log u_1}$ and angle $2\pi u_2$. | A5.2 |
 | BPE (byte-pair encoding) | A subword tokenizer that repeatedly merges the most frequent adjacent pair of symbols. | F1.3 |
 | Breakdown point | The share of values that can be replaced by garbage before a statistic can be pushed arbitrarily far: 0 for the mean, 50% for the median. | A6.1 |
@@ -99,8 +103,10 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Centering | Subtracting each column's mean so every feature has mean 0; required before computing covariance or PCA. | A3.3 |
 | Central difference | $(f(x + h) - f(x - h)) / 2h$: a derivative estimate whose truncation error shrinks like $h^2$. | A4.1 |
 | Central limit theorem (CLT) | The mean of many independent draws is approximately Gaussian, whatever the original distribution. | A5.4 |
+| Centroid | The mean of the points in a cluster; k-means represents each cluster by it. | B5.1 |
 | Chain rule | The derivative of a composition is the product of the derivatives of its parts. | A4.3 |
 | Chained assignment | Assigning through two indexing steps (`df[m]["c"] = v`); does nothing under copy-on-write. | A1.3 |
+| Chaining | Single linkage's failure mode: a thin trail of points links distinct groups into one cluster. | B5.2 |
 | Characteristic polynomial | $\det(\mathbf{A} - \lambda\mathbf{I})$, a polynomial in $\lambda$ whose roots are the eigenvalues of $\mathbf{A}$. | A3.1 |
 | Chat template | The exact text format that wraps system, user and assistant messages for a given model. | F3.1 |
 | Chebyshev's inequality | $P(\lvert X - \mu\rvert \ge \varepsilon) \le \sigma^2/\varepsilon^2$: a bound on straying from the mean that holds for any distribution. | A5.4 |
@@ -117,6 +123,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Classifier-free guidance | Steering a diffusion model by mixing its conditional and unconditional predictions. | G2.4 |
 | Cleaning log | A record of every data-cleaning decision, its reason and how many rows it touched. | B1.2 |
 | CLIP | A model that trains image and text encoders contrastively so matching pairs have similar embeddings. | G2.2 |
+| Clustering | Grouping unlabelled examples so that similar examples share a group. | B5.1 |
 | Coalition | A subset of features (players) in a Shapley-value calculation; its value $v(S)$ is the expected prediction when only those features are known. | B3.4 |
 | Cohen's d | Difference in means divided by the pooled standard deviation; a standardized effect size. | A6.3a |
 | Collaborative filtering | Recommending items from the behaviour of similar users or items, without item content. | B6.1 |
@@ -134,12 +141,14 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Confusion matrix | A table of true versus predicted classes. | B4.1 |
 | Conjugate prior | A prior that gives a posterior in the same family, such as Beta prior with Binomial data. | A6.5 |
 | Constrained optimization | Minimizing a function subject to equality or inequality constraints. | A4.5 |
+| Contamination (anomaly detection) | The expected share of anomalies, used only to set the score threshold (scikit-learn's `contamination`); it does not change the scores. | B5.6 |
 | Context assembly | Choosing, ordering and formatting retrieved chunks into the prompt within a token budget. | I2.3 |
 | Contrastive learning | Training embeddings so matching pairs are close and non-matching pairs are far apart. | G2.2 |
 | Convexity | A function is convex if every chord lies above it; then any local minimum is global. | A4.5 |
 | Convolution | Sliding a small kernel over an input and taking a weighted sum at each position. | D1.1 |
 | Coordinate descent | Minimizing one parameter at a time with the others held fixed, cycling until nothing changes; how the lasso is fitted. | B2.2 |
 | Copy-on-write | pandas 3 behaviour: every selection acts as a new object, so changing it never changes the original. | A1.3 |
+| Core point | In DBSCAN, a point with at least `min_samples` points (itself included) within distance $\varepsilon$. | B5.2 |
 | Correlation | A standardized measure (−1 to 1) of how two variables move together; not evidence of causation. | A6.1 |
 | Correlation matrix | The `(d, d)` matrix of pairwise correlations, $R_{jk} = S_{jk}/(s_j s_k)$: the covariance matrix of the standardized features. | A3.3 |
 | Cosine decay | A learning-rate schedule that falls along a half cosine curve. | C3.2 |
@@ -153,6 +162,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Cross-encoder | A model that reads a query and a document together to score their relevance; used for reranking. | I2.3 |
 | Cross-entropy | $H(p, q) = -\sum_x p(x) \log q(x)$: the expected cost of coding $p$ with $q$; the classification loss. | A6.4, C1.4 |
 | Cross-validation | Estimating generalization by training and scoring on several train/validation splits of the data. | B4.3 |
+| Crowding problem | High-dimensional data has more equidistant neighbours than a 2-D picture can hold; t-SNE's heavy-tailed Student-t kernel works around it and in doing so opens gaps between clusters. | B5.5 |
 | Cumulative distribution function (CDF) | $F(x) = P(X \le x)$; climbs from 0 to 1, in steps for discrete variables. | A5.2 |
 | Curse of dimensionality | In high dimensions points are all far apart and distances lose contrast. | B2.3 |
 | CutMix | Augmentation that pastes a patch of one image into another and mixes the labels by area. | D2.2 |
@@ -186,6 +196,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Deflation | Removing a found eigen- or singular component from a matrix so an iterative method can find the next one. | A3.2 |
 | Degrees of freedom | The number of independent pieces of information left for estimating spread; $n - 1$ for a sample variance, the parameter of the t and chi-square distributions. | A6.2, A6.3a |
 | Demographic parity | A fairness criterion: the positive-prediction rate is equal across groups. `[RAI]` | B4.6 |
+| Dendrogram | The tree drawn by hierarchical clustering: a bar at the height of each merge; cutting it at a level gives a flat clustering. | B5.2 |
 | Dense retrieval | Retrieval by nearest neighbours in embedding space. | I2.1 |
 | Density (histogram) | A bin's count divided by $n$ times the bin width, so the bars' areas sum to 1. | A1.4 |
 | Depthwise separable convolution | A convolution split into a per-channel spatial filter and a 1×1 channel mix, using far fewer parameters. | D1.4 |
@@ -323,6 +334,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Term | Definition | Taught in |
 |---|---|---|
 | Hallucination | A model stating something fluent and confident that is false or unsupported. `[RAI]` | F3.3 |
+| HDBSCAN | Hierarchical DBSCAN: builds clusterings over all $\varepsilon$ and keeps the most stable clusters, handling varying density with one main parameter (`min_cluster_size`). | B5.2 |
 | He initialization | Weight initialization with variance $2 / d_{\text{in}}$, suited to ReLU layers. | C3.3 |
 | Hessian | The matrix of second partial derivatives $H_{ij} = \partial^2 f / \partial x_i \partial x_j$; its eigenvalues give the curvature in each direction. | A4.4, A4.5 |
 | Hierarchical clustering | Building a tree of clusters by repeatedly merging (or splitting) groups. | B5.2 |
@@ -352,6 +364,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Independence (random variables) | $p(x, y) = p(x)\,p(y)$ for all values: knowing one tells nothing about the other; implies zero covariance, not the reverse. | A5.1 |
 | Index (pandas) | The row labels of a DataFrame or Series; arithmetic aligns rows by these labels. | A1.3 |
 | Indirect prompt injection | Malicious instructions hidden in content the model reads (a web page, an email, a tool result). `[RAI]` | I4.2 |
+| Inertia | The within-cluster sum of squared distances from points to their centroid; the objective k-means minimizes. | B5.1 |
 | Inference server (LLM) | A service optimized to run an LLM for many requests (batching, KV cache management). | J2.1 |
 | Information gain | The drop in entropy from a parent node to its size-weighted children; the entropy version of a split's gain. | B3.1 |
 | Initialization | How weights are set before training; it controls whether signals vanish or explode. | C3.3 |
@@ -375,6 +388,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Term | Definition | Taught in |
 |---|---|---|
 | Jacobian | The matrix of all partial derivatives of a vector-valued function; shape `(m, n)` for $f: \mathbb{R}^n \to \mathbb{R}^m$. | A4.2 |
+| Jensen's inequality | For a concave function such as log, the function of an average is at least the average of the function; gives EM's lower bound and the ELBO. | B5.3, G1.2 |
 | Jitter | A small multiple of the identity added to a matrix that should be positive definite so Cholesky succeeds despite rounding. | A3.4 |
 | Joint distribution | The probabilities $p(x, y)$ of every pair of values of two random variables. | A5.1 |
 | JSON schema | A machine-readable description of the structure a JSON value must have. | I1.3 |
@@ -385,14 +399,18 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Term | Definition | Taught in |
 |---|---|---|
 | k-anonymity | A table property: every combination of quasi-identifier values is shared by at least k rows. | B1.2 |
+| k-distance curve | Each point's distance to its $k$-th nearest neighbour, sorted; DBSCAN's $\varepsilon$ is read off its bend. | B5.2 |
 | k-fold cross-validation | Splitting data into $k$ folds and validating on each in turn. | B4.3 |
 | k-means | Clustering that alternates assigning points to the nearest centroid and recomputing centroids. | B5.1 |
+| k-means++ | k-means seeding that picks each new centroid with probability proportional to its squared distance from the nearest centroid already chosen. | B5.1 |
 | k-nearest neighbours (kNN) | Predicting from the labels of the $k$ closest training examples. | B2.3 |
+| k-NN distance score | The distance to the $k$-th nearest neighbour, used as an anomaly score (large = sparse region). | B5.6 |
 | Kernel (convolution) | The small weight array slid over the input in a convolution. | D1.1 |
 | Kernel trick | Computing inner products in a high-dimensional feature space through a kernel function, without the features. | B2.5 |
 | KKT conditions | Karush–Kuhn–Tucker conditions for $\min f$ s.t. $g \le 0$: $\nabla f + \mu\nabla g = \mathbf{0}$, $g \le 0$, $\mu \ge 0$, $\mu g = 0$. | A4.5 |
 | KL divergence | $D_{\mathrm{KL}}(p \,\|\, q) = \sum_x p(x) \log (p(x) / q(x))$: the extra cost of using $q$ for $p$; not symmetric. | A6.4 |
 | KL penalty (RLHF) | A term that keeps the tuned policy close to the reference model. | H2.3 |
+| kNN preservation | The average share of each point's $k$ nearest input-space neighbours that are also among its $k$ nearest neighbours in an embedding. | B5.5 |
 | Kolmogorov–Smirnov statistic | The largest gap between an empirical CDF and a reference CDF (or between two empirical CDFs). | A5.2, A6.3a |
 | KS test | Kolmogorov–Smirnov test: compares two distributions by the largest gap between their CDFs. | A6.3a, J2.2 |
 | KV cache | Storing past keys and values during generation so each new token costs one step, not a full recompute. | F2.4 |
@@ -410,6 +428,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Laplace smoothing | Adding a pseudo-count $\alpha$ (usually 1) to every count so no estimated probability is zero: $(N_{cw} + \alpha)/(N_c + \alpha V)$. | B2.4 |
 | Latency | The time from a request to its response; reported as percentiles (p50, p95). | I4.3 |
 | Latent diffusion | Diffusion run in an autoencoder's latent space instead of pixel space. | G2.4 |
+| Latent variable | A variable in a model's generative story that is never observed, such as the component that produced each point in a mixture. | B5.3, G1.2 |
 | Law of large numbers | The sample mean converges to the expectation as the sample grows. | A5.4 |
 | Law of total probability | $P(B) = \sum_k P(B \mid H_k)\,P(H_k)$ over hypotheses that cover every case without overlapping. | A5.3 |
 | LayerNorm | Normalizing each example's features to zero mean and unit variance, then scaling and shifting. | C3.4 |
@@ -431,8 +450,11 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Linear map | A function $f(\mathbf{x}) = \mathbf{A}\mathbf{x}$ that preserves addition and scaling. | A2.1 |
 | Linear regression | Predicting a number as a weighted sum of features plus a bias. | B1.5 |
 | Linearity of expectation | $\mathbb{E}[aX + bY] = a\,\mathbb{E}[X] + b\,\mathbb{E}[Y]$ for any random variables, dependent or not. | A5.1 |
+| Linkage | The rule for the distance between two clusters: single (closest members), complete (farthest), average, or Ward (smallest rise in within-cluster sum of squares). | B5.2 |
 | LLM-as-judge | Using an LLM with a rubric to grade outputs; it has position, length and self-preference biases. | I2.4 |
+| Lloyd's algorithm | The standard k-means iteration: assign each point to the nearest centroid, move each centroid to the mean of its points, repeat. | B5.1 |
 | Local derivative | The derivative of one node's output with respect to its own inputs; backprop multiplies local derivatives along paths. | A4.3 |
+| Local outlier factor (LOF) | A density-based anomaly score: a point's local density relative to its neighbours' densities; about 1 inside a cluster, well above 1 for an outlier. | B5.6 |
 | Lockfile | A file recording the exact resolved version of every dependency (here `uv.lock`). | A1.1 |
 | Log-odds (logit) | $\log\frac{p}{1 - p}$; the linear score of a logistic regression. The inverse of the sigmoid. | B2.1 |
 | Log-sum-exp | Computing $\log\sum_i e^{s_i}$ stably by subtracting $\max_i s_i$ first; used to normalize log-probabilities and in softmax. | B2.4, C1.4 |
@@ -461,6 +483,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Marginal distribution | The distribution of one variable on its own, found by summing the joint distribution over the others. | A5.1 |
 | Markov chain | A random process that moves between states with probabilities that depend only on the current state, given by a transition matrix. | A3.1, H1.1 |
 | Masked language modelling | Predicting hidden tokens from both sides of the context (BERT's objective). | F2.1 |
+| Masking | Several outliers inflating the mean and standard deviation so that none of them gets a large z-score. | B5.6 |
 | Matrix | A rectangular table of numbers of shape `(m, d)`, read as a linear map from $d$-vectors to $m$-vectors. | A2.1 |
 | Matrix factorization | Approximating a matrix as a product of two low-rank matrices (users × factors, factors × items). | B6.1 |
 | Matrix multiplication | $(\mathbf{A}\mathbf{B})_{ij} = \sum_k A_{ik} B_{kj}$; shapes `(n, d) @ (d, k) -> (n, k)`. | A2.2 |
@@ -517,6 +540,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Normal equations | $\mathbf{X}^\top\mathbf{X}\mathbf{w} = \mathbf{X}^\top\mathbf{y}$: the closed-form least-squares solution. | A2.4 |
 | Normalization (layers) | Rescaling activations to a stable range inside a network (BatchNorm, LayerNorm). | C3.4 |
 | Normalization (text) | Lower-casing, Unicode normalization and similar cleanup before tokenizing. | E1.1 |
+| Novelty detection | Fitting an anomaly detector on reference data believed clean and scoring new rows against it. | B5.6 |
 | Null distribution | The distribution a test statistic would have if the null hypothesis were true. | A6.3a |
 | Null hypothesis | $H_0$: the sceptical default a test tries to reject, such as "no difference". | A6.3a |
 | Null space | All vectors $\mathbf{n}$ with $\mathbf{A}\mathbf{n} = \mathbf{0}$; adding one to a solution of $\mathbf{A}\mathbf{x} = \mathbf{b}$ gives another solution. | A2.3 |
@@ -542,6 +566,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Out-of-bag error | A random forest's error on the rows each tree did not see in its bootstrap sample. | B3.2 |
 | Outer product | $\mathbf{u}\mathbf{v}^\top$: a column times a row, giving a matrix of rank 1. | A2.1, A2.2 |
 | Outlier | A value far from the bulk of the data. | A6.1, B1.2 |
+| Outlier detection (unsupervised) | Scoring a batch that may already contain anomalies, with no clean reference set. | B5.6 |
 | Overdispersion | Count data whose variance is larger than its mean, a sign that a Poisson model is too simple. | A5.2 |
 | Overfitting | Fitting noise in the training data, so training error is low but test error is high. | B4.5 |
 | Oversampling | Repeating (or synthesizing) minority-class rows in the training data; duplicating a row $k$ times equals giving it weight $k$. | B4.4 |
@@ -555,6 +580,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Peeking | Checking an experiment repeatedly and stopping at the first significant result, which inflates false positives. | A6.3b |
 | Percentile bootstrap | A confidence interval from the $\alpha/2$ and $1 - \alpha/2$ quantiles of a statistic over bootstrap resamples. | A6.2 |
 | Perfect separation | A feature that splits the classes exactly, so the logistic-regression MLE weights grow without bound. | A5.5, B2.1 |
+| Perplexity (t-SNE) | $e^{H}$ of each point's neighbour distribution (entropy in nats): the effective number of neighbours t-SNE gives every point. | B5.5 |
 | Pinball loss | The quantile loss $\max(\tau e, (\tau - 1)e)$ with $e = y - \hat{y}$; minimized by the $\tau$-quantile. | B4.2 |
 | Platt scaling | Recalibrating scores with a one-feature logistic regression, $\sigma(as + b)$, fitted on held-out rows. | B4.1 |
 | Plug-in principle | Using the empirical distribution of the sample in place of the unknown population; the basis of the bootstrap. | A6.2 |
@@ -564,6 +590,8 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Power (statistical) | The probability that a test rejects $H_0$ when a given real effect exists; $1 - \beta$. | A6.3a, A6.3b |
 | Precision–recall curve | Precision plotted against recall as the threshold varies; summarized by average precision. | B4.1 |
 | Pre-registration | Writing down the hypotheses, metrics, sample size and analysis before seeing the data. | A6.3b |
+| Principal component | A direction of greatest remaining variance in centred data: an eigenvector of the covariance matrix, equivalently a right singular vector of the centred data. | B5.4 |
+| Principal component scores | The coordinates of the rows along the kept components, $\mathbf{Z} = \mathbf{X}_c\mathbf{V}_k$, shape `(n, k)`. | B5.4 |
 | Prior | $P(\text{hypothesis})$ or $p(\boldsymbol{\theta})$: the belief before seeing the evidence. | A5.3, A5.5, A6.5 |
 | Prior correction | Undoing a change in class balance by multiplying a model's odds by $1/w$ (class weight $w$) or $\beta$ (kept share of negatives). | B4.4 |
 | Probability density function (pdf) | Probability per unit of $x$ for a continuous variable; probabilities are areas under it, and it can exceed 1. | A5.2 |
@@ -602,7 +630,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | PPO | Proximal policy optimization: a policy-gradient method with a clipped objective that limits each update. | H2.2 |
 | PR-AUC | Area under the precision–recall curve; informative when positives are rare. | B4.1 |
 | Precision | Of the predicted positives, the share that are truly positive. | B4.1 |
-| Precision@k | The share of the top $k$ recommended or retrieved items that are relevant. | B6.2 |
+| Precision@k | The share of the top $k$ recommended, retrieved or flagged items that are relevant. | B6.2, B5.6 |
 | Preference tuning | Tuning a model on human (or AI) preferences between pairs of outputs (RLHF, DPO). | F3.2 |
 | Pretraining | Training a model on a large general corpus with a self-supervised objective. | F2.2 |
 | Projected gradient descent | Gradient descent that maps each iterate back onto the feasible set after the step. | A4.5 |
@@ -645,6 +673,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Recall@k | The share of relevant items that appear in the top $k$ results. | I2.4 |
 | Receptive field | The region of the input that affects one unit of a feature map. | D1.2 |
 | Recommender system | A system that ranks items for each user. | B6.1 |
+| Reconstruction error | The squared distance between a row and its reconstruction from a reduced representation; for PCA, the total equals $(n - 1)$ times the dropped variance. | B5.4, B5.6 |
 | Red-teaming | Deliberately attacking a model to find harmful or unsafe behaviour before users do. `[RAI]` | F3.3 |
 | Reduced row echelon form | Row echelon form in which every pivot is 1 and is the only non-zero entry in its column. | A2.3 |
 | Refusal | A model declining a request it should not fulfil. `[RAI]` | F3.3 |
@@ -661,6 +690,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Residual plot | Residuals plotted against fitted values or a feature; any pattern means the model is missing something. | A2.4, B4.2 |
 | ResNet | A CNN family built from residual blocks. | D1.3 |
 | Resampling | Changing class frequencies by over-sampling the rare class or under-sampling the common one. | B4.4 |
+| Responsibility | In a mixture model, the posterior probability $\gamma_{ik} = P(z_i = k \mid \mathbf{x}_i)$ that component $k$ generated example $i$; computed by Bayes' rule in EM's E-step. | B5.3 |
 | Retention (data) | How long data is kept before deletion; part of privacy governance. `[RAI]` | J2.5 |
 | Retrieve-then-rank | A two-stage system: a cheap retriever finds candidates and a stronger model ranks them. | B6.2, I2.3 |
 | Return | The (discounted) sum of rewards from a time step on: $G_t = \sum_k \gamma^k r_{t+k+1}$. | H1.1 |
@@ -750,6 +780,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Support vector machine (SVM) | A maximum-margin classifier, optionally with kernels. | B2.5 |
 | Surprisal | $-\log p(x)$: the surprise of an outcome; it adds over independent events. | A6.4 |
 | SVD | Singular value decomposition: $\mathbf{A} = \mathbf{U}\boldsymbol{\Sigma}\mathbf{V}^\top$, rotate, scale, rotate. | A3.2 |
+| Swamping | Outliers shifting the mean so that normal points on the other side get flagged. | B5.6 |
 | Symmetric matrix | A square matrix equal to its transpose, such as $\mathbf{X}^\top\mathbf{X}$. | A2.2 |
 | System of linear equations | Equations $\mathbf{A}\mathbf{x} = \mathbf{b}$ that are linear in the unknowns $\mathbf{x}$. | A2.3 |
 | System prompt | Instructions given to an LLM that set its role and rules for the conversation. | I1.1 |
@@ -798,6 +829,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Trimmed mean | The mean after dropping a fixed share of the smallest and largest values. | A6.1 |
 | Truncated SVD | Keeping only the top $k$ singular values and vectors; `sklearn.decomposition.TruncatedSVD` computes it without centering. | A3.2 |
 | Truncation error | Error from cutting off the Taylor series; in a finite difference it shrinks as $h$ shrinks. | A4.1 |
+| Trustworthiness | An embedding-quality score in [0, 1] that penalizes each point's embedding neighbours by how far down its input-space neighbour ranking they sit; 1 = no intruders. | B5.5 |
 | Tukey's fences | $[Q_1 - 1.5\,\mathrm{IQR},\ Q_3 + 1.5\,\mathrm{IQR}]$: values outside are flagged as possible outliers. | A6.1 |
 | Type I and type II errors | A false positive (rejecting a true $H_0$, rate $\alpha$) and a false negative (missing a real effect, rate $\beta$). | A6.3a |
 
@@ -838,6 +870,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 |---|---|---|
 | Walk-forward validation | Repeatedly training on data up to a time and testing on the next period, moving forward. | B6.3 |
 | WAPE | Weighted absolute percentage error, $\sum\lvert e_i\rvert/\sum\lvert y_i\rvert$; a relative error that survives zero targets. | B4.2 |
+| Ward linkage | Agglomerative merging that joins the pair of clusters whose merge least increases the within-cluster sum of squares, $\frac{n_A n_B}{n_A + n_B}\lVert\boldsymbol{\mu}_A - \boldsymbol{\mu}_B\rVert^2$. | B5.2 |
 | Warmup | Starting with a small learning rate and increasing it over the first steps. | C3.2 |
 | Watermarking | Embedding a detectable signal in generated content to mark it as synthetic. `[RAI]` | G2.4 |
 | Weight decay | Shrinking weights a little at each step; equivalent to L2 regularization for plain SGD. | C3.5 |
