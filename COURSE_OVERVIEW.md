@@ -58,25 +58,26 @@ relevant projects to score at least 70% on their rubric.
 
 ## How much of the material is ready
 
-The course material is generated one week at a time. **Weeks 1–12 of 36 are ready**, which is
-one third of the course:
+The course material is generated one week at a time. **Weeks 1–13 of 36 are ready**, a little over
+a third of the course:
 
 | | Ready | Total |
 |---|---|---|
-| Weeks of material | 12 (weeks 1–12) | 36 |
-| Lessons (each with a runnable lab and an answer key) | 59 | 154 |
-| Weekly quizzes | 12 | 36 |
-| Weekly cheat sheets | 12 | 36 |
+| Weeks of material | 13 (weeks 1–13) | 36 |
+| Lessons (each with a runnable lab and an answer key) | 63 | 154 |
+| Weekly quizzes | 13 | 36 |
+| Weekly cheat sheets | 13 | 36 |
 | Part cheat sheets | 2 (Parts A and B) | 11 |
-| Project briefs | 3 (P1, P2, P3) | 12 |
+| Project briefs | 4 (P1–P4) | 12 |
 | Paper reading guides | 1 (XGBoost) | 10 |
 
 In terms of parts:
 
 - **Part A, Foundations (weeks 1–6): complete.**
-- **Part B, Classical ML (weeks 7–12): complete**, including the Part B cheat sheet. Part C (deep
-  learning, from week 13) is next to be generated.
-- **Parts C to L (weeks 13–36): planned in detail but not yet generated.** The syllabus for every
+- **Part B, Classical ML (weeks 7–12): complete**, including the Part B cheat sheet.
+- **Part C, Deep learning (weeks 13–16): in progress.** Week 13 (neural networks from scratch,
+  with the P4 brief) is ready; week 14 (PyTorch) is next to be generated.
+- **Weeks 14–36 (the rest of Part C, then Parts D to L): planned in detail but not yet generated.** The syllabus for every
   week is fixed, so what is coming is known; only the lessons, labs and quizzes still need to be
   written.
 
