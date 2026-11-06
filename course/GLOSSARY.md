@@ -39,6 +39,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Autocast | PyTorch's context manager that runs selected operations in a lower-precision dtype for mixed precision. | C4.2 |
 | Autoencoder | A network trained to reconstruct its input through a narrow bottleneck, learning a compressed representation. | G1.1 |
 | Autograd | Automatic differentiation: recording operations on a graph and applying the chain rule backward to get gradients. | C1.3, C2.1 |
+| Autoregressive (AR) term | In ARIMA, a term that makes the next value of the (differenced) series a linear function of its own recent values. | B6.4 |
 | Average precision | $\sum_k (R_k - R_{k-1})P_k$: precision averaged over the positives in score order; the usual PR-AUC estimate, with the prevalence as its baseline. | B4.1 |
 | Axis | One dimension of an array; axis 0 runs down the rows, axis 1 across the columns. | A1.2 |
 
@@ -71,6 +72,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Beta distribution | A density on $[0, 1]$, $\propto \theta^{a-1}(1 - \theta)^{b-1}$, with mean $a/(a + b)$; the conjugate prior for a rate. | A6.5 |
 | Bias (statistical) | The systematic gap between an estimator's or model's expected value and the truth. | B4.5 |
 | Bias (fairness) | Systematically different model behaviour or errors across groups of people. | B4.6 |
+| Bias model (recommenders) | The baseline rating prediction $\mu + b_u + b_i$: global mean plus a user and an item offset, estimated as damped means. | B6.1 |
 | Bias–variance trade-off | Test error splits into bias (too simple), variance (too sensitive to the training set) and noise. | B4.5 |
 | BIC | Bayesian information criterion, $-2\ell(\hat{\boldsymbol{\theta}}) + p\log n$: log-likelihood penalized by the number of parameters $p$; lower is better; used to choose $K$ for a GMM. | B5.3 |
 | Binomial distribution | The number of successes in $n$ independent Bernoulli trials. | A5.2 |
@@ -94,7 +96,9 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Caching (LLM) | Reusing earlier results instead of paying for a new model call; see exact, prompt and semantic caching. | I4.4 |
 | Calibration | Whether predicted probabilities match observed frequencies (of cases predicted 0.8, about 80% are positive). | B4.1 |
 | Canary rollout | Sending a small share of live traffic to a new model version before a full rollout. | J2.4 |
+| Candidate generation | The first, high-recall stage of retrieve-then-rank, which narrows a large catalogue to a few hundred items cheaply. | B6.2 |
 | CART | Classification And Regression Trees: grow a tree greedily by trying every feature and threshold and keeping the split with the lowest weighted child impurity. | B3.1 |
+| Catalogue coverage | The share of all items that appear in at least one user's recommendation list. | B6.2 |
 | Catastrophic cancellation | Losing most significant digits by subtracting two large, nearly equal floating-point numbers. | A3.4, A3.3 |
 | Categorical distribution | The distribution of one draw from $K$ classes with probabilities $p_1, \dots, p_K$. | A5.2 |
 | Categorical encoding | Turning category labels into numbers: one-hot, ordinal or target encoding. | B1.3 |
@@ -126,6 +130,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Clustering | Grouping unlabelled examples so that similar examples share a group. | B5.1 |
 | Coalition | A subset of features (players) in a Shapley-value calculation; its value $v(S)$ is the expected prediction when only those features are known. | B3.4 |
 | Cohen's d | Difference in means divided by the pooled standard deviation; a standardized effect size. | A6.3a |
+| Cold start | Recommending for new users or new items that have no interactions yet, so collaborative methods cannot score them. | B6.1 |
 | Collaborative filtering | Recommending items from the behaviour of similar users or items, without item content. | B6.1 |
 | Column space | The set of all vectors $\mathbf{A}\mathbf{x}$: every output a matrix can reach. | A2.3 |
 | ColumnTransformer | A scikit-learn step that applies a different transformer to each group of columns and joins the results. | B1.3 |
@@ -172,6 +177,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 
 | Term | Definition | Taught in |
 |---|---|---|
+| Damped trend | A Holt–Winters trend shrunk by $\phi^h$ ($0 < \phi < 1$) so that long-horizon forecasts level off. | B6.4 |
 | Data cleaning | Fixing types, missing values, outliers and duplicates before modelling. | B1.2 |
 | Data drift | The distribution of model inputs changes over time. | J2.2 |
 | Data leakage | Information unavailable at prediction time reaches training or evaluation, inflating scores. | B1.4 |
@@ -183,6 +189,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Dataset (PyTorch) | A class with `__len__` and `__getitem__` that returns one example. | C2.2 |
 | Datasheet | Documentation of a dataset's motivation, collection, composition and recommended uses. `[RAI]` | J2.5 |
 | DBSCAN | Density-based clustering that grows clusters from dense regions and marks sparse points as noise. | B5.2 |
+| DCG | Discounted cumulative gain: the sum over the top $k$ of relevance divided by $\log_2(\text{position} + 1)$. | B6.2 |
 | DCGAN | A GAN that uses convolutional generator and discriminator networks. | G1.3 |
 | ddof | "Delta degrees of freedom": the divisor is $n - $ `ddof`; `np.var` defaults to 0, `np.cov` and pandas to 1. | A3.3 |
 | DDP | Distributed Data Parallel: PyTorch's multi-process data-parallel training. | C4.4 |
@@ -205,9 +212,11 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Design matrix | The `(n, d)` matrix of examples a linear model multiplies, usually with a column of ones for the intercept. | A2.4, B1.5 |
 | Determinant | The factor by which a square matrix scales area or volume (negative if it flips orientation); $ad - bc$ for a 2×2; 0 means singular. | A2.1 |
 | Dice coefficient | Segmentation overlap: twice the intersection divided by the sum of the two areas. | D2.4 |
+| Differencing | Replacing a series by its changes, $y_t - y_{t-1}$ (or $y_t - y_{t-m}$ for seasonal differencing), to remove trend or seasonality. | B6.4 |
 | Differential privacy | A guarantee that an algorithm's output changes very little whether or not any one person's data is included. `[RAI]` | J2.5 |
 | Diffusion model | A generative model that learns to reverse a gradual noising process. | G1.4 |
 | Dimensionality reduction | Mapping data to fewer dimensions while keeping its structure (PCA, t-SNE, UMAP). | B5.4 |
+| Direct forecasting | Forecasting $h$ steps ahead with a model whose features are all at least $h$ steps old, so no forecast is fed back in. | B6.3 |
 | Directional derivative | The rate of change of $f$ when moving from $\mathbf{x}$ along a unit vector $\mathbf{u}$: $\nabla f \cdot \mathbf{u}$. | A4.2 |
 | Discount factor | $\gamma \in [0, 1]$: how much an RL agent values future rewards relative to immediate ones. | H1.1 |
 | Discriminative model | A model of $p(y \mid \mathbf{x})$ directly, fitted to predict the label (logistic regression, SVMs). | B2.4 |
@@ -250,6 +259,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Evals | Systematic tests that score an ML or LLM system against a fixed set of cases. | I2.4, I3.3 |
 | Evidence (Bayes) | $P(B)$, the normalizer in Bayes' theorem, computed with the law of total probability. | A5.3 |
 | Exact test | A test that computes the p-value by listing every possible relabelling instead of sampling or approximating. | A6.3a |
+| Expanding window | Walk-forward validation in which every fold trains on all data before its forecast origin. | B6.3 |
 | Expectation | $\mathbb{E}[X]$: the probability-weighted average of a random variable. | A5.1 |
 | Experiment tracking | Recording each training run's parameters, metrics and artifacts so runs can be compared and reproduced. | J1.1 |
 | Explained variance | The share of total variance captured by each principal component. | B5.4 |
@@ -280,6 +290,8 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Finite differences | Approximating a derivative by $(f(x + h) - f(x - h)) / 2h$; used to check gradients. | A4.1 |
 | Fixed-horizon test | An experiment analysed once, at a sample size fixed in advance. | A6.3b |
 | FlashAttention | An exact attention algorithm that avoids storing the full attention matrix by working in tiles. | F2.5 |
+| Forecast horizon | How many steps ahead a forecast is made; every feature must be at least this old. | B6.3 |
+| Forecast origin | The last time point whose value is known when a forecast is made. | B6.3 |
 | Forward and reverse KL | Minimizing $D_{\mathrm{KL}}(p \,\|\, q)$ makes $q$ cover all of $p$'s mass; minimizing $D_{\mathrm{KL}}(q \,\|\, p)$ makes it lock onto one mode. | A6.4, G1.2 |
 | Forward difference | $(f(x + h) - f(x)) / h$: a derivative estimate whose truncation error shrinks like $h$. | A4.1 |
 | Forward mode | Automatic differentiation that pushes derivatives from inputs to outputs; one pass per input direction. | A4.3 |
@@ -309,6 +321,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Geometric mean | $\exp$ of the mean of $\log x$; for data whose log is symmetric it sits near the median. | A6.1 |
 | Gibbs' inequality | $D_{\mathrm{KL}}(p \,\|\, q) \ge 0$, with equality only when $q = p$; so $H(p, q) \ge H(p)$. | A6.4 |
 | Gini impurity | $1 - \sum_k p_k^2$: the chance that a random row is misclassified by a random label drawn from the node's class shares; 0 for a pure node. | B3.1 |
+| Global forecasting model | One model trained across many related series, with series attributes as features, instead of one local model per series. | B6.4 |
 | Golden set | A curated, versioned set of inputs with known good outputs used to evaluate a system. | I2.4 |
 | GPT | A decoder-only transformer pretrained on next-token prediction. | F1.4, F2.1 |
 | Grad-CAM | A heat map of which image regions most influenced a CNN's prediction, from gradients of the last conv layer. | D2.5 |
@@ -344,6 +357,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | HNSW | Hierarchical Navigable Small World: a graph index for fast approximate nearest-neighbour search. | I2.2 |
 | Holdout set | Data kept aside and used only for the final evaluation. | B1.1 |
 | Holm procedure | Step-down FWER correction: compare sorted p-values with $\alpha/m, \alpha/(m - 1), \dots$ and stop at the first failure; never rejects less than Bonferroni. | A6.3b |
+| Holt–Winters | Exponential smoothing with separately smoothed level, trend and seasonal components. | B6.4 |
 | Householder reflection | A reflection that zeroes a column below its first entry; the stable way to compute QR (`np.linalg.qr`). | A3.4 |
 | Hybrid search | Combining keyword (full-text) and vector search results. | I2.2 |
 | Hyperparameter | A setting chosen before training (learning rate, depth), not learned from data. | B4.3 |
@@ -354,6 +368,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Term | Definition | Taught in |
 |---|---|---|
 | ICE curve | Individual conditional expectation: one row's prediction as a single feature is varied; the partial dependence curve is their average. | B3.4 |
+| Ideal DCG (IDCG) | The DCG of the best possible ordering of all of a user's relevant items, retrieved or not; the denominator of NDCG. | B6.2 |
 | Idempotent | A matrix with $\mathbf{P}^2 = \mathbf{P}$: applying it twice is the same as once, like every projection. | A2.4 |
 | Identity matrix | $\mathbf{I}$: ones on the diagonal, zeros elsewhere; $\mathbf{A}\mathbf{I} = \mathbf{A}$. | A2.2 |
 | i.i.d. | Independent and identically distributed: draws that do not influence each other and share one distribution. | A5.4 |
@@ -381,6 +396,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Irreducible error | The noise variance $\sigma^2$ in $y = f(x) + \varepsilon$: the part of the test error no model can remove. | B4.5 |
 | Isolation forest | Anomaly detection that scores points by how few random splits isolate them. | B5.6 |
 | Isotonic regression | Fitting the best non-decreasing step function; used to recalibrate scores into probabilities on held-out rows. | B4.1 |
+| Item-based collaborative filtering | Predicting a user's rating of an item from their own ratings of the most similar items. | B6.1 |
 | IVFFlat | An index that clusters vectors and searches only the nearest clusters. | I2.2 |
 
 ## J
@@ -424,10 +440,12 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Lagrange multiplier | A variable that turns a constrained optimization into an unconstrained one at a stationary point. | A4.5 |
 | Lag feature | A past value of a time series used as a feature for predicting a later value. | B6.3 |
 | Lagrangian | $f(\mathbf{x}) - \lambda(h(\mathbf{x}) - c)$: the objective plus multiplier times constraint, whose stationary points solve a constrained problem. | A4.5 |
+| LambdaRank | A learning-to-rank objective that pushes pairs of items apart in proportion to how much swapping them would change NDCG. | B6.2 |
 | Laplace distribution | Density $\frac{1}{2b}e^{-\lvert x - \mu\rvert/b}$: sharper peak and heavier tails than a Gaussian; its NLL is the absolute error. | A5.5, B2.2 |
 | Laplace smoothing | Adding a pseudo-count $\alpha$ (usually 1) to every count so no estimated probability is zero: $(N_{cw} + \alpha)/(N_c + \alpha V)$. | B2.4 |
 | Latency | The time from a request to its response; reported as percentiles (p50, p95). | I4.3 |
 | Latent diffusion | Diffusion run in an autoencoder's latent space instead of pixel space. | G2.4 |
+| Latent factor | A learned, unnamed dimension of the user and item vectors in matrix factorization. | B6.1 |
 | Latent variable | A variable in a model's generative story that is never observed, such as the component that produced each point in a mixture. | B5.3, G1.2 |
 | Law of large numbers | The sample mean converges to the expectation as the sample grows. | A5.4 |
 | Law of total probability | $P(B) = \sum_k P(B \mid H_k)\,P(H_k)$ over hypotheses that cover every case without overlapping. | A5.3 |
@@ -436,6 +454,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Leaf-wise growth | Growing a tree by always splitting the leaf with the largest gain anywhere in the tree, up to a leaf budget (LightGBM's `num_leaves`). | B3.3 |
 | Learning curve | Training and validation score plotted against training-set size (or epochs). | B4.5 |
 | Learning rate | $\eta$: the step size of gradient descent. | A4.4 |
+| Learning to rank | Training a model on (query or user, item, relevance) rows to order items, with a ranking objective such as LambdaRank. | B6.2 |
 | Least privilege | Giving each tool or credential only the permissions its task needs. `[RAI]` | I4.2 |
 | Least squares | Fitting by minimizing the sum of squared residuals. | A2.4 |
 | Left join | A join that keeps every row of the left table, with missing values where the right table has no match. | A1.3 |
@@ -479,9 +498,11 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Mann–Whitney U test | A rank-based test of whether values in one group tend to be larger than in the other. | A6.3a |
 | mAP | Mean average precision: the detection metric averaging precision over recall levels, classes and IoU thresholds. | D2.3 |
 | MAP estimation | Maximum a posteriori: choosing parameters that maximize likelihood times prior. | A5.5 |
+| MAP@k | Mean average precision at $k$: the mean over users of average precision computed on the top $k$. | B6.2 |
 | MAPE | Mean absolute percentage error, $\frac1n\sum\lvert e_i\rvert/\lvert y_i\rvert$; undefined at zero targets and biased towards under-forecasting. | B4.2 |
 | Marginal distribution | The distribution of one variable on its own, found by summing the joint distribution over the others. | A5.1 |
 | Markov chain | A random process that moves between states with probabilities that depend only on the current state, given by a transition matrix. | A3.1, H1.1 |
+| MASE | Mean absolute scaled error: a forecast's MAE divided by the in-sample MAE of the (seasonal) naive forecast. | B6.3 |
 | Masked language modelling | Predicting hidden tokens from both sides of the context (BERT's objective). | F2.1 |
 | Masking | Several outliers inflating the mean and standard deviation so that none of them gets a large z-score. | B5.6 |
 | Matrix | A rectangular table of numbers of shape `(m, d)`, read as a linear map from $d$-vectors to $m$-vectors. | A2.1 |
@@ -513,7 +534,8 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Momentum | Accumulating a running average of gradients to smooth and speed up descent. | C3.1 |
 | Monitoring | Tracking a live model's inputs, outputs, quality and costs over time. | J2.2 |
 | Monte Carlo estimation | Estimating an expectation by averaging over random samples. | A5.4 |
-| MRR | Mean reciprocal rank: the average of 1 / (rank of the first relevant result). | I2.4 |
+| Moving average (MA) term | In ARIMA, a term that makes the next value depend on recent forecast errors; not a rolling mean. | B6.4 |
+| MRR | Mean reciprocal rank: the average of 1 / (rank of the first relevant result). | B6.2, I2.4 |
 | Multi-agent system | Several LLM agents with different roles coordinated by an orchestrator or by messages. | I3.4 |
 | Multi-head attention | Running several attention operations in parallel on different learned projections and concatenating them. | F1.1 |
 | Multi-query attention (MQA) | Attention where all query heads share one key head and one value head. | F2.5 |
@@ -526,6 +548,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 
 | Term | Definition | Taught in |
 |---|---|---|
+| Naive forecast | Forecasting every future value as the last observed value. | B6.3 |
 | Nat | The unit of information with the natural log; 1 nat = 1.443 bits. | A6.4 |
 | Negative log-likelihood (NLL) | $-\sum_i \log p(x_i \mid \boldsymbol{\theta})$; minimizing it is MLE, and most training losses are an NLL. | A5.5 |
 | Nested cross-validation | An inner cross-validation tunes hyperparameters inside each fold of an outer one, which scores the whole tuning procedure on unseen rows. | B4.3 |
@@ -534,7 +557,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | NaN | "Not a number": the float value NumPy and pandas use for a missing number; NaN is not equal to itself. | A1.3 |
 | NDCG | Normalized discounted cumulative gain: a ranking metric that rewards relevant items near the top. | B6.2 |
 | Nearest-neighbour search | Finding the stored vectors most similar to a query vector. | A1.5, I2.1 |
-| Negative sampling | Training embeddings by contrasting each true pair with a few random "negative" pairs. | E1.3 |
+| Negative sampling | Training embeddings by contrasting each true pair with a few random "negative" pairs. | E1.3, B6.1 |
 | Non-maximum suppression (NMS) | Removing overlapping detection boxes, keeping the highest-scoring one. | D2.3 |
 | Norm | The length of a vector: L2 $\sqrt{\sum_j x_j^2}$, L1 $\sum_j \lvert x_j \rvert$. | A1.5 |
 | Normal equations | $\mathbf{X}^\top\mathbf{X}\mathbf{w} = \mathbf{X}^\top\mathbf{y}$: the closed-form least-squares solution. | A2.4 |
@@ -585,6 +608,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Platt scaling | Recalibrating scores with a one-feature logistic regression, $\sigma(as + b)$, fitted on held-out rows. | B4.1 |
 | Plug-in principle | Using the empirical distribution of the sample in place of the unknown population; the basis of the bootstrap. | A6.2 |
 | Point estimate | A single number computed from data as the best guess of an unknown quantity. | A6.2 |
+| Popularity bias | A recommender's tendency to over-expose already popular items, reinforced when it is trained on what it showed. | B6.1 |
 | Posterior | $P(\text{hypothesis} \mid \text{evidence})$ or $p(\boldsymbol{\theta} \mid \text{data})$: the belief after seeing the evidence. | A5.3, A6.5 |
 | Posterior predictive | The distribution of future data averaged over the posterior, wider than plugging in one estimate. | A6.5 |
 | Power (statistical) | The probability that a test rejects $H_0$ when a given real effect exists; $1 - \beta$. | A6.3a, A6.3b |
@@ -670,10 +694,11 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Rayleigh quotient | $\mathbf{x}^\top\mathbf{A}\mathbf{x}/\mathbf{x}^\top\mathbf{x}$: the eigenvalue estimate for an approximate eigenvector $\mathbf{x}$. | A3.1 |
 | RBF kernel | The Gaussian kernel $e^{-\gamma\lVert\mathbf{x} - \mathbf{z}\rVert^2}$: a similarity that is 1 for identical points and decays with distance at a rate set by $\gamma$. | B2.5 |
 | Recall | Of the true positives, the share the model finds. | B4.1 |
-| Recall@k | The share of relevant items that appear in the top $k$ results. | I2.4 |
+| Recall@k | The share of relevant items that appear in the top $k$ results. | B6.2, I2.4 |
 | Receptive field | The region of the input that affects one unit of a feature map. | D1.2 |
 | Recommender system | A system that ranks items for each user. | B6.1 |
 | Reconstruction error | The squared distance between a row and its reconstruction from a reduced representation; for PCA, the total equals $(n - 1)$ times the dropped variance. | B5.4, B5.6 |
+| Recursive forecasting | Forecasting several steps ahead with a one-step model by feeding each forecast back in as an input. | B6.3 |
 | Red-teaming | Deliberately attacking a model to find harmful or unsafe behaviour before users do. `[RAI]` | F3.3 |
 | Reduced row echelon form | Row echelon form in which every pivot is 1 and is the only non-zero entry in its column. | A2.3 |
 | Refusal | A model declining a request it should not fulfil. `[RAI]` | F3.3 |
@@ -720,9 +745,12 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Safety (LLM) | Preventing harmful outputs and misuse of a model. `[RAI]` | F3.3 |
 | Sample ratio mismatch (SRM) | A split of users between arms that differs from the planned one by more than chance; a sign the experiment is broken. | A6.3b |
 | Sample standard deviation | $\sqrt{\frac{1}{n-1}\sum_i (x_i - \bar{x})^2}$; pandas' default (`ddof=1`). | A1.2, A6.2 |
+| SARIMA | Seasonal ARIMA: ARIMA plus differencing, AR and MA terms at the seasonal lag $m$. | B6.4 |
 | Scaled dot-product attention | $\operatorname{softmax}(\mathbf{Q}\mathbf{K}^\top / \sqrt{d_k})\,\mathbf{V}$. | F1.1 |
 | Scaling (features) | Putting features on comparable ranges: standardization or min–max scaling. | B1.3 |
 | Scaling laws | Empirical power laws relating loss to parameters, data and compute. | F2.3 |
+| Seasonal decomposition | Splitting a series into trend, seasonal and residual components, additively or multiplicatively. | B6.3 |
+| Seasonal naive forecast | Forecasting each future value as the value one season earlier (the same month last year). | B6.3 |
 | Seasonality | A repeating pattern in a time series at a fixed period (daily, weekly, yearly). | B6.3 |
 | Secant | The line through two points of a graph; its slope approaches the derivative as the points merge. | A4.1 |
 | Seed | The starting value of a random number generator; fixing it makes runs repeatable. | A1.1 |
@@ -752,6 +780,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Singular matrix | A square matrix with no inverse: dependent columns, determinant 0. | A2.2, A2.3 |
 | Singular value, singular vector | In $\mathbf{A}\mathbf{v}_j = \sigma_j\mathbf{u}_j$: $\sigma_j \ge 0$ is how much $\mathbf{A}$ stretches the input direction $\mathbf{v}_j$ into the output direction $\mathbf{u}_j$. | A3.2 |
 | Skewness | $\mathbb{E}[((X - \mu)/\sigma)^3]$: lopsidedness; 0 if symmetric, positive with a long right tail. | A5.4, A6.1 |
+| Skill score | $1 - \text{model error}/\text{baseline error}$: 0 means no better than the baseline, 1 means perfect. | B6.3 |
 | Skip-gram | word2vec's objective: predict context words from the centre word. | E1.3 |
 | Soft margin | An SVM margin that allows violations, each paid for through the hinge loss at a price set by $C$. | B2.5 |
 | Soft voting | Combining classifiers by averaging their predicted class probabilities (scikit-learn's forests); hard voting counts each model's predicted class. | B3.2 |
@@ -766,6 +795,7 @@ Jump to: [A](#a) · [B](#b) · [C](#c) · [D](#d) · [E](#e) · [F](#f) · [G](#
 | Standard error | The standard deviation of an estimate across repeated samples; $\sigma/\sqrt{n}$ for a sample mean. | A5.1, A5.4 |
 | Standard normal | $\mathcal{N}(0, 1)$; every Gaussian is $\mu + \sigma Z$ for a standard normal $Z$. | A5.2 |
 | Standardization | Shifting and scaling a feature to mean 0 and standard deviation 1. | A1.2, B1.3 |
+| Stationarity | A series whose mean, variance and correlations do not change over time; ARIMA's AR and MA parts assume it. | B6.4 |
 | Steady state (Markov chain) | A probability vector $\boldsymbol{\pi}$ the transition matrix leaves unchanged: an eigenvector with eigenvalue 1. | A3.1 |
 | Stratified k-fold | k-fold cross-validation that keeps the class proportions in every fold. | B4.3 |
 | Stratified split | A train/validation/test split made within each class, so every set keeps the class proportions. | B1.1 |

@@ -3410,7 +3410,7 @@
         "B3.3-lesson",
         "B4.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B6.1",
       "level": "Core",
       "rai": false
@@ -3425,7 +3425,7 @@
       "depends_on": [
         "B6.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B6.1",
       "level": "Core",
       "rai": false
@@ -3441,7 +3441,7 @@
         "B6.1-lab",
         "B6.1-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B6.1",
       "level": "Core",
       "rai": false
@@ -3462,7 +3462,7 @@
         "B3.3-lesson",
         "B4.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B6.2",
       "level": "Depth",
       "rai": false
@@ -3477,7 +3477,7 @@
       "depends_on": [
         "B6.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B6.2",
       "level": "Depth",
       "rai": false
@@ -3493,7 +3493,7 @@
         "B6.2-lab",
         "B6.2-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B6.2",
       "level": "Depth",
       "rai": false
@@ -3514,7 +3514,7 @@
         "B3.3-lesson",
         "B4.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B6.3",
       "level": "Core",
       "rai": false
@@ -3529,7 +3529,7 @@
       "depends_on": [
         "B6.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B6.3",
       "level": "Core",
       "rai": false
@@ -3545,7 +3545,7 @@
         "B6.3-lab",
         "B6.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B6.3",
       "level": "Core",
       "rai": false
@@ -3566,7 +3566,7 @@
         "B3.3-lesson",
         "B4.3-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B6.4",
       "level": "Depth",
       "rai": false
@@ -3581,7 +3581,7 @@
       "depends_on": [
         "B6.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B6.4",
       "level": "Depth",
       "rai": false
@@ -3597,7 +3597,7 @@
         "B6.4-lab",
         "B6.4-lesson"
       ],
-      "status": "todo",
+      "status": "done",
       "topic": "B6.4",
       "level": "Depth",
       "rai": false
@@ -3615,7 +3615,7 @@
         "B6.3-lesson",
         "B6.4-lesson"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "W12-quiz-answers",
@@ -3627,7 +3627,7 @@
       "depends_on": [
         "W12-quiz"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "W12-cheatsheet",
@@ -3642,7 +3642,7 @@
         "B6.3-lesson",
         "B6.4-lesson"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "PART_B-cheatsheet",
@@ -3659,7 +3659,7 @@
         "W11-cheatsheet",
         "W12-cheatsheet"
       ],
-      "status": "todo"
+      "status": "done"
     },
     {
       "id": "C1.1-lesson",

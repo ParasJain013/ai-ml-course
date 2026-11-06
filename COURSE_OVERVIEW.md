@@ -58,24 +58,24 @@ relevant projects to score at least 70% on their rubric.
 
 ## How much of the material is ready
 
-The course material is generated one week at a time. **Weeks 1–11 of 36 are ready**, which is
-roughly 30% of the course:
+The course material is generated one week at a time. **Weeks 1–12 of 36 are ready**, which is
+one third of the course:
 
 | | Ready | Total |
 |---|---|---|
-| Weeks of material | 11 (weeks 1–11) | 36 |
-| Lessons (each with a runnable lab and an answer key) | 55 | 154 |
-| Weekly quizzes | 11 | 36 |
-| Weekly cheat sheets | 11 | 36 |
-| Part cheat sheets | 1 (Part A) | 11 |
+| Weeks of material | 12 (weeks 1–12) | 36 |
+| Lessons (each with a runnable lab and an answer key) | 59 | 154 |
+| Weekly quizzes | 12 | 36 |
+| Weekly cheat sheets | 12 | 36 |
+| Part cheat sheets | 2 (Parts A and B) | 11 |
 | Project briefs | 3 (P1, P2, P3) | 12 |
 | Paper reading guides | 1 (XGBoost) | 10 |
 
 In terms of parts:
 
 - **Part A, Foundations (weeks 1–6): complete.**
-- **Part B, Classical ML (weeks 7–12): 5 of 6 weeks ready.** Week 12 (recommender systems and
-  time-series forecasting) and the Part B cheat sheet are next to be generated.
+- **Part B, Classical ML (weeks 7–12): complete**, including the Part B cheat sheet. Part C (deep
+  learning, from week 13) is next to be generated.
 - **Parts C to L (weeks 13–36): planned in detail but not yet generated.** The syllabus for every
   week is fixed, so what is coming is known; only the lessons, labs and quizzes still need to be
   written.
